@@ -4,8 +4,21 @@ transition: my-transition
 title: Lead Generation Solutions
 ---
 
-# <Morph :texts="[ 'Welcome to XMA Agency', 'Faez' ]" />
+# <Morph :texts="[ 'Welcome to XMA Agency', displayText ]" />
 
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const displayText = ref("")
+
+onMounted(() => {
+  const urlParams = new URLSearchParams(window.location.search)
+  const name = urlParams.get('name')
+  if (name) {
+    displayText.value = name
+  }
+})
+</script>
 ---
 layout: center
 ---
