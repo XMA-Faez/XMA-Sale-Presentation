@@ -2,6 +2,9 @@
 theme: ./theme
 transition: my-transition
 title: Lead Generation Solutions
+fonts:
+    mono: 'JetBrains Mono'
+    local: Mona Sans
 ---
 
 # <Morph :texts="[ 'Welcome to XMA Agency', displayText ]" />
