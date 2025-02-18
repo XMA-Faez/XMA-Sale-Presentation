@@ -8,7 +8,8 @@
 }
 
 html {
-  font-family: 'Mona Sans';
+  font-family: 'Mona Sans' !important;
+  font-feature-settings: "ss01" on, "ss03" on, "ss05" on !important; /* Turns on square diacritical marks, small letter L distinct from capital I, and alternative small letter g */
 }
 
 :root {
