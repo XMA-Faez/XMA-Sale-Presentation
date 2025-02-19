@@ -2,433 +2,431 @@
 theme: ./theme
 transition: my-transition
 title: Lead Generation Solutions
+layout: cover
+background: /gradient.jpg
 fonts:
   mono: "JetBrains Mono"
   local: Mona Sans
 ---
 
-# <Morph :texts="[ 'Welcome to XMA Agency', displayText ]" />
-
+<!-- Global state setup -->
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, provide } from 'vue'
 
-const displayText = ref("")
+const clientName = ref("")
+const companyName = ref("")
 
 onMounted(() => {
   const urlParams = new URLSearchParams(window.location.search)
-  const name = urlParams.get('name')
-  if (name) {
-    displayText.value = name
-  }
+  clientName.value = urlParams.get('name') || ''
+  companyName.value = urlParams.get('company') || ''
+  
+  // Make these values available to other slides
+  provide('clientName', clientName)
+  provide('companyName', companyName)
 })
 </script>
 
----
-layout: center
----
-
-# About Us
-
-<v-clicks>
-  <IconBullet type="star">
-    <strong>Full-service advertising agency</strong> specializing in video-driven lead generation
-  </IconBullet>
-  
-  <IconBullet type="check">
-    <strong>15-person in-house team</strong> - everything happens under one roof
-  </IconBullet>
-  
-  <IconBullet type="target">
-    <strong>Integrated approach:</strong> creative, ads, and lead management in one place
-  </IconBullet>
-  
-  <IconBullet type="star">
-    <strong>Full satisfaction guarantee</strong>
-  </IconBullet>
-</v-clicks>
-
----
-layout: center
-class: "bg-gradient-to-t from-rose-950 to-black text-white"
----
-
-# Common Challenges for Businesses
-
-<div class="grid grid-cols-3 gap-6 mt-8">
-  <v-click>
-    <div class="flex flex-col items-center p-4 bg-white/20 rounded-lg backdrop-blur">
-      <div class="text-3xl mb-2">😓</div>
-      <div class="text-center font-medium">Inconsistent lead generation</div>
+<div class="flex flex-col items-center justify-center h-full">
+    <!-- Logo -->
+    <div
+        v-motion
+        :initial="{ filter: 'blur(12px)', opacity: 0 }"
+        :enter="{ filter: 'blur(0px)', opacity: 1 }"
+        :duration="300"
+        class="mb-8"
+    >
+        <img src="/logo.svg" alt="XMA Agency Logo" class="h-24 w-auto" />
     </div>
-  </v-click>
-  
-  <v-click>
-    <div class="flex flex-col items-center p-4 bg-white/20 rounded-lg backdrop-blur">
-      <div class="text-3xl mb-2">👎</div>
-      <div class="text-center font-medium">Poor lead quality</div>
+    <!-- Personalized Welcome -->
+    <div
+    v-motion
+    :initial="{ filter: 'blur(12px)', opacity: 0 }"
+    :enter="{ filter: 'blur(0px)', opacity: 1, transition: { delay: 200 } }"
+    :duration="300"
+    class="text-5xl font-bold mb-4 text-center"
+    >
+    <template v-if="clientName">
+    <HyperText :text="`Welcome, ${clientName}`" duration="2000" />
+    </template>
+    <template v-else>
+    Welcome to XMA Agency
+    </template>
+</div>
+<!-- Company specific message -->
+<div
+    v-if="companyName"
+    v-motion
+    :initial="{ filter: 'blur(12px)', opacity: 0 }"
+    :enter="{ filter: 'blur(0px)', opacity: 1, transition: { delay: 400 } }"
+    class="text-2xl mb-8 text-red-200"
+>
+    <HyperText :text="`Let\'s transform ${companyName}\'s digital presence`"  duration="2000" />
+</div>
+<!-- Service icons with Lucide -->
+<div class="flex gap-12 mt-12">
+    <div 
+        v-motion
+        :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
+        :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 200 } }"
+        :duration="500"
+        class="text-center"
+    >
+        <div class="mb-3 p-4 bg-white/20 rounded-full">
+            <lucide-video class="w-8 h-8" />
+        </div>
+        <div>Video</div>
     </div>
-  </v-click>
-  
-  <v-click>
-    <div class="flex flex-col items-center p-4 bg-white/20 rounded-lg backdrop-blur">
-      <div class="text-3xl mb-2">🔄</div>
-      <div class="text-center font-medium">Multiple vendors</div>
+    <div 
+        v-motion
+        :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
+        :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 400 } }"
+        :duration="500"
+        class="text-center"
+    >
+        <div class="mb-3  p-4 bg-white/20 rounded-full ">
+            <lucide-bar-chart3 class="w-8 h-8" />
+        </div>
+        <div>Marketing</div>
     </div>
-  </v-click>
-  
-  <v-click>
-    <div class="flex flex-col items-center p-4 bg-white/20 rounded-lg backdrop-blur">
-      <div class="text-3xl mb-2">🧩</div>
-      <div class="text-center font-medium">Lack of cohesive strategy</div>
+    <div 
+        v-motion
+        :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
+        :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 600 } }"
+        :duration="500"
+        class="text-center"
+    >
+        <div class="mb-3  p-4 bg-white/20 rounded-full ">
+            <lucide-bot class="w-8 h-8" />
+        </div>
+        <div>CRM</div>
     </div>
-  </v-click>
-  
-  <v-click>
-    <div class="flex flex-col items-center p-4 bg-white/20 rounded-lg backdrop-blur">
-      <div class="text-3xl mb-2">⏰</div>
-      <div class="text-center font-medium">Time-consuming management</div>
+    <div 
+        v-motion
+        :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
+        :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 800 } }"
+        :duration="500"
+        class="text-center"
+    >
+        <div class="mb-3  p-4 bg-white/20 rounded-full ">
+            <lucide-zap class="w-8 h-8" />
+        </div>
+        <div>Performance</div>
     </div>
-  </v-click>
-  
-  <v-click>
-    <div class="flex flex-col items-center p-4 bg-white/20 rounded-lg backdrop-blur">
-      <div class="text-3xl mb-2">💰</div>
-      <div class="text-center font-medium">High acquisition costs</div>
-    </div>
-  </v-click>
+</div>
 </div>
 
+<!-- Style adjustments -->
+<style>
+.slidev-layout.cover {
+  background: linear-gradient(to bottom right, #1a237e, #311b92);
+  color: white;
+}
+</style>
 ---
-layout: center
----
-
-# Our Integrated Solution
-
-<div class="flex flex-col space-y-4">
-  <v-clicks>
-    <div class="flex items-center space-x-3">
-      <div class="bg-green-500 text-white rounded-full p-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div>ONE team handles everything</div>
-    </div>
-    <div class="flex items-center space-x-3">
-      <div class="bg-green-500 text-white rounded-full p-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div>Streamlined communication</div>
-    </div>
-    <div class="flex items-center space-x-3">
-      <div class="bg-green-500 text-white rounded-full p-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div>Consistent strategy</div>
-    </div>
-    <div class="flex items-center space-x-3">
-      <div class="bg-green-500 text-white rounded-full p-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div>Faster implementation</div>
-    </div>
-    <div class="flex items-center space-x-3">
-      <div class="bg-green-500 text-white rounded-full p-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div>Better results</div>
-    </div>
-  </v-clicks>
-</div>
-
+class: text-center
 ---
 
-<div class="flex items-center justify-center h-full">
-  <div class="w-3/4 p-5 m-auto">
-    <div class="text-center font-bold border-2 border-red-500 p-5 rounded-lg transform transition-all duration-500 hover:scale-110">
-        <div>RESULT</div>
-        More leads, better conversion, less hassle
+# Who We Are
+
+<div class="relative h-full -mt-10">
+  <!-- Section 1: Advertising Agency -->
+  <div class="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2" v-click.hide="1">
+    <div
+      v-motion
+      :initial="{ filter: 'blur(12px)', opacity: 0, scale: 0.8 }"
+      :enter="{ filter: 'blur(0px)', opacity: 1, scale: 1 }"
+      class="text-center text-4xl font-bold bg-gradient-to-r leading-[50px] from-red-600 to-red-500 bg-clip-text text-transparent"
+    >
+      Advertising Agency
+    </div>
+  </div>
+
+  <!-- Section 2: In-House Team (Two-Column Layout) -->
+  <div class="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
+    <div class="flex flex-col md:flex-row gap-12 justify-center items-center">
+      <!-- Left Column: Team Label -->
+      <div class="flex-1">
+        <div
+          v-click="1"
+          v-motion
+          :initial="{ filter: 'blur(12px)', opacity: 0, scale: 0.8 }"
+          :enter="{ filter: 'blur(0px)', opacity: 1, scale: 1 }"
+          class="text-3xl font-bold text-center"
+        >
+          <span class="text-red-600">15</span> In-House<br/>Professionals
+        </div>
+      </div>
+      <!-- Right Column: Team Members -->
+      <div class="flex-1 space-y-6">
+        <div
+          v-click="2"
+          v-motion
+          :initial="{ filter: 'blur(12px)', opacity: 0, x: 50 }"
+          :enter="{ filter: 'blur(0px)', opacity: 1, x: 0 }"
+          class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
+        >
+          <lucide-video class="w-6 h-6 text-red-500"/>
+          <span class="text-lg">Videographers</span>
+        </div>
+        <div
+          v-click="3"
+          v-motion
+          :initial="{ filter: 'blur(12px)', opacity: 0, x: 50 }"
+          :enter="{ filter: 'blur(0px)', opacity: 1, x: 0 }"
+          class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
+        >
+          <lucide-clapperboard class="w-6 h-6 text-red-500"/>
+          <span class="text-lg">Video Editors</span>
+        </div>
+        <div
+          v-click="4"
+          v-motion
+          :initial="{ filter: 'blur(12px)', opacity: 0, x: 50 }"
+          :enter="{ filter: 'blur(0px)', opacity: 1, x: 0 }"
+          class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
+        >
+          <lucide-code-2 class="w-6 h-6 text-red-500"/>
+          <span class="text-lg">Developers</span>
+        </div>
+        <div
+          v-click="5"
+          v-motion
+          :initial="{ filter: 'blur(12px)', opacity: 0, x: 50 }"
+          :enter="{ filter: 'blur(0px)', opacity: 1, x: 0 }"
+          class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
+        >
+          <lucide-palette class="w-6 h-6 text-red-500"/>
+          <span class="text-lg">Graphic Designers</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 ---
-layout: image
-image: <https://source.unsplash.com/collection/94734566/1920x1080>
-class: "bg-black/40 bg-blend-multiply"
+layout: two-cols-header
+class: text-center
+---
+
+<h1 class="text-center text-4xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">What We Offer</h1>
+
+::left::
+<div class="flex-1 px-8">
+    <div
+        v-click
+        v-motion
+        :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
+        :enter="{ filter: 'blur(0px)', opacity: 1, y: 0 }"
+        class="p-6 bg-zinc-900/50 rounded-xl backdrop-blur-sm border border-zinc-800 hover:border-red-600/50 shadow-lg"
+    >
+        <div class="flex flex-col items-center gap-4">
+            <lucide-target class="w-12 h-12 text-red-500"/>
+            <h3 class="text-xl font-semibold">Quality Lead Generation</h3>
+            <p class="text-sm text-zinc-400">Targeted campaigns that convert prospects into valuable leads</p>
+        </div>
+    </div>
+</div>
+
+::right::
+<div class="flex-1 px-8">
+    <div
+        v-click
+        v-motion
+        :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
+        :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 200 } }"
+        class="p-6 bg-zinc-900/50 rounded-xl backdrop-blur-sm border border-zinc-800 hover:border-red-600/50 shadow-lg"
+    >
+        <div class="flex flex-col items-center gap-4">
+            <lucide-settings class="w-12 h-12 text-red-500"/>
+            <h3 class="text-xl font-semibold">Lead Management System</h3>
+            <p class="text-sm text-zinc-400">Comprehensive CRM to track and nurture your leads effectively</p>
+        </div>
+    </div>
+</div>
+---
+class: text-center
+---
+
+# Trusted By Dubai's Businesses
+<div 
+  v-motion
+  :initial="{ opacity: 0, y: 100 }"
+  :enter="{ opacity: 1, y: 0 }"
+  :exit="{ opacity: 1, y: 0 }"
+  class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8"
+>
+    <dl class="grid grid-cols-1 gap-8 sm:mt-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div 
+          v-motion
+          :initial="{ filter: 'blur(12px)', opacity: 0, scale: 0.8 }"
+          :enter="{ filter: 'blur(0px)', opacity: 1, scale: 1, transition: { delay: 200 } }"
+          class="flex flex-col px-4 py-8 text-center bg-zinc-900/50 rounded-xl border border-zinc-800 hover:border-red-600/50"
+        >
+            <dd class="text-2xl font-extrabold text-red-600 md:text-5xl mb-4">
+                <Ticker :value="50" :decimalPlaces="0" />+
+            </dd>
+            <dt class="text-lg font-medium text-zinc-400">Total Clients</dt>
+        </div>
+        <div 
+          v-motion
+          :initial="{ filter: 'blur(12px)', opacity: 0, scale: 0.8 }"
+          :enter="{ filter: 'blur(0px)', opacity: 1, scale: 1, transition: { delay: 400 } }"
+          class="flex flex-col px-4 py-8 text-center bg-zinc-900/50 rounded-xl border border-zinc-800 hover:border-red-600/50"
+        >
+            <dd class="text-2xl font-extrabold text-red-600 md:text-5xl mb-4">
+                <Ticker :value="30" decimalPlaces="0" />K+
+            </dd>
+            <dt class="text-lg font-medium text-zinc-400">Leads Generated</dt>
+        </div>
+        <div 
+          v-motion
+          :initial="{ filter: 'blur(12px)', opacity: 0, scale: 0.8 }"
+          :enter="{ filter: 'blur(0px)', opacity: 1, scale: 1, transition: { delay: 600 } }"
+          class="flex flex-col px-4 py-8 text-center bg-zinc-900/50 rounded-xl border border-zinc-800 hover:border-red-600/50"
+        >
+            <dd class="text-2xl font-extrabold text-red-600 md:text-5xl mb-4">
+                AED <Ticker :value="3" decimalPlaces="0" />M+
+            </dd>
+            <dt class="text-lg font-medium text-zinc-400">Ad Budget Managed</dt>
+        </div>
+    </dl>
+</div>
+
+<div 
+  v-motion
+  :initial="{ opacity: 0 }"
+  :enter="{ opacity: 1, transition: { delay: 800 } }"
+  class="relative mt-8"
+>
+    <Marquee
+        class="[--duration:20s]"
+    >
+        <img src="/packman_Logo.jpg" class="h-12 mx-4 duration-300" />
+        <img src="/packman_Logo.jpg" class="h-12 mx-4 duration-300" />
+        <img src="/packman_Logo.jpg" class="h-12 mx-4 duration-300" />
+        <img src="/packman_Logo.jpg" class="h-12 mx-4 duration-300" />
+        <img src="/packman_Logo.jpg" class="h-12 mx-4 duration-300" />
+        <img src="/packman_Logo.jpg" class="h-12 mx-4 duration-300" />
+        <img src="/packman_Logo.jpg" class="h-12 mx-4 duration-300" />
+    </Marquee>
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#0f0f0f] dark:from-background" />
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#0f0f0f] dark:from-background" />
+</div>
+
+---
+class: text-center
 ---
 
 # Our Process
 
-<div class="flex flex-wrap justify-center gap-4 mt-12">
-  <v-click>
-    <div class="bg-red-950/20 p-5 rounded-lg shadow-lg w-64">
-      <div class="text-4xl text-center text-yellow-500 mb-2">1</div>
-      <div class="font-bold text-center mb-1">Strategy Development</div>
-      <div class="text-sm text-center">Tailored to your business goals</div>
+<style>
+.scale-step {
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.scale-step:hover {
+    background: rgba(255,255,255,0.15);
+    transform: scale(1.02);
+}
+</style>
+
+<div class="grid mt-20 grid-cols-4 gap-4 text-center">
+    <div v-click class="scale-step">
+        <lucide-video class="w-12 h-12 text-blue-500" />
+        <p class="text-lg font-bold text-blue-500">Content Creation</p>
     </div>
-  </v-click>
-  
-  <v-click>
-    <div class="bg-red-950/20 p-5 rounded-lg shadow-lg w-64">
-      <div class="text-4xl text-center text-yellow-500 mb-2">2</div>
-      <div class="font-bold text-center mb-1">Creative Production</div>
-      <div class="text-sm text-center">High-quality videos and graphics</div>
+    <div v-click class="scale-step">
+        <lucide-layout-dashboard class="w-12 h-12 text-green-500" />
+        <p class="text-lg font-bold text-green-500">CRM Setup</p>
     </div>
-  </v-click>
-  
-  <v-click>
-    <div class="bg-red-950/20 p-5 rounded-lg shadow-lg w-64">
-      <div class="text-4xl text-center text-yellow-500 mb-2">3</div>
-      <div class="font-bold text-center mb-1">Campaign Launch</div>
-      <div class="text-sm text-center">Multi-platform ad management</div>
+    <div v-click class="scale-step">
+        <mdi-bullhorn class="w-12 h-12 text-yellow-500" />
+        <p class="text-lg font-bold text-yellow-500">Advertising</p>
     </div>
-  </v-click>
-  
-  <v-click>
-    <div class="bg-red-950/20 p-5 rounded-lg shadow-lg w-64">
-      <div class="text-4xl text-center text-yellow-500 mb-2">4</div>
-      <div class="font-bold text-center mb-1">Lead Capture & Nurturing</div>
-      <div class="text-sm text-center">CRM & WhatsApp integration</div>
+    <div v-click class="scale-step">
+        <mdi-account-convert class="w-12 h-12 text-red-500" />
+        <p class="text-lg font-bold text-red-500">Lead Management</p>
     </div>
-  </v-click>
-  
-  <v-click>
-    <div class="bg-red-950/20 p-5 rounded-lg shadow-lg w-64">
-      <div class="text-4xl text-center text-yellow-500 mb-2">5</div>
-      <div class="font-bold text-center mb-1">Optimization</div>
-      <div class="text-sm text-center">Continuous performance improvement</div>
-    </div>
-  </v-click>
 </div>
 
 ---
-layout: iframe-right
+src: ./pages/Process.md
 ---
 
-# Creative Development
-
-<v-clicks>
-  <IconBullet type="idea">
-    <strong>Professional in-house video production</strong>
-  </IconBullet>
-  
-  <IconBullet type="idea">
-    <strong>Data-driven creative strategy</strong>
-  </IconBullet>
-  
-  <IconBullet type="idea">
-    <strong>Multiple variants for A/B testing</strong>
-  </IconBullet>
-  
-  <IconBullet type="idea">
-    <strong>Consistent branding across platforms</strong>
-  </IconBullet>
-</v-clicks>
-
 ---
-layout: section
-zoom: 0.8
+src: ./pages/VideoType.md
 ---
 
-# Campaign Management
-
-<div class="grid grid-cols-2 gap-8 mt-12">
-  <v-click>
-    <div class="bg-gradient-to-br from-indigo-500 to-blue-600 text-white p-6 rounded-xl shadow-xl">
-      <div class="text-4xl mb-2">📊</div>
-      <h3 class="text-xl font-bold mb-2">Advanced Targeting</h3>
-      <p>Precision demographic and behavioral targeting to reach the right audience</p>
-    </div>
-  </v-click>
-  
-  <v-click>
-    <div class="bg-gradient-to-br from-blue-500 to-sky-600 text-white p-6 rounded-xl shadow-xl">
-      <div class="text-4xl mb-2">🌐</div>
-      <h3 class="text-xl font-bold mb-2">Multi-platform Strategy</h3>
-      <p>Coordinated campaigns across all relevant platforms</p>
-    </div>
-  </v-click>
-  
-  <v-click>
-    <div class="bg-gradient-to-br from-sky-500 to-cyan-600 text-white p-6 rounded-xl shadow-xl">
-      <div class="text-4xl mb-2">📈</div>
-      <h3 class="text-xl font-bold mb-2">Performance Reviews</h3>
-      <p>Regular analysis and reporting on campaign metrics</p>
-    </div>
-  </v-click>
-  
-  <v-click>
-    <div class="bg-gradient-to-br from-cyan-500 to-indigo-600 text-white p-6 rounded-xl shadow-xl">
-      <div class="text-4xl mb-2">🔄</div>
-      <h3 class="text-xl font-bold mb-2">Responsive Adjustments</h3>
-      <p>Data-driven campaign optimizations for maximum ROI</p>
-    </div>
-  </v-click>
-</div>
-
 ---
-layout: table-contents
+src: ./pages/Clients.md
 ---
 
-# Lead Nurturing System
-
-<div class="mt-8">
-  <v-click>
-    <div class="flex items-start mb-6">
-      <div class="bg-blue-100 p-3 rounded-full mr-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-        </svg>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-2">Automated lead capture</h3>
-        <p class="text-gray-300">Instantly collect and organize leads from all campaign sources</p>
-      </div>
-    </div>
-  </v-click>
-  
-  <v-click>
-    <div class="flex items-start mb-6">
-      <div class="bg-green-100 p-3 rounded-full mr-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-2">Seamless CRM integration</h3>
-        <p class="text-gray-300">Works with your existing systems or our proprietary platform</p>
-      </div>
-    </div>
-  </v-click>
-  
-  <v-click>
-    <div class="flex items-start mb-6">
-      <div class="bg-yellow-100 p-3 rounded-full mr-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-2">WhatsApp marketing automation</h3>
-        <p class="text-gray-300">Engage prospects where they're most responsive</p>
-      </div>
-    </div>
-  </v-click>
-  
-  <v-click>
-    <div class="flex items-start">
-      <div class="bg-purple-100 p-3 rounded-full mr-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-2">AI chatbot engagement (Premium)</h3>
-        <p class="text-gray-300">24/7 intelligent lead qualification and nurturing</p>
-      </div>
-    </div>
-  </v-click>
-</div>
-
 ---
-layout: two-cols
+src: ./pages/Offer.md
 ---
-
-# Case Study: Flower Guys
-
-<div class="p-6 rounded-lg shadow-md my-6">
-  <v-click>
-    <h3 class="text-lg font-semibold mb-4 text-red-600">The Challenge</h3>
-    <p class="mb-4">[Specific issue similar to prospect's situation]</p>
-  </v-click>
-  
-  <v-click>
-    <h3 class="text-lg font-semibold mb-4 text-blue-600">Our Solution</h3>
-    <p>[Package level] implementation with focus on [key element]</p>
-  </v-click>
-</div>
-
-::right::
-
-<div class="pl-6 flex flex-col justify-center h-full">
-  <h3 class="text-xl font-bold mb-6 text-center">Results Achieved</h3>
-  
-  <div class="space-y-4">
-    <v-click>
-      <div class="bg-zinc-900 p-4 rounded-lg shadow-md border-l-4 border-green-500">
-        <div class="text-2xl font-bold text-green-600">[X]%</div>
-        <div>increase in qualified leads</div>
-      </div>
-    </v-click>
-    <v-click>
-      <div class="bg-zinc-900 p-4 rounded-lg shadow-md border-l-4 border-blue-500">
-        <div class="text-2xl font-bold text-blue-600">[Y]%</div>
-        <div>improvement in conversion rate</div>
-      </div>
-    </v-click>
-    <v-click>
-      <div class="bg-zinc-900 p-4 rounded-lg shadow-md border-l-4 border-purple-500">
-        <div class="text-2xl font-bold text-purple-600">[Z]%</div>
-        <div>reduction in cost per acquisition</div>
-      </div>
-    </v-click>
-  </div>
-</div>
-
-<!--
-Additional slide examples with different layouts
--->
-
----
-layout: quote
----
-
-# What Our Clients Say
-
-> "Working with XMA Agency transformed our lead generation process completely. Their integrated approach eliminated all the headaches of managing multiple vendors and delivered results beyond our expectations."
-
-<div class="text-right mt-4">
-  <div class="font-bold">Jane Smith</div>
-  <div class="text-sm">CEO, Company Name</div>
-</div>
-
 
 ---
 layout: center
-class: "text-center"
+class: text-center
 ---
 
-# Ready to Transform Your Lead Generation?
+<div class="flex flex-col items-center justify-center gap-8">
+  <div
+    v-motion
+    :initial="{ filter: 'blur(12px)', opacity: 0, y: -50 }"
+    :enter="{ filter: 'blur(0px)', opacity: 1, y: 0 }"
+  >
+    <h1 class="text-6xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent mb-2">
+      Let's Work Together
+    </h1>
+  </div>
 
-<div class="mt-8 flex flex-col items-center">
-  <div class="text-xl mb-6">Schedule your free consultation today</div>
-  <div class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-xl font-bold transform transition-all duration-300 hover:scale-105">
-    Get Started
+  <div
+    v-motion
+    :initial="{ filter: 'blur(12px)', opacity: 0 }"
+    :enter="{ filter: 'blur(0px)', opacity: 1, transition: { delay: 200 } }"
+    class="flex flex-col items-center gap-6"
+  >
+    <div class="text-2xl text-zinc-400">Transform Your Business with XMA Agency</div>
+    <div class="flex items-center gap-8 mt-4">
+      <div class="flex items-center gap-2">
+        <lucide-phone class="w-6 h-6 text-red-500" />
+        <span>+971 XX XXX XXXX</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <lucide-mail class="w-6 h-6 text-red-500" />
+        <span>contact@xmaagency.com</span>
+      </div>
+    </div>
   </div>
-</div>
 
-<div class="mt-12 grid grid-cols-3 gap-8">
-  <div class="flex flex-col items-center">
-    <div class="text-4xl mb-2">📱</div>
-    <div>(555) 123-4567</div>
+  <div 
+    v-motion
+    :initial="{ opacity: 0, y: 50 }"
+    :enter="{ opacity: 1, y: 0, transition: { delay: 400 } }"
+    class="mt-8 p-4 bg-zinc-900/50 rounded-xl border border-zinc-800 backdrop-blur-sm"
+  >
+    <div class="text-xl">
+      Ready to discuss your project? Let's schedule a call!
+    </div>
   </div>
-  
-  <div class="flex flex-col items-center">
-    <div class="text-4xl mb-2">📧</div>
-    <div>info@xma-agency.com</div>
-  </div>
-  
-  <div class="flex flex-col items-center">
-    <div class="text-4xl mb-2">🌐</div>
-    <div>www.xma-agency.com</div>
+
+  <div 
+    v-motion
+    :initial="{ opacity: 0 }"
+    :enter="{ opacity: 1, transition: { delay: 600 } }"
+    class="absolute bottom-8 flex items-center gap-2 text-zinc-500"
+  >
+    <lucide-map-pin class="w-5 h-5" />
+    <span>Dubai, UAE</span>
   </div>
 </div>
