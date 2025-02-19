@@ -41,7 +41,6 @@ class: text-center
       Advertising Agency
     </div>
   </div>
-
   <!-- Section 2: In-House Team (Two-Column Layout) -->
   <div class="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
     <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
@@ -98,21 +97,10 @@ class: text-center
       </div>
     </div>
   </div>
-
   <!-- Section 3: Final Cards (Two-Column Layout) -->
   <div class="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
+    <div v-click="6" class="mb-20 text-2xl font-bold">We Offer:</div>
     <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
-      <div class="flex-1">
-        <div
-          v-click="6"
-          v-motion
-          :initial="{ opacity: 0, x: -20 }"
-          :enter="{ opacity: 1, x: 0 }"
-          class="p-4 bg-zinc-800 rounded shadow text-center"
-        >
-          Delivering Quality Ads
-        </div>
-      </div>
       <div class="flex-1">
         <div
           v-click="7"
@@ -121,7 +109,18 @@ class: text-center
           :enter="{ opacity: 1, x: 0 }"
           class="p-4 bg-zinc-800 rounded shadow text-center"
         >
-          Managing Leads
+        Quality Lead
+        </div>
+      </div>
+      <div class="flex-1">
+        <div
+          v-click="8"
+          v-motion
+          :initial="{ opacity: 0, x: -20 }"
+          :enter="{ opacity: 1, x: 0 }"
+          class="p-4 bg-zinc-800 rounded shadow text-center"
+        >
+            Lead Management System
         </div>
       </div>
     </div>
