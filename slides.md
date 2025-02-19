@@ -47,7 +47,7 @@ class: text-center
       <!-- Left Column: Team Label -->
       <div class="flex-1">
         <div
-          v-click="['1','6']"
+          v-click="1"
           v-motion
           :initial="{ opacity: 0, y: -20 }"
           :enter="{ opacity: 1, y: 0 }"
@@ -59,7 +59,7 @@ class: text-center
       <!-- Right Column: Team Members -->
       <div class="flex-1 space-y-4">
         <div
-          v-click="['2','6']"
+          v-click="2"
           v-motion
           :initial="{ opacity: 0, x: -20 }"
           :enter="{ opacity: 1, x: 0 }"
@@ -68,7 +68,7 @@ class: text-center
           Videographers
         </div>
         <div
-          v-click="['3','6']"
+          v-click="3"
           v-motion
           :initial="{ opacity: 0, x: -20 }"
           :enter="{ opacity: 1, x: 0 }"
@@ -77,7 +77,7 @@ class: text-center
           Video Editors
         </div>
         <div
-          v-click="['4','6']"
+          v-click="4"
           v-motion
           :initial="{ opacity: 0, x: -20 }"
           :enter="{ opacity: 1, x: 0 }"
@@ -86,7 +86,7 @@ class: text-center
           Developers
         </div>
         <div
-          v-click="['5','6']"
+          v-click="5"
           v-motion
           :initial="{ opacity: 0, x: -20 }"
           :enter="{ opacity: 1, x: 0 }"
