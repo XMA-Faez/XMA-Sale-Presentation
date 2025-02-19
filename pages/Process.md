@@ -2,7 +2,6 @@
 
 <div class="grid grid-cols-2 gap-8">
   <div
-    v-click
     class="bg-blue-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
