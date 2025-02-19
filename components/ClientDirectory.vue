@@ -30,8 +30,91 @@ const clients = [
       totalGraphics: 32,
       conversionRate: '8.9%',
       monthlyBudget: '8,000 AED'
+    },
+    content: {
+      videos: [
+        {
+          id: 1,
+          title: 'Company Overview',
+          type: 'brand',
+          industry: 'real-estate',
+          format: 'story',
+          views: '3.2k',
+          engagement: '75%',
+          performance: 'high'
+        },
+        {
+          id: 2,
+          title: 'Property Showcase',
+          type: 'product',
+          industry: 'real-estate',
+          format: 'feed',
+          views: '2.8k',
+          engagement: '68%',
+          performance: 'medium'
+        }
+      ],
+      graphics: [
+        {
+          id: 1,
+          title: 'Property Listing',
+          type: 'banner',
+          industry: 'real-estate',
+          format: 'horizontal',
+          engagement: '70%',
+          performance: 'high'
+        },
+        {
+          id: 2,
+          title: 'Open House Announcement',
+          type: 'post',
+          industry: 'real-estate',
+          format: 'square',
+          engagement: '65%',
+          performance: 'medium'
+        }
+      ]
     }
   },
+  {
+    id: 2,
+    name: 'Elite Education Center',
+    industry: 'education',
+    logo: '/api/placeholder/80/80',
+    stats: {
+      totalCampaigns: 8,
+      activeLeads: 180,
+      totalVideos: 15,
+      totalGraphics: 32,
+      conversionRate: '8.9%',
+      monthlyBudget: '8,000 AED'
+    },
+    content: {
+      videos: [
+        {
+          id: 1,
+          title: 'Course Introduction',
+          type: 'product',
+          industry: 'education',
+          format: 'story',
+          views: '1.5k',
+          engagement: '82%',
+          performance: 'high'
+        }
+      ],
+      graphics: [
+        {
+          id: 1,
+          title: 'Course Schedule',
+          type: 'post',
+          industry: 'education',
+          format: 'square',
+          engagement: '58%',
+          performance: 'medium'
+        }
+      ]
+    }
+  }
   // Add more clients...
 ]
 
@@ -81,7 +164,7 @@ const getIndustryColor = (industry) => {
               {{ client.industry }}
             </span>
           </div>
-          <h3 class="!text-xl font-bold mb-2">{{ client.name }}</h3>
+          <h3 class="text-xl font-bold mb-2">{{ client.name }}</h3>
           <div class="flex flex-wrap gap-4 text-sm text-zinc-400">
             <div>
               <div class="i-lucide-video w-4 h-4 inline-block mr-1" />

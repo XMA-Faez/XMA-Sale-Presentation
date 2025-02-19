@@ -1,150 +1,147 @@
 <script setup>
 import { ref, computed } from 'vue'
 
+const props = defineProps({
+  videos: {
+    type: Array,
+    default: () => [
+      {
+        id: 1,
+        title: 'Luxury Villa Showcase',
+        type: 'product',
+        industry: 'real-estate',
+        format: 'story',
+        views: '5.2k',
+        engagement: '78%',
+        performance: 'high'
+      },
+      {
+        id: 2,
+        title: 'Student Success Stories',
+        type: 'testimonial',
+        industry: 'education',
+        format: 'story',
+        views: '3.8k',
+        engagement: '82%',
+        performance: 'high'
+      },
+      {
+        id: 3,
+        title: 'Downtown Living',
+        type: 'brand',
+        industry: 'real-estate',
+        format: 'feed',
+        views: '4.1k',
+        engagement: '71%',
+        performance: 'medium'
+      },
+      {
+        id: 4,
+        title: 'Summer Collection',
+        type: 'product',
+        industry: 'retail',
+        format: 'story',
+        views: '6.3k',
+        engagement: '75%',
+        performance: 'high'
+      },
+      {
+        id: 5,
+        title: 'Campus Tour',
+        type: 'brand',
+        industry: 'education',
+        format: 'story',
+        views: '2.9k',
+        engagement: '69%',
+        performance: 'medium'
+      },
+      {
+        id: 6,
+        title: 'Store Opening Event',
+        type: 'brand',
+        industry: 'retail',
+        format: 'feed',
+        views: '3.5k',
+        engagement: '73%',
+        performance: 'medium'
+      }
+    ]
+  },
+  graphics: {
+    type: Array,
+    default: () => [
+      {
+        id: 1,
+        title: 'Property Listing Ad',
+        type: 'banner',
+        industry: 'real-estate',
+        format: 'horizontal',
+        engagement: '65%',
+        performance: 'high'
+      },
+      {
+        id: 2,
+        title: 'Course Enrollment',
+        type: 'post',
+        industry: 'education',
+        format: 'square',
+        engagement: '58%',
+        performance: 'medium'
+      },
+      {
+        id: 3,
+        title: 'Seasonal Sale',
+        type: 'story',
+        industry: 'retail',
+        format: 'portrait',
+        engagement: '72%',
+        performance: 'high'
+      },
+      {
+        id: 4,
+        title: 'Luxury Apartment Launch',
+        type: 'banner',
+        industry: 'real-estate',
+        format: 'horizontal',
+        engagement: '68%',
+        performance: 'medium'
+      },
+      {
+        id: 5,
+        title: 'Faculty Spotlight',
+        type: 'post',
+        industry: 'education',
+        format: 'square',
+        engagement: '61%',
+        performance: 'medium'
+      },
+      {
+        id: 6,
+        title: 'New Collection Preview',
+        type: 'story',
+        industry: 'retail',
+        format: 'portrait',
+        engagement: '70%',
+        performance: 'high'
+      }
+    ]
+  }
+})
+
 const activeTab = ref('videos')
 const activeFilter = ref('all')
-
-// Video data
-const videos = [
-  {
-    id: 1,
-    title: 'Product Demo',
-    type: 'product',
-    industry: 'real-estate',
-    format: 'reels', // 9:16
-    views: '2.5k',
-    engagement: '68%',
-    performance: 'high'
-  },
-  {
-    id: 2,
-    title: 'Brand reels',
-    type: 'brand',
-    industry: 'education',
-    format: 'reels', // 4:5
-    views: '1.8k',
-    engagement: '72%',
-    performance: 'medium'
-  },
-  {
-    id: 3,
-    title: 'Brand reels',
-    type: 'brand',
-    industry: 'education',
-    format: 'reels', // 4:5
-    views: '1.8k',
-    engagement: '72%',
-    performance: 'medium'
-  },
-  {
-    id: 4,
-    title: 'Brand reels',
-    type: 'brand',
-    industry: 'education',
-    format: 'reels', // 4:5
-    views: '1.8k',
-    engagement: '72%',
-    performance: 'medium'
-  },
-  {
-    id: 5,
-    title: 'Brand reels',
-    type: 'brand',
-    industry: 'education',
-    format: 'reels', // 4:5
-    views: '1.8k',
-    engagement: '72%',
-    performance: 'medium'
-  },
-]
-
-// Graphics data
-const graphics = [
-  {
-    id: 1,
-    title: 'Product Banner',
-    type: 'banner',
-    industry: 'real-estate',
-    format: 'square', // 1:1
-    engagement: '65%',
-    performance: 'high'
-  },
-  {
-    id: 2,
-    title: 'Promotional Post',
-    type: 'post',
-    industry: 'education',
-    format: 'reels', // 9:16
-    engagement: '58%',
-    performance: 'medium'
-  },
-  {
-    id: 1,
-    title: 'Product Banner',
-    type: 'banner',
-    industry: 'real-estate',
-    format: 'square', // 1:1
-    engagement: '65%',
-    performance: 'high'
-  },
-  {
-    id: 2,
-    title: 'Promotional Post',
-    type: 'post',
-    industry: 'education',
-    format: 'reels', // 9:16
-    engagement: '58%',
-    performance: 'medium'
-  },
-  {
-    id: 1,
-    title: 'Product Banner',
-    type: 'banner',
-    industry: 'real-estate',
-    format: 'square', // 1:1
-    engagement: '65%',
-    performance: 'high'
-  },
-  {
-    id: 2,
-    title: 'Promotional Post',
-    type: 'post',
-    industry: 'education',
-    format: 'reels', // 9:16
-    engagement: '58%',
-    performance: 'medium'
-  },
-  {
-    id: 1,
-    title: 'Product Banner',
-    type: 'banner',
-    industry: 'real-estate',
-    format: 'square', // 1:1
-    engagement: '65%',
-    performance: 'high'
-  },
-  {
-    id: 2,
-    title: 'Promotional Post',
-    type: 'post',
-    industry: 'education',
-    format: 'reels', // 9:16
-    engagement: '58%',
-    performance: 'medium'
-  },
-]
 
 const filters = {
   videos: {
     type: ['all', 'product', 'brand', 'testimonial'],
     industry: ['all', 'real-estate', 'education', 'retail'],
-    format: ['all', 'reels', 'feed'],
+    format: ['all', 'story', 'feed'],
     performance: ['all', 'high', 'medium', 'low']
   },
   graphics: {
-    type: ['all', 'banner', 'post', 'reels'],
+    type: ['all', 'banner', 'post', 'story'],
     industry: ['all', 'real-estate', 'education', 'retail'],
-    format: ['all', 'square', 'reels', 'portrait'],
+    format: ['all', 'square', 'horizontal', 'portrait'],
     performance: ['all', 'high', 'medium', 'low']
   }
 }
@@ -158,41 +155,59 @@ const currentFilters = ref({
 
 const getAspectRatioClass = (format, type) => {
   if (type === 'videos') {
-    return format === 'reels' ? 'h-96' : 'h-80'
+    return format === 'story' ? 'h-96' : 'h-80'
   }
   return format === 'square' ? 'h-64' : 
-         format === 'reels' ? 'h-96' : 
+         format === 'horizontal' ? 'h-96' : 
          'h-72'
 }
 
 const filteredContent = computed(() => {
-  const content = activeTab.value === 'videos' ? videos : graphics
+  const content = activeTab.value === 'videos' ? props.videos : props.graphics
   return content.filter(item => {
     return Object.entries(currentFilters.value).every(([key, value]) => {
       return value === 'all' || item[key] === value
     })
   })
 })
+
+// Check if there's content for each tab
+const hasVideos = computed(() => props.videos.length > 0)
+const hasGraphics = computed(() => props.graphics.length > 0)
+
+// Set initial active tab based on available content
+if (!hasVideos.value && hasGraphics.value) {
+  activeTab.value = 'graphics'
+}
 </script>
 
 <template>
   <!-- Tabs -->
-  <div class="flex gap-4 mb-8">
+  <div v-if="hasVideos || hasGraphics" class="flex gap-4 mb-8">
     <button 
-      v-for="tab in ['videos', 'graphics']"
-      :key="tab"
-      @click="activeTab = tab"
+      v-if="hasVideos"
+      @click="activeTab = 'videos'"
       :class="[
         'px-4 text-sm py-2 rounded-lg font-medium transition-colors',
-        activeTab === tab ? 'bg-zinc-800 text-white' : 'text-zinc-400 hover:text-white'
+        activeTab === 'videos' ? 'bg-zinc-800 text-white' : 'text-zinc-400 hover:text-white'
       ]"
     >
-      {{ tab.charAt(0).toUpperCase() + tab.slice(1) }}
+      Videos
+    </button>
+    <button 
+      v-if="hasGraphics"
+      @click="activeTab = 'graphics'"
+      :class="[
+        'px-4 text-sm py-2 rounded-lg font-medium transition-colors',
+        activeTab === 'graphics' ? 'bg-zinc-800 text-white' : 'text-zinc-400 hover:text-white'
+      ]"
+    >
+      Graphics
     </button>
   </div>
 
   <!-- Filters -->
-  <div class="grid grid-cols-4 gap-4 mb-8">
+  <div v-if="filteredContent.length > 0" class="grid grid-cols-4 gap-4 mb-8">
     <div v-for="(options, filter) in filters[activeTab]" :key="filter" class="space-y-2">
       <label class="!text-sm font-medium text-zinc-400">{{ filter.charAt(0).toUpperCase() + filter.slice(1) }}</label>
       <select 
@@ -210,8 +225,16 @@ const filteredContent = computed(() => {
     </div>
   </div>
 
+  <!-- Empty State -->
+  <div 
+    v-if="!hasVideos && !hasGraphics" 
+    class="text-center py-12 text-zinc-400"
+  >
+    No content available
+  </div>
+
   <!-- Masonry Content Grid -->
-  <div class="columns-3 gap-4 space-y-4">
+  <div v-else-if="filteredContent.length > 0" class="columns-3 gap-4 space-y-4">
     <div 
       v-for="item in filteredContent"
       :key="item.id"
@@ -266,6 +289,14 @@ const filteredContent = computed(() => {
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- No Results -->
+  <div 
+    v-else 
+    class="text-center py-12 text-zinc-400"
+  >
+    No results found with current filters
   </div>
 </template>
 

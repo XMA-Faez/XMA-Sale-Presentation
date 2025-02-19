@@ -124,7 +124,10 @@ const stats = [
 
       <!-- Content Tab -->
       <div v-if="activeTab === 'content'">
-        <ContentGallery />
+        <ContentGallery 
+          :videos="client.content?.videos || []"
+          :graphics="client.content?.graphics || []"
+        />
       </div>
     </div>
   </div>
