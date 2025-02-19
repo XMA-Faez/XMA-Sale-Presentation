@@ -3,8 +3,8 @@ theme: ./theme
 transition: my-transition
 title: Lead Generation Solutions
 fonts:
-    mono: 'JetBrains Mono'
-    local: Mona Sans
+  mono: "JetBrains Mono"
+  local: Mona Sans
 ---
 
 # <Morph :texts="[ 'Welcome to XMA Agency', displayText ]" />
@@ -22,6 +22,7 @@ onMounted(() => {
   }
 })
 </script>
+
 ---
 layout: center
 ---
@@ -41,7 +42,7 @@ layout: center
     <strong>Integrated approach:</strong> creative, ads, and lead management in one place
   </IconBullet>
   
-  <IconBullet type="check">
+  <IconBullet type="star">
     <strong>Full satisfaction guarantee</strong>
   </IconBullet>
 </v-clicks>
@@ -399,6 +400,7 @@ layout: quote
   <div class="font-bold">Jane Smith</div>
   <div class="text-sm">CEO, Company Name</div>
 </div>
+
 
 ---
 layout: center
