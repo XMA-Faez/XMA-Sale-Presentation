@@ -13,7 +13,7 @@ html {
 }
 
 :root {
-  --slidev-theme-primary: hsl(0, 72%, 51%);
+  --slidev-theme-primary: #f0f0f0;
 }
 
 #slide-content {

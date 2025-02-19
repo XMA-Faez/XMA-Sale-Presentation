@@ -97,46 +97,93 @@ class: text-center
       </div>
     </div>
   </div>
-  <!-- Section 3: Final Cards (Two-Column Layout) -->
-  <div class="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
-    <div v-click="6" class="mb-20 text-2xl font-bold">We Offer:</div>
-    <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
-      <div class="flex-1">
-        <div
-          v-click="7"
-          v-motion
-          :initial="{ opacity: 0, x: -20 }"
-          :enter="{ opacity: 1, x: 0 }"
-          class="p-4 bg-zinc-800 rounded shadow text-center"
-        >
-        Quality Lead
-        </div>
-      </div>
-      <div class="flex-1">
-        <div
-          v-click="8"
-          v-motion
-          :initial="{ opacity: 0, x: -20 }"
-          :enter="{ opacity: 1, x: 0 }"
-          class="p-4 bg-zinc-800 rounded shadow text-center"
-        >
-            Lead Management System
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 ---
+layout: two-cols-header
+class: text-center
+---
 
-# Our Social Proof & Expertise
+<h1 class="text-center">We Offer</h1>
 
-<v-clicks>
+::left::
 
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>Team Expertise:</strong> Our specialists are industry veterans committed to your success</div>
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>Client Numbers:</strong> Over <em>[Insert number]</em> satisfied clients (growing every day!)</div>
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>Innovation:</strong> Leveraging cutting-edge technology to stay ahead of the curve</div>
+<div class="flex-1">
+    <div
+        v-click
+        v-motion
+        :initial="{ opacity: 0, x: -20 }"
+        :enter="{ opacity: 1, x: 0 }"
+        class="p-4 mx-4 bg-zinc-800 rounded shadow text-center"
+    >
+        Quality Lead
+    </div>
+</div>
 
-</v-clicks>
+::right::
+
+<div class="flex-1">
+    <div
+        v-click
+        v-motion
+        :initial="{ opacity: 0, x: -20 }"
+        :enter="{ opacity: 1, x: 0 }"
+        class="p-4 mx-4 bg-zinc-800 rounded shadow text-center"
+    >
+        Lead Management System
+    </div>
+</div>
+
+---
+class: text-center
+---
+
+# Trusted By Dubai's Businesses
+
+
+<div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+    </div>
+    <dl
+        class="mg-6 grid grid-cols-1 gap-4 divide-y divide-zinc-100 sm:mt-8 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-3 dark:divide-zinc-900"
+    >
+        <div class="flex flex-col px-4 py-8 text-center">
+            <dt class="order-last text-lg font-medium text-zinc-500 dark:text-zinc-400">Total Clients</dt>
+            <dd class="text-2xl font-extrabold text-red-600 md:text-5xl">
+                <Ticker :value="50" :decimalPlaces="0" />+
+            </dd>
+        </div>
+        <div class="flex flex-col px-4 py-8 text-center">
+            <dt class="order-last text-lg font-medium text-zinc-500 dark:text-zinc-400">
+        Leads Generated
+            </dt>
+            <dd class="text-2xl font-extrabold text-red-600 md:text-5xl">
+                <Ticker :value="30" decimalPlaces="0" />K+
+            </dd>
+        </div>
+        <div class="flex flex-col px-4 py-8 text-center">
+            <dt class="order-last text-lg font-medium text-zinc-500 dark:text-zinc-400">Ad Budget Managed</dt>
+            <dd class="text-2xl font-extrabold text-red-600 md:text-5xl">
+                AED <Ticker :value="3" decimalPlaces="0" />M+
+            </dd>
+        </div>
+    </dl>
+</div>
+
+<div class="relative">
+    <Marquee
+        class="[--duration:20s]"
+    >
+        <img src="/packman_Logo.jpg" class="h-10" />
+        <img src="/packman_Logo.jpg" class="h-10" />
+        <img src="/packman_Logo.jpg" class="h-10" />
+        <img src="/packman_Logo.jpg" class="h-10" />
+        <img src="/packman_Logo.jpg" class="h-10" />
+        <img src="/packman_Logo.jpg" class="h-10" />
+        <img src="/packman_Logo.jpg" class="h-10" />
+    </Marquee>
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#0f0f0f] dark:from-background" />
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#0f0f0f] dark:from-background" />
+</div>
 
 ---
 
