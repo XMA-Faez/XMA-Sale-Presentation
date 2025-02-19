@@ -139,7 +139,6 @@ class: text-center
 
 # Trusted By Dubai's Businesses
 
-
 <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
     <div class="mx-auto max-w-3xl text-center">
     </div>
@@ -186,71 +185,56 @@ class: text-center
 </div>
 
 ---
-
-<img src="/System.svg" class="mx-auto max-w-2xl" />
-
+class: text-center
 ---
 
-# The Video Creation Process
+# Our Process
 
-1. **Information Gathering:**
-   <v-click>
-    <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }">Understand your company, audience, and branding</div>
-   </v-click>
-2. **Production:**
-   <v-click>
-    <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }">Shoot compelling videos for your ads</div>
-   </v-click>
-3. **Editing & Production:**
-   <v-click>
-    <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }">Polish and perfect your video content</div>
-   </v-click>
-4. **Feedback Loop:**
-   <v-click>
-    <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }">Iterate until you’re completely satisfied</div>
-   </v-click>
+<style>
+.scale-step {
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.scale-step:hover {
+    background: rgba(255,255,255,0.15);
+    transform: scale(1.02);
+}
+</style>
 
----
-
-# The Marketing Process
-
-<v-clicks>
-
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>Campaign Creation:</strong> Once videos are ready, we craft targeted ad campaigns on Meta</div>
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>Lead Funnel:</strong> Ads direct prospects to a form where they become leads</div>
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>CRM Integration:</strong> Every lead flows seamlessly into our CRM for further nurturing</div>
-
-</v-clicks>
-
----
-
-# The CRM Process
-
-<v-clicks>
-
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>Ad-CRM Connection:</strong> Our CRM is directly linked to your ads for real-time lead capture</div>
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>WhatsApp Integration:</strong> Automatic messages are sent to new leads via WhatsApp</div>
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>Chatbot Features:</strong> Standard Chatbot for immediate responses, with an option to upgrade to an AI Chatbot in Premium</div>
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>Pipeline Management:</strong> Track leads through various stages until they are closed</div>
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>Multi-Channel Communication:</strong> Reach out via WhatsApp, email, or SMS directly from the CRM</div>
-
-</v-clicks>
-
-*It’s like having a digital concierge guiding every prospect through your sales funnel!*
+<div class="grid mt-20 grid-cols-4 gap-4 text-center">
+    <div v-click class="scale-step">
+        <lucide-video class="w-12 h-12 text-blue-500" />
+        <p class="text-lg font-bold text-blue-500">Content Creation</p>
+    </div>
+    <div v-click class="scale-step">
+        <lucide-layout-dashboard class="w-12 h-12 text-green-500" />
+        <p class="text-lg font-bold text-green-500">CRM Setup</p>
+    </div>
+    <div v-click class="scale-step">
+        <mdi-bullhorn class="w-12 h-12 text-yellow-500" />
+        <p class="text-lg font-bold text-yellow-500">Advertising</p>
+    </div>
+    <div v-click class="scale-step">
+        <mdi-account-convert class="w-12 h-12 text-red-500" />
+        <p class="text-lg font-bold text-red-500">Lead Management</p>
+    </div>
+</div>
 
 ---
+src: ./pages/Process.md
+---
 
-# The All-In-One Solution
-
-Our integrated approach combines:
-
-<v-clicks>
-
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>Creative Video Production</strong></div>
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>Strategic Marketing Campaigns</strong></div>
-- <div v-motion :initial="{ opacity: 0, x: -20 }" :enter="{ opacity: 1, x: 0 }"><strong>Robust CRM Management</strong></div>
-
-</v-clicks>
+---
+src: ./pages/VideoType.md
+---
 
 ---
 zoom: 0.6
@@ -298,7 +282,7 @@ layout: end
 # Thank You For Your Time!
 
 <div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0 }">
-    I'd Be Happy to explain Your Questions! 
+    I'd Be Happy To Answer Your Questions! 
 </div>
 
 ---

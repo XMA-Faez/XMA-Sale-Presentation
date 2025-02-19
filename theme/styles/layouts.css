@@ -20,6 +20,10 @@ html {
   background: #0f0f0f;
 }
 
+.slidev-page {
+  overflow: scroll;
+}
+
 .slidev-layout {
   h1 {
     color: var(--slidev-theme-primary);
