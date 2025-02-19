@@ -11,47 +11,47 @@ const videos = [
     title: 'Product Demo',
     type: 'product',
     industry: 'real-estate',
-    format: 'story', // 9:16
+    format: 'reels', // 9:16
     views: '2.5k',
     engagement: '68%',
     performance: 'high'
   },
   {
     id: 2,
-    title: 'Brand Story',
+    title: 'Brand reels',
     type: 'brand',
     industry: 'education',
-    format: 'story', // 4:5
+    format: 'reels', // 4:5
     views: '1.8k',
     engagement: '72%',
     performance: 'medium'
   },
   {
     id: 3,
-    title: 'Brand Story',
+    title: 'Brand reels',
     type: 'brand',
     industry: 'education',
-    format: 'story', // 4:5
+    format: 'reels', // 4:5
     views: '1.8k',
     engagement: '72%',
     performance: 'medium'
   },
   {
     id: 4,
-    title: 'Brand Story',
+    title: 'Brand reels',
     type: 'brand',
     industry: 'education',
-    format: 'story', // 4:5
+    format: 'reels', // 4:5
     views: '1.8k',
     engagement: '72%',
     performance: 'medium'
   },
   {
     id: 5,
-    title: 'Brand Story',
+    title: 'Brand reels',
     type: 'brand',
     industry: 'education',
-    format: 'story', // 4:5
+    format: 'reels', // 4:5
     views: '1.8k',
     engagement: '72%',
     performance: 'medium'
@@ -74,7 +74,7 @@ const graphics = [
     title: 'Promotional Post',
     type: 'post',
     industry: 'education',
-    format: 'horizontal', // 9:16
+    format: 'reels', // 9:16
     engagement: '58%',
     performance: 'medium'
   },
@@ -92,7 +92,7 @@ const graphics = [
     title: 'Promotional Post',
     type: 'post',
     industry: 'education',
-    format: 'horizontal', // 9:16
+    format: 'reels', // 9:16
     engagement: '58%',
     performance: 'medium'
   },
@@ -110,7 +110,7 @@ const graphics = [
     title: 'Promotional Post',
     type: 'post',
     industry: 'education',
-    format: 'horizontal', // 9:16
+    format: 'reels', // 9:16
     engagement: '58%',
     performance: 'medium'
   },
@@ -128,7 +128,7 @@ const graphics = [
     title: 'Promotional Post',
     type: 'post',
     industry: 'education',
-    format: 'horizontal', // 9:16
+    format: 'reels', // 9:16
     engagement: '58%',
     performance: 'medium'
   },
@@ -138,13 +138,13 @@ const filters = {
   videos: {
     type: ['all', 'product', 'brand', 'testimonial'],
     industry: ['all', 'real-estate', 'education', 'retail'],
-    format: ['all', 'story', 'feed'],
+    format: ['all', 'reels', 'feed'],
     performance: ['all', 'high', 'medium', 'low']
   },
   graphics: {
-    type: ['all', 'banner', 'post', 'story'],
+    type: ['all', 'banner', 'post', 'reels'],
     industry: ['all', 'real-estate', 'education', 'retail'],
-    format: ['all', 'square', 'horizontal', 'portrait'],
+    format: ['all', 'square', 'reels', 'portrait'],
     performance: ['all', 'high', 'medium', 'low']
   }
 }
@@ -158,10 +158,10 @@ const currentFilters = ref({
 
 const getAspectRatioClass = (format, type) => {
   if (type === 'videos') {
-    return format === 'story' ? 'h-96' : 'h-80'
+    return format === 'reels' ? 'h-96' : 'h-80'
   }
   return format === 'square' ? 'h-64' : 
-         format === 'horizontal' ? 'h-96' : 
+         format === 'reels' ? 'h-96' : 
          'h-72'
 }
 
