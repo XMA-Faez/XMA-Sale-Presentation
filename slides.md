@@ -187,11 +187,7 @@ class: text-center
 
 ---
 
-# Our System Overview
-
-<div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0 }">
-Imagine your business as a high-performance car—our system is the powerful engine that fuels growth, delivering high-quality leads and smooth operations every step of the way.
-</div>
+<img src="/System.svg" class="mx-auto max-w-2xl" />
 
 ---
 
