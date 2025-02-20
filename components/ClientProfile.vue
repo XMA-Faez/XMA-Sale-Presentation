@@ -64,42 +64,26 @@ const stats = [
       <div class="max-w-6xl mx-auto px-8 py-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-4">
-            <button 
-              @click="$emit('close')"
-              class="p-2 hover:bg-zinc-800 rounded-lg transition-colors"
-            >
+            <button @click="$emit('close')" class="p-2 hover:bg-zinc-800 rounded-lg transition-colors">
               <div class="i-lucide-arrow-left w-5 h-5" />
             </button>
             <div class="flex items-center gap-3">
-              <img 
-                :src="client.logo" 
-                class="w-10 h-10 rounded-lg bg-zinc-700"
-              />
+              <img :src="client.logo" class="w-10 h-10 rounded-lg bg-zinc-700" />
               <h1 class="text-xl font-bold">{{ client.name }}</h1>
             </div>
           </div>
-          <span 
-            class="px-3 py-1 rounded-full text-sm font-medium"
-            :class="getIndustryColor(client.industry)"
-          >
+          <span class="px-3 py-1 rounded-full text-sm font-medium" :class="getIndustryColor(client.industry)">
             {{ client.industry }}
           </span>
         </div>
 
         <!-- Tabs -->
         <div class="flex gap-8 mt-6">
-          <button
-            v-for="tab in ['content', 'stats']"
-            :key="tab"
-            @click="activeTab = tab"
+          <button v-for="tab in ['content', 'stats']" :key="tab" @click="activeTab = tab"
             class="pb-4 px-2 text-sm font-medium relative"
-            :class="activeTab === tab ? 'text-white' : 'text-zinc-400 hover:text-white'"
-          >
+            :class="activeTab === tab ? 'text-white' : 'text-zinc-400 hover:text-white'">
             {{ tab.charAt(0).toUpperCase() + tab.slice(1) }}
-            <div 
-              v-if="activeTab === tab"
-              class="absolute bottom-0 left-0 right-0 h-0.5 bg-white rounded-full"
-            />
+            <div v-if="activeTab === tab" class="absolute bottom-0 left-0 right-0 h-0.5 bg-white rounded-full" />
           </button>
         </div>
       </div>
@@ -109,11 +93,7 @@ const stats = [
     <div class="max-w-6xl mx-auto px-8 py-8">
       <!-- Stats Tab -->
       <div v-if="activeTab === 'stats'" class="grid grid-cols-3 gap-6">
-        <div 
-          v-for="stat in stats"
-          :key="stat.label"
-          class="bg-zinc-800/40 rounded-lg p-6"
-        >
+        <div v-for="stat in stats" :key="stat.label" class="bg-zinc-800/40 rounded-lg p-6">
           <div class="flex items-center gap-3 text-zinc-400 mb-2">
             <div :class="[stat.icon, 'w-5 h-5']" />
             <span class="text-sm">{{ stat.label }}</span>
@@ -124,10 +104,7 @@ const stats = [
 
       <!-- Content Tab -->
       <div v-if="activeTab === 'content'">
-        <ContentGallery 
-          :videos="client.content?.videos || []"
-          :graphics="client.content?.graphics || []"
-        />
+        <ContentGallery :videos="client.content?.videos || []" :graphics="client.content?.graphics || []" />
       </div>
     </div>
   </div>

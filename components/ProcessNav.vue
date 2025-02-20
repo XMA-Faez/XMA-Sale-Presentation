@@ -1,15 +1,10 @@
 <template>
   <div class="grid grid-cols-4 gap-4 text-center mb-8">
-    <button
-      v-for="process in processes"
-      :key="process.id"
-      @click="$slidev.nav.go(process.page)"
-      :class="[
-        'scale-step transform transition-all duration-300 p-4 rounded-lg',
-        'flex flex-col items-center justify-center gap-2',
-        activeProcess === process.id ? process.bgColor : ''
-      ]"
-    >
+    <button v-for="process in processes" :key="process.id" @click="$slidev.nav.go(process.page)" :class="[
+      'scale-step transform transition-all duration-300 p-4 rounded-lg',
+      'flex flex-col items-center justify-center gap-2',
+      activeProcess === process.id ? process.bgColor : ''
+    ]">
       <div :class="[process.color]">
         <div :class="[process.icon, 'w-8 h-8']" />
       </div>
@@ -76,5 +71,4 @@ const processes = [
   border: none;
   cursor: pointer;
 }
-
 </style>

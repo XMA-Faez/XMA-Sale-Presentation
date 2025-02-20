@@ -146,21 +146,12 @@ const getIndustryColor = (industry) => {
     <!-- Client Grid -->
     <div v-if="!selectedClient" class="max-w-6xl mx-auto">
       <div class="grid grid-cols-3 gap-6">
-        <div 
-          v-for="client in clients" 
-          :key="client.id"
+        <div v-for="client in clients" :key="client.id"
           class="bg-zinc-800/40 rounded-lg p-6 cursor-pointer hover:bg-zinc-800 transition-colors"
-          @click="showClientProfile(client)"
-        >
+          @click="showClientProfile(client)">
           <div class="flex items-start justify-between mb-4">
-            <img 
-              :src="client.logo" 
-              class="w-16 h-16 rounded-lg bg-zinc-700"
-            />
-            <span 
-              class="px-3 py-1 rounded-full text-sm font-medium"
-              :class="getIndustryColor(client.industry)"
-            >
+            <img :src="client.logo" class="w-16 h-16 rounded-lg bg-zinc-700" />
+            <span class="px-3 py-1 rounded-full text-sm font-medium" :class="getIndustryColor(client.industry)">
               {{ client.industry }}
             </span>
           </div>
@@ -185,11 +176,7 @@ const getIndustryColor = (industry) => {
 
     <!-- Client Profile -->
     <Transition name="fade">
-      <ClientProfile 
-        v-if="selectedClient"
-        :client="selectedClient"
-        @close="closeClientProfile"
-      />
+      <ClientProfile v-if="selectedClient" :client="selectedClient" @close="closeClientProfile" />
     </Transition>
   </div>
 </template>
