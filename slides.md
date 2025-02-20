@@ -1,6 +1,7 @@
 ---
 theme: ./theme
 colorschema: dark
+favicon: '/logo.svg'
 transition: my-transition
 title: Lead Generation Solutions
 layout: cover
