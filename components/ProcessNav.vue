@@ -3,7 +3,7 @@
     <button
       v-for="process in processes"
       :key="process.id"
-      @click="$emit('update:activeProcess', process.id)"
+      @click="$slidev.nav.go(process.page)"
       :class="[
         'scale-step transform transition-all duration-300 p-4 rounded-lg',
         'flex flex-col items-center justify-center gap-2',
@@ -21,6 +21,10 @@
 </template>
 
 <script setup>
+import { useSlideContext } from '@slidev/client'
+
+const { $slidev } = useSlideContext()
+
 const props = defineProps({
   activeProcess: {
     type: String,
@@ -36,28 +40,32 @@ const processes = [
     icon: 'i-lucide-video',
     title: 'Content Creation',
     color: 'text-blue-500',
-    bgColor: 'bg-blue-950/40'
+    bgColor: 'bg-blue-950/40',
+    page: 6
   },
   {
     id: 'crm',
     icon: 'i-lucide-layout-dashboard',
     title: 'CRM Setup',
     color: 'text-green-500',
-    bgColor: 'bg-green-950/40'
+    bgColor: 'bg-green-950/40',
+    page: 7
   },
   {
     id: 'advertising',
     icon: 'i-mdi-bullhorn',
     title: 'Advertising',
     color: 'text-yellow-500',
-    bgColor: 'bg-yellow-950/40'
+    bgColor: 'bg-yellow-950/40',
+    page: 8
   },
   {
     id: 'leads',
     icon: 'i-mdi-account-convert',
     title: 'Lead Management',
     color: 'text-red-500',
-    bgColor: 'bg-red-950/40'
+    bgColor: 'bg-red-950/40',
+    page: 9
   }
 ]
 </script>
