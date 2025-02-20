@@ -104,7 +104,9 @@ layout: center
 zoom: 0.5
 ---
 
-# Detailed Package Comparison
+<h1 class="text-center text-4xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
+    Detailed Package Comparison
+</h1>
 
 <div class="overflow-x-auto py-8">
   <div class="inline-block min-w-full bg-zinc-900/50 rounded-xl border border-zinc-800 backdrop-blur-sm">
@@ -154,7 +156,9 @@ zoom: 0.5
 zoom: 0.5
 ---
 
-# Retainer Structure
+<h1 class="text-center text-4xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
+    Retainer Structure
+</h1>
 
 <div class="overflow-x-auto py-8">
   <div class="inline-block min-w-full bg-zinc-900/50 rounded-xl border border-zinc-800 backdrop-blur-sm">
