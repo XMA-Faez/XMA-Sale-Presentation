@@ -323,39 +323,28 @@ class: text-center
 
 <style>
 .scale-step {
-    margin: 2rem 0;
-    padding: 1rem;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.1);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    @apply rounded-lg p-6 transform transition duration-500 hover:scale-105
+
 }
-.scale-step:hover {
-    background: rgba(255,255,255,0.15);
-    transform: scale(1.02);
-}
+
 </style>
 
-<div class="grid mt-20 grid-cols-4 gap-4 text-center">
-    <div v-click class="scale-step">
+<div class="grid mt-32 grid-cols-4 gap-4 text-center">
+    <div v-click class="scale-step bg-blue-950/40">
         <lucide-video class="w-12 h-12 text-blue-500" />
-        <p class="text-lg font-bold text-blue-500">Content Creation</p>
+        <p style="margin: 0" class="text-lg font-bold text-blue-500">Content Creation</p>
     </div>
-    <div v-click class="scale-step">
+    <div v-click class="scale-step bg-green-950/40">
         <lucide-layout-dashboard class="w-12 h-12 text-green-500" />
-        <p class="text-lg font-bold text-green-500">CRM Setup</p>
+        <p style="margin: 0" class="text-lg font-bold text-green-500">CRM Setup</p>
     </div>
-    <div v-click class="scale-step">
+    <div v-click class="scale-step bg-yellow-950/40">
         <mdi-bullhorn class="w-12 h-12 text-yellow-500" />
-        <p class="text-lg font-bold text-yellow-500">Advertising</p>
+        <p style="margin: 0" class="text-lg font-bold text-yellow-500">Advertising</p>
     </div>
-    <div v-click class="scale-step">
+    <div v-click class="scale-step bg-red-950/40">
         <mdi-account-convert class="w-12 h-12 text-red-500" />
-        <p class="text-lg font-bold text-red-500">Lead Management</p>
+        <p style="margin: 0" class="text-lg font-bold text-red-500">Lead Management</p>
     </div>
 </div>
 
