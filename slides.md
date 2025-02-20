@@ -51,7 +51,7 @@ onMounted(() => {
     <HyperText :text="`Welcome, ${clientName}`" duration="2000" />
     </template>
     <template v-else>
-    Welcome to XMA Agency
+    <HyperText text="Welcome to XMA Agency"  duration="2000" />
     </template>
 </div>
 <!-- Company specific message -->
@@ -63,6 +63,15 @@ onMounted(() => {
     class="text-2xl mb-8 text-red-200"
 >
     <HyperText :text="`Let\'s transform ${companyName}\'s digital presence`"  duration="2000" />
+</div>
+<div
+    v-else
+    v-motion
+    :initial="{ filter: 'blur(12px)', opacity: 0 }"
+    :enter="{ filter: 'blur(0px)', opacity: 1, transition: { delay: 400 } }"
+    class="text-2xl mb-8 text-red-200"
+>
+    <HyperText :text="`Let\'s transform your digital presence`"  duration="2000" />
 </div>
 <!-- Service icons with Lucide -->
 <div class="flex gap-12 mt-12">
