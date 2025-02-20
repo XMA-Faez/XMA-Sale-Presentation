@@ -1,3 +1,38 @@
+---
+class: text-center
+---
+
+# Our Process
+
+<style>
+.scale-step {
+    @apply rounded-lg p-6 transform transition duration-500 hover:scale-105
+
+}
+
+</style>
+
+<div class="grid mt-32 grid-cols-4 gap-4 text-center">
+    <div v-click class="scale-step bg-blue-950/40">
+        <lucide-video class="w-12 h-12 text-blue-500" />
+        <p style="margin: 0" class="text-lg font-bold text-blue-500">Content Creation</p>
+    </div>
+    <div v-click class="scale-step bg-green-950/40">
+        <lucide-layout-dashboard class="w-12 h-12 text-green-500" />
+        <p style="margin: 0" class="text-lg font-bold text-green-500">CRM Setup</p>
+    </div>
+    <div v-click class="scale-step bg-yellow-950/40">
+        <mdi-bullhorn class="w-12 h-12 text-yellow-500" />
+        <p style="margin: 0" class="text-lg font-bold text-yellow-500">Advertising</p>
+    </div>
+    <div v-click class="scale-step bg-red-950/40">
+        <mdi-account-convert class="w-12 h-12 text-red-500" />
+        <p style="margin: 0" class="text-lg font-bold text-red-500">Lead Management</p>
+    </div>
+</div>
+
+---
+
 <ProcessNav activeProcess="content" />
 
 <div class="grid grid-cols-2 gap-8">
