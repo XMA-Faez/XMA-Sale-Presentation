@@ -1,5 +1,6 @@
 ---
 theme: ./theme
+colorschema: dark
 transition: my-transition
 title: Lead Generation Solutions
 layout: cover
