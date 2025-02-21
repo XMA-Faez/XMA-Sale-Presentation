@@ -25,7 +25,7 @@ layout: center
 >
   <div class="text-red-600 text-6xl font-bold mb-4">Premium</div>
   <div class="text-4xl font-semibold mb-2">25,000 AED</div>
-  <div class="text-2xl font-medium text-zinc-400 mb-8">$6,800 USD</div>
+  <div class="text-2xl font-medium text-zinc-400 mb-8">$7000 USD</div>
   <div class="space-y-4 text-xl">
     <div class="flex items-center gap-2">
       <lucide-check class="text-red-500" /> 48 Ads
@@ -83,7 +83,7 @@ layout: center
 >
   <div class="text-red-600 text-6xl font-bold mb-4">Base</div>
   <div class="text-4xl font-semibold mb-2">8,000 AED</div>
-  <div class="text-2xl font-medium text-zinc-400 mb-8">$2,300 USD</div>
+  <div class="text-2xl font-medium text-zinc-400 mb-8">$2,500 USD</div>
   <div class="space-y-4 text-xl">
     <div class="flex items-center gap-2">
       <lucide-check class="text-red-500" /> 7 Ads
