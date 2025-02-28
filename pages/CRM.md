@@ -362,7 +362,9 @@ zoom: 0.8
       <div class="interface-content">
         <div class="contact-list">
           <div class="contact-item active">
-            <div class="contact-avatar"></div>
+            <div class="contact-avatar">
+              <lucide-user class="w-6 h-6 text-gray-400" />
+            </div>
             <div class="contact-info">
               <div class="contact-name">John Smith</div>
               <div class="contact-detail">Premium Package Inquiry</div>
@@ -370,7 +372,9 @@ zoom: 0.8
             <div class="contact-status new">New</div>
           </div>
           <div class="contact-item">
-            <div class="contact-avatar"></div>
+            <div class="contact-avatar">
+              <lucide-user class="w-6 h-6 text-gray-400" />
+            </div>
             <div class="contact-info">
               <div class="contact-name">Sarah Johnson</div>
               <div class="contact-detail">Website Design Project</div>
@@ -378,7 +382,9 @@ zoom: 0.8
             <div class="contact-status follow">Follow-up</div>
           </div>
           <div class="contact-item">
-            <div class="contact-avatar"></div>
+            <div class="contact-avatar">
+              <lucide-user class="w-6 h-6 text-gray-400" />
+            </div>
             <div class="contact-info">
               <div class="contact-name">Michael Brown</div>
               <div class="contact-detail">Consultation Request</div>
@@ -415,12 +421,20 @@ zoom: 0.8
               <div class="message-time">10:26 AM</div>
             </div>
           </div>
-          <div class="message-input">
-            <input type="text" placeholder="Type your message..." />
-            <button>
+        <div class="flex flex-col pl-2 pb-2">
+          <div class="flex items-center gap-1.5 bg-zinc-800 px-2 py-0.5 rounded-t-md text-xs self-start ml-2 border border-zinc-700 border-b-0">
+            <ic-baseline-whatsapp class="w-3.5 h-3.5 text-green-400" />
+            <lucide-message-square class="w-3.5 h-3.5 text-blue-400" />
+            <lucide-mail class="w-3.5 h-3.5 text-purple-400" />
+            <span class="text-[9px] text-white/60">All channels in one place</span>
+          </div>
+          <div class="flex gap-2 pr-2">
+            <input type="text" placeholder="Type your message..." class="flex-grow bg-zinc-700/50 border border-zinc-600 rounded px-3 py-1 text-sm focus:outline-none focus:border-green-500" />
+            <button class="w-7 h-7 flex items-center justify-center rounded bg-green-600 hover:bg-green-500">
               <lucide-send class="w-4 h-4" />
             </button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -508,7 +522,7 @@ zoom: 0.8
 }
 
 .contact-avatar {
-  @apply w-8 h-8 rounded-full bg-zinc-600/50;
+  @apply w-8 h-8 rounded-full bg-zinc-600/50 aspect-square flex justify-center items-center;
 }
 
 .contact-info {
@@ -588,7 +602,19 @@ zoom: 0.8
 }
 
 .message-input {
-  @apply flex gap-2 p-3 border-t border-zinc-700/50;
+  @apply flex gap-2 p-3 pt-5 mt-5 border-t border-zinc-700/50 relative;
+}
+
+.channel-indicators {
+  @apply absolute -top-1 left-5 flex items-center gap-1.5 bg-zinc-800 px-2 py-0.5 rounded-t border border-zinc-700/50 border-b-0 text-[10px];
+}
+
+.channel-icon {
+  @apply flex items-center justify-center;
+}
+
+.channel-label {
+  @apply text-[9px] text-white/60 ml-1;
 }
 
 .message-input input {

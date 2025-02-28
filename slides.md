@@ -30,15 +30,15 @@ src: ./pages/Process.md
 ---
 
 ---
-src: ./pages/Meetings.md
----
-
----
 src: ./pages/VideoType.md
 ---
 
 ---
 src: ./pages/Clients.md
+---
+
+---
+src: ./pages/Meetings.md
 ---
 
 ---
