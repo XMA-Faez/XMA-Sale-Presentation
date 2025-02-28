@@ -1,14 +1,14 @@
 <template>
-  <div class="grid grid-cols-4 gap-4 text-center mb-8">
+  <div class="grid grid-cols-4 max-w-2xl mx-auto gap-4 text-center mb-8">
     <button v-for="process in processes" :key="process.id" @click="$slidev.nav.go(process.page)" :class="[
-      'scale-step transform transition-all duration-300 p-4 rounded-lg',
-      'flex flex-col items-center justify-center gap-2',
+      'scale-step transform transition-all duration-300 p-2 rounded-lg',
+      'flex flex-col items-center justify-center gap-0',
       activeProcess === process.id ? process.bgColor : ''
     ]">
       <div :class="[process.color]">
-        <div :class="[process.icon, 'w-8 h-8']" />
+        <div :class="[process.icon, 'w-4 h-4']" />
       </div>
-      <p style="margin: 0" :class="['text-sm font-bold', process.color]">
+      <p style="margin: 0" :class="['text-xs font-bold', process.color]">
         {{ process.title }}
       </p>
     </button>
@@ -52,7 +52,7 @@ const processes = [
     title: 'Advertising',
     color: 'text-yellow-500',
     bgColor: 'bg-yellow-950/40',
-    page: 8
+    page: 11
   },
   {
     id: 'leads',
@@ -60,7 +60,7 @@ const processes = [
     title: 'Lead Management',
     color: 'text-red-500',
     bgColor: 'bg-red-950/40',
-    page: 9
+    page: 12
   }
 ]
 </script>

@@ -33,7 +33,7 @@ class: text-center
         </div>
       </div>
       <!-- Right Column: Team Members -->
-      <div class="flex-1 space-y-6">
+      <div class="flex-1 text-left grid grid-cols-2 gap-4">
         <div
           v-click="2"
           v-motion
@@ -42,7 +42,7 @@ class: text-center
           class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
         >
           <lucide-video class="w-6 h-6 text-red-500"/>
-          <span class="text-lg">Videographers</span>
+          <span class="text-sm">Videographers</span>
         </div>
         <div
           v-click="3"
@@ -52,7 +52,7 @@ class: text-center
           class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
         >
           <lucide-clapperboard class="w-6 h-6 text-red-500"/>
-          <span class="text-lg">Video Editors</span>
+          <span class="text-sm">Video Editors</span>
         </div>
         <div
           v-click="4"
@@ -62,7 +62,7 @@ class: text-center
           class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
         >
           <lucide-code-2 class="w-6 h-6 text-red-500"/>
-          <span class="text-lg">Developers</span>
+          <span class="text-sm">Developers</span>
         </div>
         <div
           v-click="5"
@@ -72,7 +72,25 @@ class: text-center
           class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
         >
           <lucide-palette class="w-6 h-6 text-red-500"/>
-          <span class="text-lg">Graphic Designers</span>
+          <span class="text-sm">Graphic Designers</span>
+        </div><div
+          v-click="6"
+          v-motion
+          :initial="{ filter: 'blur(12px)', opacity: 0, x: 50 }"
+          :enter="{ filter: 'blur(0px)', opacity: 1, x: 0 }"
+          class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
+        >
+          <lucide-presentation class="w-6 h-6 text-red-500"/>
+          <span class="text-sm">Marketing Managers</span>
+        </div><div
+          v-click="7"
+          v-motion
+          :initial="{ filter: 'blur(12px)', opacity: 0, x: 50 }"
+          :enter="{ filter: 'blur(0px)', opacity: 1, x: 0 }"
+          class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
+        >
+          <lucide-megaphone class="w-6 h-6 text-red-500"/>
+          <span class="text-sm">Advertising Experts</span>
         </div>
       </div>
     </div>
