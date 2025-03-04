@@ -46,27 +46,18 @@ const graphics = [
 
 // Function to format video data
 const formatVideoData = (item, index) => {
-  // Extract the video name from the public_id
-  const videoName = item.public_id.split('/').pop().replace(/_/g, ' ').replace(/-/g, ' ');
-  
-  // Format the name with proper capitalization
-  const formattedName = videoName
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-  
   // Determine format based on aspect ratio
   const aspectRatio = item.width / item.height;
   let format = 'reels'; // Default to reels (9:16)
-  
+
   if (aspectRatio > 0.9) { // Closer to 1:1 or wider
     format = 'feed';
   }
-  
+
   return {
     id: index + 1,
     cloudinaryId: item.public_id,
-    title: formattedName,
+    title: item.title,
     type: 'video',
     industry: 'general',
     format: format,
@@ -81,21 +72,21 @@ const formatVideoData = (item, index) => {
 const fetchCloudinaryVideos = async () => {
   try {
     isLoading.value = true;
-    
+
     // Load the JSON file
     const response = await fetch('/cloudinary-videos-sorted.json');
-    
+
     if (!response.ok) {
       throw new Error(`Failed to fetch videos: ${response.statusText}`);
     }
-    
+
     const data = await response.json();
-    
+
     // Format the videos
     videos.value = data.map(formatVideoData);
-    
+
     console.log(`Loaded ${videos.value.length} videos`);
-    
+
   } catch (err) {
     console.error('Error loading videos:', err);
     error.value = 'Failed to load videos. Please check if the JSON file exists.';
@@ -140,7 +131,7 @@ const filteredContent = computed(() => {
 // Fetch videos when component mounts
 onMounted(() => {
   fetchCloudinaryVideos();
-  
+
   // Add event listener to close video player on escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && isPlaying.value) {
@@ -176,22 +167,15 @@ onMounted(() => {
     <div v-for="item in filteredContent" :key="item.id"
       class="break-inside-avoid mb-4 bg-zinc-800/40 rounded-lg overflow-hidden group">
       <!-- Content Preview -->
-      <div 
-        :class="[
-          getAspectRatioClass(item.format, activeTab),
-          'bg-zinc-900 relative group-hover:opacity-90 transition-opacity cursor-pointer'
-        ]"
-        @click="activeTab === 'videos' ? playVideo(item) : null"
-      >
+      <div :class="[
+        getAspectRatioClass(item.format, activeTab),
+        'bg-zinc-900 relative group-hover:opacity-90 transition-opacity cursor-pointer'
+      ]" @click="activeTab === 'videos' ? playVideo(item) : null">
         <!-- Video preview image -->
-        <img 
-          v-if="activeTab === 'videos'"
-          :src="item.url ? item.url.replace('.mp4', '.jpg') : null" 
-          :alt="item.title"
+        <img v-if="activeTab === 'videos'" :src="item.url ? item.url.replace('.mp4', '.jpg') : null" :alt="item.title"
           class="w-full h-full object-cover"
-          @error="$event.target.src = `https://res.cloudinary.com/dw1j7izud/video/upload/w_auto,c_scale,f_auto,q_auto/e_preview:duration_2/${item.cloudinaryId}`"
-        />
-        
+          @error="$event.target.src = `https://res.cloudinary.com/dw1j7izud/video/upload/w_auto,c_scale,f_auto,q_auto/e_preview:duration_2/${item.cloudinaryId}`" />
+
         <!-- Fallback for non-image content -->
         <div v-else class="absolute inset-0 flex items-center justify-center">
           <div :class="[
@@ -199,18 +183,16 @@ onMounted(() => {
             'w-12 h-12 text-zinc-600 group-hover:text-zinc-400 transition-colors'
           ]" />
         </div>
-        
+
         <!-- Play button overlay for videos -->
-        <div 
-          v-if="activeTab === 'videos'" 
-          class="absolute inset-0 flex items-center justify-center"
-        >
-          <div class="w-16 h-16 bg-black/50 rounded-full flex items-center justify-center group-hover:bg-red-600/50 transition-colors">
+        <div v-if="activeTab === 'videos'" class="absolute inset-0 flex items-center justify-center">
+          <div
+            class="w-16 h-16 bg-black/50 rounded-full flex items-center justify-center group-hover:bg-red-600/50 transition-colors">
             <div class="i-lucide-play w-8 h-8 text-white ml-1"></div>
           </div>
         </div>
       </div>
-      
+
       <!-- Content Info -->
       <div class="p-4">
         <h3 class="!text-lg font-bold mb-2">{{ item.title }}</h3>
@@ -221,46 +203,34 @@ onMounted(() => {
       </div>
     </div>
   </div>
-  
+
   <!-- Video Player Modal (Fully Responsive) -->
-  <div 
-    v-if="activeVideo && isPlaying" 
+  <div v-if="activeVideo && isPlaying"
     class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center transition-opacity duration-300"
-    :class="{ 'opacity-0': !isPlaying, 'opacity-100': isPlaying }"
-    @click="closeVideoPlayer"
-  >
-    <div 
-      class="relative w-full h-full p-4 md:p-6 flex flex-col items-center justify-center"
-      @click.stop
-    >
+    :class="{ 'opacity-0': !isPlaying, 'opacity-100': isPlaying }" @click="closeVideoPlayer">
+    <div class="relative w-full h-full p-4 md:p-6 flex flex-col items-center justify-center" @click.stop>
       <!-- Close button - Fixed position for better accessibility -->
-      <button 
+      <button
         class="absolute top-4 right-4 z-10 bg-red-600 hover:bg-red-700 rounded-full p-2 text-white transition-colors"
-        @click="closeVideoPlayer"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        @click="closeVideoPlayer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M18 6 6 18" />
           <path d="m6 6 12 12" />
         </svg>
       </button>
-      
+
       <!-- Video container with controlled dimensions -->
       <div class="w-full h-full max-w-4xl max-h-[80vh] flex flex-col">
         <!-- Video title above video -->
         <h3 class="text-white text-xl font-bold mb-2 truncate px-2">
           {{ activeVideo ? activeVideo.title : '' }}
         </h3>
-        
+
         <!-- Video element with responsive sizing -->
         <div class="flex-1 bg-black rounded-lg shadow-2xl overflow-hidden flex items-center justify-center">
-          <video 
-            v-if="activeVideo"
-            :src="activeVideo.url" 
-            controls 
-            autoplay
-            class="max-w-full max-h-full"
-            style="object-fit: contain;"
-          ></video>
+          <video v-if="activeVideo" :src="activeVideo.url" controls autoplay class="max-w-full max-h-full"
+            style="object-fit: contain;"></video>
         </div>
       </div>
     </div>
