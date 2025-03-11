@@ -191,6 +191,8 @@ layout: center
 class: text-center
 ---
 
+---
+
 <div class="process-header ads-header">
   <div class="header-icon">
     <lucide-megaphone class="w-10 h-10" />
