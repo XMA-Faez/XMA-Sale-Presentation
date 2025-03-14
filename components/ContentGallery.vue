@@ -35,10 +35,7 @@ const formatVideoData = (item, index) => {
     id: index + 1,
     cloudinaryId: item.public_id,
     title: item.title,
-    type: 'video',
-    industry: 'general',
     format: format,
-    // Use the direct URL from the JSON file if available
     url: item.url || null,
     width: item.width,
     height: item.height
@@ -224,6 +221,20 @@ const filteredContent = computed(() => {
   return activeTab.value === 'videos' ? videos.value : graphics.value;
 })
 
+// Use computed properties to conditionally style the container based on active tab
+const contentContainerClass = computed(() => {
+  return activeTab.value === 'videos' 
+    ? 'grid grid-cols-3 gap-4 pb-12' // Grid for videos
+    : 'columns-3 gap-4 space-y-4 pb-12'; // Masonry for graphics
+});
+
+// Use computed properties to conditionally style the items based on active tab
+const contentItemClass = computed(() => {
+  return activeTab.value === 'videos'
+    ? 'bg-zinc-800/40 rounded-lg overflow-hidden group' // Grid item style
+    : 'break-inside-avoid mb-4 bg-zinc-800/40 rounded-lg overflow-hidden group'; // Masonry item style
+});
+
 // Fetch data when component mounts
 onMounted(() => {
   fetchCloudinaryVideos();
@@ -264,10 +275,9 @@ onMounted(() => {
     {{ contentError }}
   </div>
 
-  <!-- Masonry Content Grid -->
-  <div v-else class="columns-3 gap-4 space-y-4 pb-12">
-    <div v-for="item in filteredContent" :key="item.id"
-      class="break-inside-avoid mb-4 bg-zinc-800/40 rounded-lg overflow-hidden group">
+  <!-- Dynamic layout container - switches between grid and masonry -->
+  <div v-else :class="contentContainerClass">
+    <div v-for="item in filteredContent" :key="item.id" :class="contentItemClass">
       <!-- Content Preview -->
       <div :class="[
         getAspectRatioClass(item.format, activeTab),
@@ -393,19 +403,33 @@ onMounted(() => {
 </template>
 
 <style>
-/* Optional: Add some smooth transitions */
+/* Responsive grid styles */
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Masonry column styles */
 .columns-3 {
   column-count: 3;
   column-gap: 1rem;
 }
 
+/* Responsive styles for both layouts */
 @media (max-width: 1024px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
   .columns-3 {
     column-count: 2;
   }
 }
 
 @media (max-width: 640px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
   .columns-3 {
     column-count: 1;
   }

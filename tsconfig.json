@@ -10,6 +10,7 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
+    "verbatimModuleSyntax": true,
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
@@ -30,7 +31,8 @@
     "pages/**/*.vue",
     "lib/**/*.ts",
     "lib/**/*.vue",
-    "*.vue"
+    "*.vue",
+    "*.js"
   ],
   "exclude": [
     "node_modules",
