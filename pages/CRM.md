@@ -113,10 +113,11 @@ class: text-center
 ---
 layout: center
 class: text-center
+zoom: 0.8
 ---
 
 
-# The Problem: Managing Leads Without a System
+# To Understand Why You Need a CRM, Let's See What Happens Without One
 
 <div class="problem-scenario">
   <div 
@@ -126,7 +127,8 @@ class: text-center
     <div class="problem-icon">
       <lucide-mail class="icon-red" />
     </div>
-    <p>New leads buried in your email inbox</p>
+    <h4 class="text-lg font-bold mb-1">Email Chaos</h4>
+    <p>Your leads get buried in your inbox, making you miss potential clients</p>
   </div>
   
   <div 
@@ -136,7 +138,8 @@ class: text-center
     <div class="problem-icon">
       <lucide-clock class="icon-red" />
     </div>
-    <p>Manual follow-up takes too much time</p>
+    <h4 class="text-lg font-bold mb-1">Manual Follow-ups</h4>
+    <p>You need to follow up on leads manually, which is very time consuming</p>
   </div>
   
   <div 
@@ -146,7 +149,8 @@ class: text-center
     <div class="problem-icon">
       <lucide-list class="icon-red" />
     </div>
-    <p>Information scattered across tools</p>
+    <h4 class="text-lg font-bold mb-1">Scattered Data</h4>
+    <p>Your customer info is spread across emails, notes, and spreadsheets</p>
   </div>
   
   <div 
@@ -156,7 +160,8 @@ class: text-center
     <div class="problem-icon">
       <lucide-users class="icon-red" />
     </div>
-    <p>Overwhelmed as lead volume increases</p>
+    <h4 class="text-lg font-bold mb-1">Volume Overwhelm</h4>
+    <p>As leads increase, your system breaks down and you get overwhelmed</p>
   </div>
   
   <div 
@@ -166,7 +171,8 @@ class: text-center
     <div class="problem-icon">
       <lucide-ban class="icon-red" />
     </div>
-    <p>No way to prioritize high-value leads</p>
+    <h4 class="text-lg font-bold mb-1">No Prioritization</h4>
+    <p>You can't tell which leads are hot and which can wait</p>
   </div>
   
   <div 
@@ -176,7 +182,8 @@ class: text-center
     <div class="problem-icon">
       <lucide-x-circle class="icon-red" />
     </div>
-    <p>Forgotten follow-ups and lost sales</p>
+    <h4 class="text-lg font-bold mb-1">Lost Opportunities</h4>
+    <p>You forget to follow up, and potential sales slip through the cracks</p>
   </div>
 </div>
 
@@ -184,19 +191,15 @@ class: text-center
 .problem-scenario {
   @apply grid grid-cols-3 gap-6 max-w-4xl mx-auto mt-8;
 }
-
 .problem-card {
   @apply flex flex-col items-center gap-2 p-4 bg-red-500/10 rounded-lg border border-red-500/30 text-center transition-all duration-300;
 }
-
 .problem-icon {
   @apply w-12 h-12 flex items-center justify-center bg-red-500/10 rounded-full;
 }
-
 .icon-red {
   @apply w-6 h-6 text-red-500;
 }
-
 .problem-card p {
   @apply text-sm m-0;
 }
@@ -362,8 +365,9 @@ zoom: 0.8
       <div class="interface-content">
         <div class="contact-list">
           <div class="contact-item active">
-            <div class="contact-avatar">
+            <div class="contact-avatar relative">
               <lucide-user class="w-6 h-6 text-gray-400" />
+              <skill-icons-instagram class="absolute -bottom-1 -right-1 w-4 h-5" />
             </div>
             <div class="contact-info">
               <div class="contact-name">John Smith</div>
@@ -372,8 +376,9 @@ zoom: 0.8
             <div class="contact-status new">New</div>
           </div>
           <div class="contact-item">
-            <div class="contact-avatar">
+            <div class="contact-avatar relative">
               <lucide-user class="w-6 h-6 text-gray-400" />
+              <ic-baseline-whatsapp class="absolute -bottom-1 -right-1 w-4 h-4 text-green-500" />
             </div>
             <div class="contact-info">
               <div class="contact-name">Sarah Johnson</div>
@@ -382,8 +387,9 @@ zoom: 0.8
             <div class="contact-status follow">Follow-up</div>
           </div>
           <div class="contact-item">
-            <div class="contact-avatar">
+            <div class="contact-avatar relative">
               <lucide-user class="w-6 h-6 text-gray-400" />
+              <lucide-mail class="absolute -bottom-1 -right-1 w-4 h-4 text-purple-400" />
             </div>
             <div class="contact-info">
               <div class="contact-name">Michael Brown</div>
@@ -424,7 +430,7 @@ zoom: 0.8
         <div class="flex flex-col pl-2 pb-2">
           <div class="flex items-center gap-1.5 bg-zinc-800 px-2 py-0.5 rounded-t-md text-xs self-start ml-2 border border-zinc-700 border-b-0">
             <ic-baseline-whatsapp class="w-3.5 h-3.5 text-green-400" />
-            <lucide-message-square class="w-3.5 h-3.5 text-blue-400" />
+            <skill-icons-instagram class="w-3.5 h-3.5" />
             <lucide-mail class="w-3.5 h-3.5 text-purple-400" />
             <span class="text-[9px] text-white/60">All channels in one place</span>
           </div>

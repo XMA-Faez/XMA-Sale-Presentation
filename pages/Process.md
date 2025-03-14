@@ -36,9 +36,9 @@ class: text-center
     </div>
     <div v-click="4" class="process-step-summary">
       <div class="step-icon leads-icon">
-        <lucide-users class="w-8 h-8" />
+        <lucide-gauge class="w-8 h-8" />
       </div>
-      <h3>Leads Management</h3>
+      <h3>Campaign Management</h3>
     </div>
   </div>
 </div>
@@ -54,6 +54,10 @@ class: text-center
 
 .process-step-summary {
   @apply flex flex-col items-center gap-2;
+}
+
+.process-step-summary h3 {
+  @apply text-xl font-bold;
 }
 
 .step-icon {
@@ -183,6 +187,10 @@ layout: center
 
 
 ---
+src: ./VideoType.md
+---
+
+---
 src: ./CRM.md
 ---
 
@@ -274,24 +282,22 @@ class: text-center
 
 <div class="process-header leads-header">
   <div class="header-icon">
-    <lucide-users class="w-10 h-10" />
+    <lucide-gauge class="w-10 h-10" />
   </div>
-  <h1>Lead Management</h1>
-  <p class="header-description">Converting prospects into loyal customers</p>
+  <h1>Campaign Management</h1>
+  <p class="header-description">Optimizing your advertising performance</p>
 </div>
 
 <style>
 .process-header {
   @apply flex flex-col items-center mb-8;
 }
-
 .header-icon {
   @apply w-20 h-20 rounded-full flex items-center justify-center border-2 mb-4;
 }
 .leads-header .header-icon {
   @apply bg-red-950/40 border-red-500 text-red-500;
 }
-
 .leads-header h1 {
   @apply text-3xl font-bold text-red-500 mb-2;
 }
@@ -306,46 +312,42 @@ layout: center
     class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
-      <lucide-user-plus class="w-6 h-6 text-red-500" />
-      <h3 class="text-xl font-bold">Lead Capture</h3>
+      <lucide-message-square class="w-6 h-6 text-red-500" />
+      <h3 class="text-xl font-bold">WhatsApp Marketing</h3>
     </div>
-    <p class="text-zinc-300">Automated collection and organization of leads</p>
+    <p class="text-zinc-300">Automated messaging campaigns to nurture leads and drive conversions</p>
   </div>
-
   <div
     v-click
     class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
-      <lucide-filter class="w-6 h-6 text-red-500" />
-      <h3 class="text-xl font-bold">Lead Qualification</h3>
+      <lucide-activity class="w-6 h-6 text-red-500" />
+      <h3 class="text-xl font-bold">Campaign Monitoring</h3>
     </div>
-    <p class="text-zinc-300">Scoring and prioritizing potential customers</p>
+    <p class="text-zinc-300">Real-time tracking and reporting on ad performance across platforms</p>
   </div>
-
   <div
     v-click
     class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
-      <lucide-message-circle class="w-6 h-6 text-red-500" />
-      <h3 class="text-xl font-bold">Communication</h3>
+      <lucide-database class="w-6 h-6 text-red-500" />
+      <h3 class="text-xl font-bold">CRM Subscription</h3>
     </div>
-    <p class="text-zinc-300">Multi-channel engagement with prospects</p>
+    <p class="text-zinc-300">Ongoing access to powerful CRM tools to organize and utilize your leads</p>
   </div>
-
   <div
     v-click
     class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
-      <lucide-check-circle-2 class="w-6 h-6 text-red-500" />
-      <h3 class="text-xl font-bold">Conversion</h3>
+      <lucide-refresh-cw class="w-6 h-6 text-red-500" />
+      <h3 class="text-xl font-bold">Content Refresh</h3>
     </div>
-    <p class="text-zinc-300">Turning qualified leads into customers</p>
+    <p class="text-zinc-300">Regular updates to your ad creative to prevent audience fatigue</p>
   </div>
 </div>
-
 
 ---
 layout: center
@@ -385,9 +387,9 @@ class: text-center
     </div>
     <div class="process-step-summary">
       <div class="step-icon leads-icon">
-        <lucide-users class="w-8 h-8" />
+        <lucide-gauge class="w-10 h-10" />
       </div>
-      <h3>Leads Management</h3>
+      <h3>Campaign Management</h3>
     </div>
   </div>
 </div>

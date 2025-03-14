@@ -2,7 +2,7 @@
 class: text-center
 ---
 
-# Trusted By Dubai's Businesses
+# Trusted By Leading Businesses
 <div 
   v-motion
   :initial="{ opacity: 0, y: 100 }"
@@ -58,6 +58,9 @@ class: text-center
     >
         <img src="/packman_Logo.png" class="h-12 duration-300 bg-white rounded-xl" />
         <img src="/Casapons.png" class="h-12 rounded-xl duration-300 bg-white rounded-xl" />
+        <img src="/DXtreme.svg" class="h-12 rounded-xl duration-300 bg-white rounded-xl p-2" />
+        <img src="/4Matic.jpg" class="h-12 rounded-xl duration-300 rounded-xl" />
+        <img src="/wyz-logo.png" class="h-12 rounded-xl duration-300 bg-white rounded-xl p-2" />
         <img src="/Tick.webp" class="h-12 bg-white rounded-xl duration-300 p-2" />
         <img src="/ASUS.png" class="h-12 w-full rounded-xl bg-white rounded-xl duration-300" />
         <img src="/TFG.png" class="h-12 w-full rounded-xl bg-white rounded-xl duration-300" />

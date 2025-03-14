@@ -29,10 +29,6 @@ src: ./pages/SocialProof.md
 src: ./pages/Process.md
 ---
 
----
-src: ./pages/VideoType.md
----
-
 <!-- --- -->
 <!-- src: ./pages/Clients.md -->
 <!-- --- -->
