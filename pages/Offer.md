@@ -165,22 +165,22 @@ zoom: 0.5
     <div class="grid grid-cols-4 ">
       <!-- Headers -->
       <div class="p-4 font-semibold text-zinc-400">Features</div>
-      <div v-for="plan in ['Base', 'Standard', 'Premium']" 
+      <div v-for="plan in ['Lite', 'Plus', 'Pro']" 
            class="p-4 font-bold text-xl text-red-600">
         {{ plan }}
       </div>
       <!-- Features -->
       <template v-for="feature in [
-        { name: 'CRM Subscription', base: '✅', standard: '✅', premium: '✅' },
-        { name: 'Single Platform Ad Management', base: '✅', standard: '✅', premium: '✅' },
-        { name: 'Multi Platform Ad Management', base: '❌', standard: '✅', premium: '✅' },
-        { name: 'WhatsApp Marketing Management', base: '❌', standard: '✅', premium: '✅' },
-        { name: 'Monthly Graphics', base: '1', standard: '4', premium: '8' },
-        { name: 'Monthly Videos (Types)', base: '0', standard: '0', premium: '4 in 1 Shoots' },
-        { name: 'Ad Management Budget', base: '0 - 5,000', standard: '5,000 - 15,000', premium: '15,000+' }
+        { name: 'CRM Subscription', lite: '✅', plus: '✅', pro: '✅' },
+        { name: 'Single Platform Ad Management', lite: '✅', plus: '✅', pro: '✅' },
+        { name: 'Multi Platform Ad Management', lite: '❌', plus: '✅', pro: '✅' },
+        { name: 'WhatsApp Marketing Management', lite: '❌', plus: '✅', pro: '✅' },
+        { name: 'Monthly Graphics', lite: '1', plus: '4', pro: '8' },
+        { name: 'Monthly Videos (Types)', lite: '0', plus: '0', pro: '4 in 1 Shoots' },
+        { name: 'Ad Management Budget', lite: '0 - 5,000', plus: '5,000 - 15,000', pro: '15,000+' }
       ]">
         <div class="p-4 border-t border-zinc-800 text-zinc-400">{{ feature.name }}</div>
-        <div v-for="value in [feature.base, feature.standard, feature.premium]"
+        <div v-for="value in [feature.lite, feature.plus, feature.pro]"
              class="p-4 border-t border-zinc-800 font-medium"
              :class="{'text-red-500': value === '✅', 'text-zinc-600': value === '❌'}">
           {{ value }}

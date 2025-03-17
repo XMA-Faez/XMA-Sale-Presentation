@@ -24,11 +24,11 @@ class: text-center
     <div class="flex items-center gap-8 mt-4">
       <div class="flex items-center gap-2">
         <lucide-phone class="w-6 h-6 text-red-500" />
-        <span>+971 XX XXX XXXX</span>
+        <span><a href="tel:+971503636856">+971 50 363 6856</a></span>
       </div>
       <div class="flex items-center gap-2">
         <lucide-mail class="w-6 h-6 text-red-500" />
-        <span>contact@xmaagency.com</span>
+        <span><a href="mailto:admin@xmaagency.com">admin@xmaagency.com</a></span>
       </div>
     </div>
   </div>
