@@ -120,16 +120,16 @@ zoom: 0.5
       <!-- Features -->
       <template v-for="feature in [
         { name: 'ADs', base: '7', standard: '20', premium: '48' },
-        { name: 'Ad Campaign(s) Set-up', base: '✅', standard: '✅', premium: '✅' },
         { name: 'Graphics', base: '5', standard: '10', premium: '20' },
         { name: 'Videos', base: '2', standard: '5', premium: '7' },
         { name: 'Variants', base: '1', standard: '2', premium: '4' },
         { name: 'Total Videos (with Variants)', base: '2', standard: '10', premium: '28' },
+        { name: 'Ad Campaign(s) Set-up', base: '✅', standard: '✅', premium: '✅' },
         { name: 'CRM', base: '✅', standard: '✅', premium: '✅' },
         { name: 'WhatsApp Integration', base: '✅', standard: '✅', premium: '✅' },
         { name: 'Chatbot', base: '❌', standard: '✅', premium: '✅' },
         { name: 'Marketing Tools', base: '❌', standard: '✅', premium: '✅' },
-        { name: 'AI WhatsApp Chatbot', base: '❌', standard: '❌', premium: '✅' }
+        { name: 'Smart AI WhatsApp Chatbot', base: '❌', standard: '❌', premium: '✅' }
       ]">
         <div class="p-4 border-t border-zinc-800 text-zinc-400">{{ feature.name }}</div>
         <div v-for="value in [feature.base, feature.standard, feature.premium]"
