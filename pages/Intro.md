@@ -25,7 +25,7 @@ onMounted(() => {
         :duration="300"
         class="mb-8"
     >
-        <img src="/logo.svg" alt="XMA Agency Logo" class="h-24 w-auto" />
+        <img src="/XMA-White.svg" alt="XMA Agency Logo" class="h-10 w-auto" />
     </div>
     <!-- Personalized Welcome -->
     <div

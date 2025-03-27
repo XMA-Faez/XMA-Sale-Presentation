@@ -9,7 +9,7 @@
     <lucide-external-link class="w-4 h-4" />
   </a>
 
-  <img src="/logo.svg" class="h-10 ml-2 w-auto" />
+  <img src="/XMA-White.svg" class="h-4 m-4 w-auto" />
   <footer class="absolute hidden z-50 bottom-0 left-0 right-0 p-2 xl:flex justify-center gap-2">
     <!-- Back Button -->
     <div v-if="!$nav.isPresenter" class="relative group">

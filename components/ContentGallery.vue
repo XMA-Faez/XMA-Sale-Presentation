@@ -286,7 +286,7 @@ onMounted(() => {
         <!-- Video preview image -->
         <img v-if="activeTab === 'videos'" :src="item.url ? item.url.replace('.mp4', '.jpg') : null" :alt="item.title"
           class="w-full h-full object-cover"
-          @error="$event.target.src = `https://res.cloudinary.com/dw1j7izud/video/upload/w_auto,c_scale,f_auto,q_auto/e_preview:duration_2/${item.cloudinaryId}`" />
+          @error="$event.target.src = `https://res.cloudinary.com/dw1j7izud/video/upload/${item.cloudinaryId}`" />
 
         <!-- Image for graphics -->
         <img v-else :src="item.url" :alt="item.title" class="w-full h-full object-cover" />
