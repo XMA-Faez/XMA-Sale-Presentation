@@ -186,6 +186,9 @@ layout: center
 </div>
 
 
+---
+src: ./VideoType.md
+---
 
 ---
 src: ./CRM.md

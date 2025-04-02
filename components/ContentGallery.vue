@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 
 const activeTab = ref('videos')
 
@@ -21,24 +21,30 @@ const graphicsError = ref(null)
 const activeGraphic = ref(null)
 const isPreviewingGraphic = ref(false)
 
+// Cache for loaded resources - prevents duplicate requests
+const loadedResources = ref(new Map())
+
+// Base64 encoded tiny placeholder image to avoid network requests
+const inlineImagePlaceholder = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=';
+
 // Function to format video data
 const formatVideoData = (item, index) => {
-  // Determine format based on aspect ratio
-  const aspectRatio = item.width / item.height;
-  let format = 'reels'; // Default to reels (9:16)
-
-  if (aspectRatio > 0.9) { // Closer to 1:1 or wider
-    format = 'feed';
+  // Cloudinary thumbnail generation
+  let thumbnailUrl = null;
+  if (item.public_id) {
+    thumbnailUrl = `https://res.cloudinary.com/dw1j7izud/video/upload/${item.public_id}.jpg`;
   }
+  
 
   return {
     id: index + 1,
     cloudinaryId: item.public_id,
-    title: item.title,
-    format: format,
+    title: item.title || `Video ${index + 1}`,
     url: item.url || null,
+    thumbnailUrl: thumbnailUrl, // Use the new Cloudinary-generated thumbnail
     width: item.width,
-    height: item.height
+    height: item.height,
+    loaded: false
   };
 }
 
@@ -76,13 +82,13 @@ const formatGraphicData = (item, index) => {
 
   // Check if any keywords are in the public_id
   Object.entries(typeKeywords).forEach(([keyword, value]) => {
-    if (item.public_id.toLowerCase().includes(keyword)) {
+    if (item.public_id && item.public_id.toLowerCase().includes(keyword)) {
       type = value;
     }
   });
 
   // Format title from filename
-  const filename = item.public_id.split('/').pop(); // Get last part after /
+  const filename = item.public_id ? item.public_id.split('/').pop() : `Image ${index + 1}`; // Get last part after /
   const title = filename
     .replace(/\.\w+$/, '') // Remove file extension
     .replace(/[-_]/g, ' ') // Replace dashes and underscores with spaces
@@ -99,14 +105,28 @@ const formatGraphicData = (item, index) => {
     format: format,
     url: item.url || null,
     width: item.width,
-    height: item.height
+    height: item.height,
+    loaded: false
   };
 }
 
-// Fetch videos from the JSON file
+// Fetch videos from the JSON file - with caching
 const fetchCloudinaryVideos = async () => {
+  // Don't fetch if we already have videos and they're not loading
+  if (videos.value.length > 0 && !isLoading.value) {
+    return;
+  }
+  
   try {
     isLoading.value = true;
+
+    // Check for cached data in sessionStorage
+    const cachedVideos = sessionStorage.getItem('cachedVideos');
+    if (cachedVideos) {
+      videos.value = JSON.parse(cachedVideos);
+      isLoading.value = false;
+      return;
+    }
 
     // Load the JSON file
     const response = await fetch('/cloudinary-videos-sorted.json');
@@ -119,8 +139,9 @@ const fetchCloudinaryVideos = async () => {
 
     // Format the videos
     videos.value = data.map(formatVideoData);
-
-    console.log(`Loaded ${videos.value.length} videos`);
+    
+    // Cache the formatted data
+    sessionStorage.setItem('cachedVideos', JSON.stringify(videos.value));
 
   } catch (err) {
     console.error('Error loading videos:', err);
@@ -130,10 +151,23 @@ const fetchCloudinaryVideos = async () => {
   }
 };
 
-// Fetch graphics from the JSON file
+// Fetch graphics from the JSON file - with caching
 const fetchCloudinaryGraphics = async () => {
+  // Don't fetch if we already have graphics and they're not loading
+  if (graphics.value.length > 0 && !graphicsLoading.value) {
+    return;
+  }
+  
   try {
     graphicsLoading.value = true;
+
+    // Check for cached data in sessionStorage
+    const cachedGraphics = sessionStorage.getItem('cachedGraphics');
+    if (cachedGraphics) {
+      graphics.value = JSON.parse(cachedGraphics);
+      graphicsLoading.value = false;
+      return;
+    }
 
     // Load the JSON file
     const response = await fetch('/cloudinary-graphics-sorted.json');
@@ -146,8 +180,9 @@ const fetchCloudinaryGraphics = async () => {
 
     // Format the graphics
     graphics.value = data.map(formatGraphicData);
-
-    console.log(`Loaded ${graphics.value.length} graphics`);
+    
+    // Cache the formatted data
+    sessionStorage.setItem('cachedGraphics', JSON.stringify(graphics.value));
 
   } catch (err) {
     console.error('Error loading graphics:', err);
@@ -155,6 +190,19 @@ const fetchCloudinaryGraphics = async () => {
   } finally {
     graphicsLoading.value = false;
   }
+};
+
+// Mark resource as loaded to prevent duplicate requests
+const markResourceLoaded = (item) => {
+  if (item) {
+    loadedResources.value.set(item.id, true);
+    item.loaded = true;
+  }
+};
+
+// Check if resource is already loaded
+const isResourceLoaded = (item) => {
+  return item && (loadedResources.value.has(item.id) || item.loaded);
 };
 
 const getAspectRatioClass = (format, type) => {
@@ -206,6 +254,16 @@ const closeGraphicPreview = () => {
   }, 300);
 }
 
+// Watch for tab changes
+watch(activeTab, (newTab, oldTab) => {
+  // Fetch data for the active tab if it's not already loaded
+  if (newTab === 'videos') {
+    fetchCloudinaryVideos();
+  } else if (newTab === 'graphics') {
+    fetchCloudinaryGraphics();
+  }
+});
+
 // Determine if content is loading
 const isContentLoading = computed(() => {
   return activeTab.value === 'videos' ? isLoading.value : graphicsLoading.value;
@@ -235,10 +293,69 @@ const contentItemClass = computed(() => {
     : 'break-inside-avoid mb-4 bg-zinc-800/40 rounded-lg overflow-hidden group'; // Masonry item style
 });
 
-// Fetch data when component mounts
+// Function to handle the intersection observer callback
+const handleIntersection = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Get the item ID from the data attribute
+      const itemId = entry.target.dataset.itemId;
+      const type = entry.target.dataset.itemType;
+      
+      if (type === 'videos') {
+        const video = videos.value.find(v => v.id.toString() === itemId);
+        if (video && !video.loaded) {
+          video.loaded = true;
+          loadedResources.value.set(video.id, true);
+        }
+      } else {
+        const graphic = graphics.value.find(g => g.id === itemId);
+        if (graphic && !graphic.loaded) {
+          graphic.loaded = true;
+          loadedResources.value.set(graphic.id, true);
+        }
+      }
+      
+      // Stop observing this element
+      observer.unobserve(entry.target);
+    }
+  });
+};
+
+// Fetch initial data for active tab
 onMounted(() => {
-  fetchCloudinaryVideos();
-  fetchCloudinaryGraphics();
+  // Only fetch data for the active tab initially
+  if (activeTab.value === 'videos') {
+    fetchCloudinaryVideos();
+  } else {
+    fetchCloudinaryGraphics();
+  }
+
+  // Create IntersectionObserver for lazy loading
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '100px', // Load images 100px before they appear in the viewport
+    threshold: 0.1
+  });
+  
+  // Observe elements when DOM updates
+  const observeElements = () => {
+    document.querySelectorAll('.lazy-load-item').forEach(el => {
+      observer.observe(el);
+    });
+  };
+  
+  // Set up a MutationObserver to detect when new elements are added
+  const mutationObserver = new MutationObserver(() => {
+    observeElements();
+  });
+  
+  mutationObserver.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+  
+  // Initial observation
+  setTimeout(observeElements, 500);
 
   // Add event listener to close video player on escape key
   document.addEventListener('keydown', (e) => {
@@ -281,15 +398,28 @@ onMounted(() => {
       <!-- Content Preview -->
       <div :class="[
         getAspectRatioClass(item.format, activeTab),
-        'bg-zinc-900 relative group-hover:opacity-90 transition-opacity cursor-pointer'
-      ]" @click="activeTab === 'videos' ? playVideo(item) : previewGraphic(item)">
-        <!-- Video preview image -->
-        <img v-if="activeTab === 'videos'" :src="item.url ? item.url.replace('.mp4', '.jpg') : null" :alt="item.title"
+        'bg-zinc-900 relative group-hover:opacity-90 transition-opacity cursor-pointer lazy-load-item'
+      ]" 
+      :data-item-id="item.id" 
+      :data-item-type="activeTab"
+      @click="activeTab === 'videos' ? playVideo(item) : previewGraphic(item)">
+        <!-- Video preview image - with lazy loading -->
+        <img v-if="activeTab === 'videos'" 
+          loading="lazy"
+          :src="isResourceLoaded(item) && item.thumbnailUrl ? item.thumbnailUrl : inlineImagePlaceholder" 
+          :alt="item.title"
           class="w-full h-full object-cover"
-          @error="$event.target.src = `https://res.cloudinary.com/dw1j7izud/video/upload/${item.cloudinaryId}`" />
+          @load="markResourceLoaded(item)"
+          @error="$event.target.src = inlineImagePlaceholder" />
 
-        <!-- Image for graphics -->
-        <img v-else :src="item.url" :alt="item.title" class="w-full h-full object-cover" />
+        <!-- Image for graphics - with lazy loading -->
+        <img v-else 
+          loading="lazy"
+          :src="isResourceLoaded(item) ? (item.url || inlineImagePlaceholder) : inlineImagePlaceholder" 
+          :alt="item.title" 
+          class="w-full h-full object-cover"
+          @load="markResourceLoaded(item)"
+          @error="$event.target.src = inlineImagePlaceholder" />
 
         <!-- Fallback for non-image content -->
         <div v-if="!item.url" class="absolute inset-0 flex items-center justify-center">
@@ -316,16 +446,6 @@ onMounted(() => {
           </div>
         </div>
       </div>
-
-      <!-- Content Info -->
-      <!-- <div class="p-4"> -->
-      <!--   <h3 class="!text-lg font-bold mb-2">{{ item.title }}</h3> -->
-      <!--   <div class="flex flex-wrap gap-2"> -->
-      <!--     <span class="px-2 py-1 rounded bg-zinc-700 !text-xs">{{ item.type }}</span> -->
-      <!--     <span class="px-2 py-1 rounded bg-zinc-700 !text-xs">{{ item.industry }}</span> -->
-      <!--     <span v-if="activeTab === 'graphics'" class="px-2 py-1 rounded bg-zinc-700 !text-xs">{{ item.format }}</span> -->
-      <!--   </div> -->
-      <!-- </div> -->
     </div>
   </div>
 
