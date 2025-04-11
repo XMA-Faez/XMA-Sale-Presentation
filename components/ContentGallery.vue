@@ -34,14 +34,13 @@ const formatVideoData = (item, index) => {
   if (item.public_id) {
     thumbnailUrl = `https://res.cloudinary.com/dw1j7izud/video/upload/${item.public_id}.jpg`;
   }
-  
 
   return {
     id: index + 1,
     cloudinaryId: item.public_id,
     title: item.title || `Video ${index + 1}`,
     url: item.url || null,
-    thumbnailUrl: thumbnailUrl, // Use the new Cloudinary-generated thumbnail
+    thumbnailUrl: item.thumbnail, // Use the new Cloudinary-generated thumbnail
     width: item.width,
     height: item.height,
     loaded: false
