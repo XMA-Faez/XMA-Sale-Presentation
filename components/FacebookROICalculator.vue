@@ -1,7 +1,7 @@
 <!-- FacebookROICalculator.vue -->
 <template>
   <div class="bg-zinc-900 rounded-lg border border-zinc-800 text-white absolute inset-24">
-    <h2 class="text-2xl font-bold text-center py-4 bg-gradient-to-r border-b border-zinc-800">Facebook Ads ROI Calculator</h2>
+    <h2 class="text-2xl font-bold text-center py-4 bg-gradient-to-r border-b border-zinc-800">Ads ROI Calculator</h2>
     
     <div class="flex flex-row h-[500px]">
       <!-- Left Column (Inputs) - Fixed -->
