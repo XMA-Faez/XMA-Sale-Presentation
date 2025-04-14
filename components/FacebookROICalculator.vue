@@ -24,15 +24,14 @@
               class="w-full bg-zinc-800 border border-zinc-700 rounded-md px-3 py-2 text-white"
             />
           </div>
-          
-          <div>
-            <label class="block text-sm font-medium text-zinc-400 mb-1">Cost Per Lead (AED)</label>
-            <input
-              type="number"
-              v-model="costPerLead"
-              class="w-full bg-zinc-800 border border-zinc-700 rounded-md px-3 py-2 text-white"
-            />
-          </div>
+          <!-- <div> -->
+          <!--   <label class="block text-sm font-medium text-zinc-400 mb-1">Cost Per Lead (AED)</label> -->
+          <!--   <input -->
+          <!--     type="number" -->
+          <!--     v-model="costPerLead" -->
+          <!--     class="w-full bg-zinc-800 border border-zinc-700 rounded-md px-3 py-2 text-white" -->
+          <!--   /> -->
+          <!-- </div> -->
           
           <div>
             <label class="block text-sm font-medium text-zinc-400 mb-1">Average Customer Value (AED)</label>
@@ -43,6 +42,21 @@
             />
           </div>
           
+          <div>
+            <label class="block text-sm font-medium text-zinc-400 mb-1">Cost Per Lead: AED {{ costPerLead }}</label>
+            <input
+              type="range"
+              min="0"
+              max="1000"
+              step="5"
+              v-model="costPerLead"
+              class="w-full accent-red-600"
+            />
+            <div class="flex justify-between text-xs text-zinc-500">
+              <span>1</span>
+              <span>1000</span>
+            </div>
+          </div>
           <div>
             <label class="block text-sm font-medium text-zinc-400 mb-1">Conversion Rate: {{ conversionRate }}%</label>
             <input
