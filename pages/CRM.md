@@ -681,11 +681,9 @@ class: text-center
       <div class="lead-card-more">+4 more</div>
     </div>
   </div>
-  
   <div class="pipeline-arrow">
     <lucide-chevron-right class="w-6 h-6 text-white/30" />
   </div>
-  
   <div class="pipeline-stage">
     <div class="stage-header">
       <h3>Contacted</h3>
@@ -709,11 +707,9 @@ class: text-center
       <div class="lead-card-more">+2 more</div>
     </div>
   </div>
-  
   <div class="pipeline-arrow">
     <lucide-chevron-right class="w-6 h-6 text-white/30" />
   </div>
-  
   <div class="pipeline-stage">
     <div class="stage-header">
       <h3>Meeting Scheduled</h3>
@@ -730,11 +726,9 @@ class: text-center
       <div class="lead-card-more">+2 more</div>
     </div>
   </div>
-  
   <div class="pipeline-arrow">
     <lucide-chevron-right class="w-6 h-6 text-white/30" />
   </div>
-  
   <div class="pipeline-stage">
     <div class="stage-header">
       <h3>Proposal Sent</h3>
@@ -751,11 +745,9 @@ class: text-center
       <div class="lead-card-more">+1 more</div>
     </div>
   </div>
-  
   <div class="pipeline-arrow">
     <lucide-chevron-right class="w-6 h-6 text-white/30" />
   </div>
-  
   <div class="pipeline-stage">
     <div class="stage-header">
       <h3>Closed Won</h3>
@@ -773,7 +765,6 @@ class: text-center
     </div>
   </div>
 </div>
-
 <div class="pipeline-benefits">
   <div 
     v-click="2"
@@ -785,7 +776,6 @@ class: text-center
       <p>See where every lead stands at a glance</p>
     </div>
   </div>
-  
   <div 
     v-click="3"
     class="benefit-item"
@@ -796,7 +786,6 @@ class: text-center
       <p>Assign sales reps to specific leads or stages</p>
     </div>
   </div>
-  
   <div 
     v-click="4"
     class="benefit-item"
@@ -807,7 +796,6 @@ class: text-center
       <p>Measure performance at each stage of your funnel</p>
     </div>
   </div>
-  
   <div 
     v-click="5"
     class="benefit-item"
