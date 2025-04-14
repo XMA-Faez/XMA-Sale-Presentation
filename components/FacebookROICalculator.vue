@@ -107,113 +107,113 @@
           </div>
 
           <!-- Revenue Growth vs Investment (Visual Comparison) -->
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Revenue vs. Investment (6 Months)</h3>
-            <div class="space-y-4">
-              <div class="space-y-2">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <span class="text-sm font-semibold inline-block text-white">
-                      Revenue (AED {{ formatNumber(graphData[graphData.length - 1].cumulativeRevenue) }})
-                    </span>
-                  </div>
-                </div>
-                <div class="overflow-hidden h-6 text-xs flex rounded bg-zinc-800">
-                  <div style="width:100%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500 rounded"></div>
-                </div>
-              </div>
-              
-              <div class="space-y-2">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <span class="text-sm font-semibold inline-block text-white">
-                      Investment (AED {{ formatNumber(graphData[graphData.length - 1].cumulativeInvestment) }})
-                    </span>
-                  </div>
-                </div>
-                <div class="overflow-hidden h-6 text-xs flex rounded bg-zinc-800">
-                  <div :style="{ width: investmentPercentage + '%' }" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-zinc-600 rounded"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- <div> -->
+          <!--   <h3 class="text-lg font-semibold mb-4">Revenue vs. Investment</h3> -->
+          <!--   <div class="space-y-4"> -->
+          <!--     <div class="space-y-2"> -->
+          <!--       <div class="flex items-center justify-between"> -->
+          <!--         <div> -->
+          <!--           <span class="text-sm font-semibold inline-block text-white"> -->
+          <!--             Revenue (AED {{ formatNumber(graphData[graphData.length - 1].cumulativeRevenue) }}) -->
+          <!--           </span> -->
+          <!--         </div> -->
+          <!--       </div> -->
+          <!--       <div class="overflow-hidden h-6 text-xs flex rounded bg-zinc-800"> -->
+          <!--         <div style="width:100%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500 rounded"></div> -->
+          <!--       </div> -->
+          <!--     </div> -->
+          <!--      -->
+          <!--     <div class="space-y-2"> -->
+          <!--       <div class="flex items-center justify-between"> -->
+          <!--         <div> -->
+          <!--           <span class="text-sm font-semibold inline-block text-white"> -->
+          <!--             Investment (AED {{ formatNumber(graphData[graphData.length - 1].cumulativeInvestment) }}) -->
+          <!--           </span> -->
+          <!--         </div> -->
+          <!--       </div> -->
+          <!--       <div class="overflow-hidden h-6 text-xs flex rounded bg-zinc-800"> -->
+          <!--         <div :style="{ width: investmentPercentage + '%' }" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-zinc-600 rounded"></div> -->
+          <!--       </div> -->
+          <!--     </div> -->
+          <!--   </div> -->
+          <!-- </div> -->
 
           <!-- Month by Month Performance -->
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Month by Month Performance</h3>
-            <div class="mb-4">
-              <bar-chart :chart-data="revenueVsInvestmentData" />
-            </div>
-            <div class="space-y-4">
-              <div v-for="(item, index) in graphData" :key="index" 
-                  class="bg-zinc-800 p-4 rounded-lg border border-zinc-700">
-                <h4 class="text-md font-semibold mb-2">{{ item.name }}</h4>
-                <div class="grid grid-cols-2 gap-4">
-                  <div>
-                    <div class="text-sm text-zinc-400">Revenue</div>
-                    <div class="font-bold">AED {{ formatNumber(item.cumulativeRevenue) }}</div>
-                  </div>
-                  <div>
-                    <div class="text-sm text-zinc-400">Investment</div>
-                    <div class="font-bold">AED {{ formatNumber(item.cumulativeInvestment) }}</div>
-                  </div>
-                  <div>
-                    <div class="text-sm text-zinc-400">Profit</div>
-                    <div class="font-bold" :class="item.cumulativeProfit >= 0 ? 'text-green-500' : 'text-red-500'">
-                      AED {{ formatNumber(item.cumulativeProfit) }}
-                    </div>
-                  </div>
-                  <div>
-                    <div class="text-sm text-zinc-400">ROI</div>
-                    <div class="font-bold" :class="item.cumulativeROI >= 0 ? 'text-green-500' : 'text-red-500'">
-                      {{ item.cumulativeROI.toFixed(1) }}%
-                    </div>
-                  </div>
-                </div>
-                <!-- Progress bar showing ROI -->
-                <div class="mt-3 space-y-1">
-                  <div class="text-xs text-zinc-400">ROI Progress</div>
-                  <div class="overflow-hidden h-2 text-xs flex rounded bg-zinc-900">
-                    <div 
-                      :style="{ width: `${Math.min(Math.max(item.cumulativeROI, 0), 100)}%` }" 
-                      class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- <div> -->
+          <!--   <h3 class="text-lg font-semibold mb-4">Month by Month Performance</h3> -->
+          <!--   <div class="mb-4"> -->
+          <!--     <bar-chart :chart-data="revenueVsInvestmentData" /> -->
+          <!--   </div> -->
+          <!--   <div class="space-y-4"> -->
+          <!--     <div v-for="(item, index) in graphData" :key="index"  -->
+          <!--         class="bg-zinc-800 p-4 rounded-lg border border-zinc-700"> -->
+          <!--       <h4 class="text-md font-semibold mb-2">{{ item.name }}</h4> -->
+          <!--       <div class="grid grid-cols-2 gap-4"> -->
+          <!--         <div> -->
+          <!--           <div class="text-sm text-zinc-400">Revenue</div> -->
+          <!--           <div class="font-bold">AED {{ formatNumber(item.cumulativeRevenue) }}</div> -->
+          <!--         </div> -->
+          <!--         <div> -->
+          <!--           <div class="text-sm text-zinc-400">Investment</div> -->
+          <!--           <div class="font-bold">AED {{ formatNumber(item.cumulativeInvestment) }}</div> -->
+          <!--         </div> -->
+          <!--         <div> -->
+          <!--           <div class="text-sm text-zinc-400">Profit</div> -->
+          <!--           <div class="font-bold" :class="item.cumulativeProfit >= 0 ? 'text-green-500' : 'text-red-500'"> -->
+          <!--             AED {{ formatNumber(item.cumulativeProfit) }} -->
+          <!--           </div> -->
+          <!--         </div> -->
+          <!--         <div> -->
+          <!--           <div class="text-sm text-zinc-400">ROI</div> -->
+          <!--           <div class="font-bold" :class="item.cumulativeROI >= 0 ? 'text-green-500' : 'text-red-500'"> -->
+          <!--             {{ item.cumulativeROI.toFixed(1) }}% -->
+          <!--           </div> -->
+          <!--         </div> -->
+          <!--       </div> -->
+          <!--       Progress bar showing ROI -->
+          <!--       <div class="mt-3 space-y-1"> -->
+          <!--         <div class="text-xs text-zinc-400">ROI Progress</div> -->
+          <!--         <div class="overflow-hidden h-2 text-xs flex rounded bg-zinc-900"> -->
+          <!--           <div  -->
+          <!--             :style="{ width: `${Math.min(Math.max(item.cumulativeROI, 0), 100)}%` }"  -->
+          <!--             class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500" -->
+          <!--           ></div> -->
+          <!--         </div> -->
+          <!--       </div> -->
+          <!--     </div> -->
+          <!--   </div> -->
+          <!-- </div> -->
           
           <!-- Projected Performance Table -->
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Projected Performance (6 Months)</h3>
-            <div class="overflow-x-auto">
-              <table class="min-w-full bg-zinc-800 rounded-lg">
-                <thead>
-                  <tr>
-                    <th class="py-2 px-4 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider border-b border-zinc-700">Month</th>
-                    <th class="py-2 px-4 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider border-b border-zinc-700">Revenue</th>
-                    <th class="py-2 px-4 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider border-b border-zinc-700">Investment</th>
-                    <th class="py-2 px-4 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider border-b border-zinc-700">Profit</th>
-                    <th class="py-2 px-4 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider border-b border-zinc-700">ROI</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="(item, index) in graphData" :key="index" :class="index % 2 === 0 ? 'bg-zinc-800' : 'bg-zinc-800/50'">
-                    <td class="py-2 px-4 text-sm">{{ item.name }}</td>
-                    <td class="py-2 px-4 text-sm">AED {{ formatNumber(item.cumulativeRevenue) }}</td>
-                    <td class="py-2 px-4 text-sm">AED {{ formatNumber(item.cumulativeInvestment) }}</td>
-                    <td class="py-2 px-4 text-sm" :class="item.cumulativeProfit >= 0 ? 'text-green-500' : 'text-red-500'">
-                      AED {{ formatNumber(item.cumulativeProfit) }}
-                    </td>
-                    <td class="py-2 px-4 text-sm" :class="item.cumulativeROI >= 0 ? 'text-green-500' : 'text-red-500'">
-                      {{ item.cumulativeROI.toFixed(1) }}%
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+          <!-- <div> -->
+          <!--   <h3 class="text-lg font-semibold mb-4">Projected Performance (6 Months)</h3> -->
+          <!--   <div class="overflow-x-auto"> -->
+          <!--     <table class="min-w-full bg-zinc-800 rounded-lg"> -->
+          <!--       <thead> -->
+          <!--         <tr> -->
+          <!--           <th class="py-2 px-4 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider border-b border-zinc-700">Month</th> -->
+          <!--           <th class="py-2 px-4 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider border-b border-zinc-700">Revenue</th> -->
+          <!--           <th class="py-2 px-4 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider border-b border-zinc-700">Investment</th> -->
+          <!--           <th class="py-2 px-4 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider border-b border-zinc-700">Profit</th> -->
+          <!--           <th class="py-2 px-4 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider border-b border-zinc-700">ROI</th> -->
+          <!--         </tr> -->
+          <!--       </thead> -->
+          <!--       <tbody> -->
+          <!--         <tr v-for="(item, index) in graphData" :key="index" :class="index % 2 === 0 ? 'bg-zinc-800' : 'bg-zinc-800/50'"> -->
+          <!--           <td class="py-2 px-4 text-sm">{{ item.name }}</td> -->
+          <!--           <td class="py-2 px-4 text-sm">AED {{ formatNumber(item.cumulativeRevenue) }}</td> -->
+          <!--           <td class="py-2 px-4 text-sm">AED {{ formatNumber(item.cumulativeInvestment) }}</td> -->
+          <!--           <td class="py-2 px-4 text-sm" :class="item.cumulativeProfit >= 0 ? 'text-green-500' : 'text-red-500'"> -->
+          <!--             AED {{ formatNumber(item.cumulativeProfit) }} -->
+          <!--           </td> -->
+          <!--           <td class="py-2 px-4 text-sm" :class="item.cumulativeROI >= 0 ? 'text-green-500' : 'text-red-500'"> -->
+          <!--             {{ item.cumulativeROI.toFixed(1) }}% -->
+          <!--           </td> -->
+          <!--         </tr> -->
+          <!--       </tbody> -->
+          <!--     </table> -->
+          <!--   </div> -->
+          <!-- </div> -->
         </div>
       </div>
     </div>
@@ -270,8 +270,8 @@ const graphData = computed(() => {
     const monthlyCustomers = customersAcquired.value;
     const monthlyRevenue = revenue.value;
     const monthlyInvestment = index === 0 ? totalInvestment.value : adBudget.value;
-    const cumulativeRevenue = revenue.value * (index + 1);
-    const cumulativeInvestment = Number(initialInvestment.value) + (Number(adBudget.value) * (index + 1));
+    const cumulativeRevenue = revenue.value;
+    const cumulativeInvestment = Number(initialInvestment.value);
     const cumulativeProfit = cumulativeRevenue - cumulativeInvestment;
     const cumulativeROI = (cumulativeProfit / cumulativeInvestment) * 100;
     
