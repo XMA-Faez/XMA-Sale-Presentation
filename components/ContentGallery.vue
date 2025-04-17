@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, watch } from 'vue'
 
 const activeTab = ref('videos')
+const activeFilter = ref('all')
 
 // State for storing videos
 const videos = ref([])
@@ -27,6 +28,14 @@ const loadedResources = ref(new Map())
 // Base64 encoded tiny placeholder image to avoid network requests
 const inlineImagePlaceholder = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=';
 
+// Available filters for videos
+const filters = [
+  { id: 'all', label: 'All' },
+  { id: 'service-based', label: 'Service Based' },
+  { id: 'product', label: 'Product' },
+  { id: 'best-performing', label: 'Best Performing' }
+]
+
 // Function to format video data
 const formatVideoData = (item, index) => {
   // Cloudinary thumbnail generation
@@ -43,7 +52,8 @@ const formatVideoData = (item, index) => {
     thumbnailUrl: item.thumbnail, // Use the new Cloudinary-generated thumbnail
     width: item.width,
     height: item.height,
-    loaded: false
+    loaded: false,
+    tags: item.tags || [] // Ensure tags are included
   };
 }
 
@@ -105,7 +115,8 @@ const formatGraphicData = (item, index) => {
     url: item.url || null,
     width: item.width,
     height: item.height,
-    loaded: false
+    loaded: false,
+    tags: item.tags || [] // Ensure tags are included
   };
 }
 
@@ -273,9 +284,22 @@ const contentError = computed(() => {
   return activeTab.value === 'videos' ? error.value : graphicsError.value;
 });
 
-// Filtered content based on active tab
+// Filtered content based on active tab and filter
 const filteredContent = computed(() => {
-  return activeTab.value === 'videos' ? videos.value : graphics.value;
+  const content = activeTab.value === 'videos' ? videos.value : graphics.value;
+  
+  // If the filter is 'all', return all content
+  if (activeFilter.value === 'all') {
+    return content;
+  }
+  
+  // Convert filter to tag format (lowercase, no spaces)
+  const filterTag = activeFilter.value;
+  
+  // Return only content that has the selected tag
+  return content.filter(item => {
+    return item.tags && Array.isArray(item.tags) && item.tags.includes(filterTag);
+  });
 })
 
 // Use computed properties to conditionally style the container based on active tab
@@ -371,13 +395,30 @@ onMounted(() => {
 </script>
 
 <template>
-  <!-- Tabs -->
-  <div class="flex gap-4 mb-8">
-    <button v-for="tab in ['videos', 'graphics']" :key="tab" @click="activeTab = tab" :class="[
+  <!-- Main Tabs -->
+  <div class="flex gap-4 mb-4">
+    <button v-for="tab in ['videos', 'graphics']" :key="tab" @click="activeTab = tab; activeFilter = 'all'" :class="[
       'px-4 text-sm py-2 rounded-lg font-medium transition-colors',
       activeTab === tab ? 'bg-zinc-800 text-white' : 'text-zinc-400 hover:text-white'
     ]">
       {{ tab.charAt(0).toUpperCase() + tab.slice(1) }}
+    </button>
+  </div>
+
+  <!-- Filter Tabs (only show for videos tab) -->
+  <div v-if="activeTab === 'videos'" class="flex gap-2 mb-8 flex-wrap">
+    <button 
+      v-for="filter in filters" 
+      :key="filter.id" 
+      @click="activeFilter = filter.id" 
+      :class="[
+        'px-3 text-xs py-1 rounded-full font-medium transition-colors',
+        activeFilter === filter.id 
+          ? 'bg-red-600 text-white' 
+          : 'bg-zinc-800/70 text-zinc-300 hover:bg-zinc-700'
+      ]"
+    >
+      {{ filter.label }}
     </button>
   </div>
 
@@ -389,6 +430,19 @@ onMounted(() => {
   <!-- Error state -->
   <div v-else-if="contentError" class="text-center py-12 text-red-500">
     {{ contentError }}
+  </div>
+
+  <!-- Empty state -->
+  <div v-else-if="filteredContent.length === 0" class="text-center py-12 text-zinc-400">
+    <div class="i-lucide-search-x w-16 h-16 mx-auto mb-4 opacity-50"></div>
+    <p class="text-xl font-medium mb-2">No items found</p>
+    <p v-if="activeTab === 'videos'">No videos matching the "{{ filters.find(f => f.id === activeFilter)?.label }}" filter.</p>
+    <button 
+      @click="activeFilter = 'all'" 
+      class="mt-4 px-4 py-2 bg-zinc-800 rounded-lg text-white text-sm hover:bg-zinc-700"
+    >
+      View all {{ activeTab }}
+    </button>
   </div>
 
   <!-- Dynamic layout container - switches between grid and masonry -->
@@ -444,6 +498,22 @@ onMounted(() => {
             <div class="i-lucide-eye w-8 h-8 text-white"></div>
           </div>
         </div>
+        
+        <!-- Tags/badges (if item has tags and they are in our filter list) -->
+        <div v-if="item.tags && item.tags.length > 0" class="absolute top-2 right-2 flex gap-1.5 flex-wrap justify-end max-w-[70%]">
+          <span 
+            v-for="tag in item.tags.filter(t => filters.some(f => f.id === t))" 
+            :key="tag"
+            class="px-2 py-0.5 bg-black/70 backdrop-blur-sm rounded-full text-xs font-medium"
+            :class="{
+              'text-red-500': tag === 'best-performing',
+              'text-blue-400': tag === 'service-based',
+              'text-green-400': tag === 'product'
+            }"
+          >
+            {{ filters.find(f => f.id === tag)?.label }}
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -470,6 +540,22 @@ onMounted(() => {
         <h3 class="text-white text-xl font-bold mb-2 truncate px-2">
           {{ activeVideo ? activeVideo.title : '' }}
         </h3>
+
+        <!-- Tags/badges if the video has them -->
+        <div v-if="activeVideo && activeVideo.tags && activeVideo.tags.length > 0" class="flex gap-2 mb-2 px-2 flex-wrap">
+          <span 
+            v-for="tag in activeVideo.tags.filter(t => filters.some(f => f.id === t))" 
+            :key="tag"
+            class="px-2 py-0.5 bg-zinc-800 rounded-full text-xs font-medium"
+            :class="{
+              'text-red-500': tag === 'best-performing',
+              'text-blue-400': tag === 'service-based',
+              'text-green-400': tag === 'product'
+            }"
+          >
+            {{ filters.find(f => f.id === tag)?.label }}
+          </span>
+        </div>
 
         <!-- Video element with responsive sizing -->
         <div class="flex-1 bg-black rounded-lg shadow-2xl overflow-hidden flex items-center justify-center">
@@ -504,11 +590,24 @@ onMounted(() => {
         </h3>
 
         <!-- Graphic details -->
-        <div class="flex gap-2 mb-2 px-2">
+        <div class="flex gap-2 mb-2 px-2 flex-wrap">
           <span class="px-2 py-1 rounded bg-zinc-700 text-xs text-white">{{ activeGraphic?.type }}</span>
           <span class="px-2 py-1 rounded bg-zinc-700 text-xs text-white">{{ activeGraphic?.industry }}</span>
-          <span class="px-2 py-1 rounded bg-zinc-700 text-xs text-white">{{ activeGraphic?.width }} × {{
-            activeGraphic?.height }}</span>
+          <span class="px-2 py-1 rounded bg-zinc-700 text-xs text-white">{{ activeGraphic?.width }} × {{ activeGraphic?.height }}</span>
+          
+          <!-- Display tags if the graphic has them -->
+          <span 
+            v-for="tag in (activeGraphic?.tags || []).filter(t => filters.some(f => f.id === t))" 
+            :key="tag"
+            class="px-2 py-1 rounded bg-zinc-700 text-xs font-medium"
+            :class="{
+              'text-red-500': tag === 'best-performing',
+              'text-blue-400': tag === 'service-based',
+              'text-green-400': tag === 'product'
+            }"
+          >
+            {{ filters.find(f => f.id === tag)?.label }}
+          </span>
         </div>
 
         <!-- Image with responsive sizing -->
