@@ -70,7 +70,7 @@ class: text-center
 }
 
 .dashboard-wrapper {
-  @apply bg-zinc-800/70 rounded-lg border border-zinc-700 overflow-hidden shadow-xl;
+  @apply bg-zinc-900/50 rounded-lg border border-zinc-700 overflow-hidden shadow-xl;
 }
 
 .dashboard-header {
@@ -192,10 +192,10 @@ zoom: 0.8
   @apply grid grid-cols-3 gap-6 max-w-4xl mx-auto mt-8;
 }
 .problem-card {
-  @apply flex flex-col items-center gap-2 p-4 bg-red-500/10 rounded-lg border border-red-500/30 text-center transition-all duration-300;
+  @apply flex flex-col items-center gap-2 p-4 bg-red-900/10 rounded-lg border border-red-950 text-center transition-all duration-300;
 }
 .problem-icon {
-  @apply w-12 h-12 flex items-center justify-center bg-red-500/10 rounded-full;
+  @apply w-12 h-12 flex items-center justify-center rounded-full;
 }
 .icon-red {
   @apply w-6 h-6 text-red-500;
@@ -298,7 +298,7 @@ layout: center
 }
 
 .diagram-container {
-  @apply p-6 bg-zinc-800/50 rounded-lg border border-zinc-700/30;
+  @apply p-6 bg-zinc-900/50 rounded-lg border border-zinc-700/30;
 }
 
 .diagram {
@@ -338,7 +338,7 @@ layout: center
 }
 
 .benefit-item {
-  @apply flex items-start gap-3 p-4 bg-zinc-800/50 rounded-lg border border-zinc-700/30;
+  @apply flex items-start gap-3 p-4 bg-zinc-900/50 rounded-lg border border-zinc-700/30;
 }
 
 .benefit-item p {
@@ -428,14 +428,14 @@ zoom: 0.8
             </div>
           </div>
         <div class="flex flex-col pl-2 pb-2">
-          <div class="flex items-center gap-1.5 bg-zinc-800 px-2 py-0.5 rounded-t-md text-xs self-start ml-2 border border-zinc-700 border-b-0">
+          <div class="flex items-center gap-1.5 bg-zinc-800/50 px-2 py-0.5 rounded-t-md text-xs self-start ml-2 border border-zinc-700 border-b-0">
             <ic-baseline-whatsapp class="w-3.5 h-3.5 text-green-400" />
             <skill-icons-instagram class="w-3.5 h-3.5" />
             <lucide-mail class="w-3.5 h-3.5 text-purple-400" />
             <span class="text-[9px] text-white/60">All channels in one place</span>
           </div>
           <div class="flex gap-2 pr-2">
-            <input type="text" placeholder="Type your message..." class="flex-grow bg-zinc-700/50 border border-zinc-600 rounded px-3 py-1 text-sm focus:outline-none focus:border-green-500" />
+            <input type="text" placeholder="Type your message..." class="flex-grow bg-zinc-800/50 border border-zinc-700 rounded px-3 py-1 text-sm focus:outline-none focus:border-green-500" />
             <button class="w-7 h-7 flex items-center justify-center rounded bg-green-600 hover:bg-green-500">
               <lucide-send class="w-4 h-4" />
             </button>
@@ -500,7 +500,7 @@ zoom: 0.8
 }
 
 .interface-preview {
-  @apply bg-zinc-800/70 rounded-lg border border-zinc-700 overflow-hidden shadow-xl;
+  @apply bg-zinc-900/50 rounded-lg border border-zinc-800 overflow-hidden shadow-xl;
 }
 
 .interface-header {
@@ -528,7 +528,7 @@ zoom: 0.8
 }
 
 .contact-avatar {
-  @apply w-8 h-8 rounded-full bg-zinc-600/50 aspect-square flex justify-center items-center;
+  @apply w-8 h-8 rounded-full bg-zinc-700/50 aspect-square flex justify-center items-center;
 }
 
 .contact-info {
@@ -596,7 +596,7 @@ zoom: 0.8
 }
 
 .message.incoming .message-content {
-  @apply bg-zinc-700;
+  @apply bg-zinc-800;
 }
 
 .message.outgoing .message-content {
@@ -608,7 +608,7 @@ zoom: 0.8
 }
 
 .message-input {
-  @apply flex gap-2 p-3 pt-5 mt-5 border-t border-zinc-700/50 relative;
+  @apply flex gap-2 p-3 pt-5 mt-5 border-t border-zinc-800/50 relative;
 }
 
 .channel-indicators {
@@ -624,7 +624,7 @@ zoom: 0.8
 }
 
 .message-input input {
-  @apply flex-grow bg-zinc-700/50 border border-zinc-600 rounded px-3 py-1 text-sm focus:outline-none focus:border-green-500;
+  @apply flex-grow bg-zinc-800/50 border border-zinc-600 rounded px-3 py-1 text-sm focus:outline-none focus:border-green-500;
 }
 
 .message-input button {
@@ -636,7 +636,7 @@ zoom: 0.8
 }
 
 .feature-item {
-  @apply flex items-start gap-3 p-4 bg-zinc-800/50 rounded-lg border border-zinc-700/30;
+  @apply flex items-start gap-3 p-4 bg-zinc-900/50 rounded-lg border border-zinc-700/30;
 }
 
 .feature-item h3 {
@@ -810,7 +810,7 @@ class: text-center
 
 <style>
 .pipeline-visualization {
-  @apply flex items-start justify-between gap-2 p-4 bg-zinc-800/70 rounded-lg border border-zinc-700 overflow-x-auto max-w-4xl mx-auto;
+  @apply flex items-start justify-between gap-2 p-4 !bg-zinc-900/70 rounded-lg border border-zinc-800 overflow-x-auto max-w-4xl mx-auto;
 }
 
 .pipeline-stage {
@@ -826,7 +826,7 @@ class: text-center
 }
 
 .stage-count {
-  @apply text-xs px-2 py-0.5 rounded-full bg-zinc-700/70 text-white/80;
+  @apply text-xs px-2 py-0.5 rounded-full bg-zinc-800/70 text-white/80;
 }
 
 .stage-content {
@@ -834,7 +834,7 @@ class: text-center
 }
 
 .lead-card {
-  @apply bg-zinc-700/50 rounded p-2 flex justify-between items-center border border-zinc-600/30;
+  @apply bg-zinc-800/50 rounded p-2 flex justify-between items-center border border-zinc-700/30;
 }
 
 .lead-info {
@@ -866,7 +866,7 @@ class: text-center
 }
 
 .benefit-item {
-  @apply flex flex-col items-center gap-2 p-3 bg-zinc-800/50 rounded-lg border border-zinc-700/30 text-center;
+  @apply flex flex-col items-center gap-2 p-3 bg-zinc-900/50 rounded-lg border border-zinc-800/30 text-center;
 }
 
 .benefit-item h3 {
@@ -1056,7 +1056,7 @@ zoom: 0.8
 }
 
 .chat-preview {
-  @apply bg-zinc-800/70 rounded-lg border border-zinc-700 p-4 space-y-4 max-h-80 overflow-y-auto;
+  @apply bg-zinc-900/50 rounded-lg border border-zinc-800 p-4 space-y-4 max-h-80 overflow-y-auto;
 }
 
 .chat-bubble {
@@ -1088,7 +1088,7 @@ zoom: 0.8
 }
 
 .chat-bubble.company .chat-message {
-  @apply bg-zinc-700 text-white/90;
+  @apply bg-zinc-800 text-white/90;
 }
 
 .chat-bubble.user .chat-message {
@@ -1104,7 +1104,7 @@ zoom: 0.8
 }
 
 .feature-item {
-  @apply flex items-start gap-3 p-4 bg-zinc-800/50 rounded-lg border border-zinc-700/30;
+  @apply flex items-start gap-3 p-4 bg-zinc-900/50 rounded-lg border border-zinc-700/30;
 }
 
 .feature-item h3 {
@@ -1116,7 +1116,7 @@ zoom: 0.8
 }
 
 .workflow-diagram {
-  @apply bg-zinc-800/50 rounded-lg border border-zinc-700/30 p-4;
+  @apply bg-zinc-900/50 rounded-lg border border-zinc-700/30 p-4;
 }
 
 .workflow-title {
@@ -1153,7 +1153,7 @@ layout: center
 zoom: 0.7
 ---
 
-<h1 class="text-center">
+<h1 class="text-center !mb-8">
     Why You Need a CRM
 </h1>
 
@@ -1231,7 +1231,7 @@ zoom: 0.7
 }
 
 .benefit-card {
-  @apply bg-zinc-800/50 rounded-lg p-5 border border-zinc-700/30 transition-all duration-300 hover:border-green-500/30 hover:bg-zinc-800/70;
+  @apply bg-zinc-900/50 rounded-lg p-5 border border-zinc-700/30 transition-all duration-300 hover:border-green-500/30 hover:bg-zinc-800/70;
 }
 
 .benefit-icon {

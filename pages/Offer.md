@@ -89,7 +89,7 @@ const retainers = [
     popular: false,
     features: [
       { text: 'CRM Subscription', included: true },
-      { text: 'Ad Management', included: true },
+      { text: 'Ad Management + 1 Month Free', included: true },
       { text: '1 Monthly Graphic', included: true },
       { text: 'WhatsApp Marketing Management', included: false },
       { text: 'Smart AI ChatBot', included: false },
@@ -104,7 +104,7 @@ const retainers = [
     popular: true,
     features: [
       { text: 'CRM Subscription', included: true },
-      { text: 'Ad Management', included: true },
+      { text: 'Ad Management + 1 Month Free', included: true },
       { text: '4 Monthly Graphics', included: true },
       { text: 'WhatsApp Marketing Management', included: true },
       { text: 'Smart AI ChatBot', included: true },
@@ -119,7 +119,7 @@ const retainers = [
     popular: false,
     features: [
       { text: 'CRM Subscription', included: true },
-      { text: 'Ad Management', included: true },
+      { text: 'Ad Management + 1 Month Free', included: true },
       { text: '8 Monthly Graphics', included: true },
       { text: 'WhatsApp Marketing Management', included: true },
       { text: 'Smart AI ChatBot', included: true },

@@ -20,7 +20,7 @@ layout: center
 
 <div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
   <div
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500"
   >
     <div class="flex gap-4 mb-4">
       <lucide-target class="w-8 h-8 text-yellow-500" />
@@ -72,7 +72,7 @@ layout: center
 
 <div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
   <div
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500"
   >
     <div class="flex gap-4 mb-4">
       <lucide-lightbulb class="w-8 h-8 text-yellow-500" />
@@ -122,7 +122,7 @@ layout: center
 
 <div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
   <div
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500"
   >
     <div class="flex gap-4 mb-4">
       <lucide-timer class="w-8 h-8 text-yellow-500" />
@@ -184,7 +184,7 @@ layout: center
 
 <div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
   <div
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500"
   >
     <div class="flex gap-4 mb-4">
       <lucide-layers class="w-8 h-8 text-yellow-500" />
@@ -384,7 +384,7 @@ layout: center
 
 <div class="grid grid-cols-2 gap-8">
   <div
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex gap-4 mb-4">
       <lucide-message-square class="w-6 h-6 text-blue-500" />
@@ -395,7 +395,7 @@ layout: center
 
   <div
     v-click
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
       <lucide-video class="w-6 h-6 text-blue-500" />
@@ -406,7 +406,7 @@ layout: center
 
   <div
     v-click
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
       <lucide-edit class="w-6 h-6 text-blue-500" />
@@ -417,7 +417,7 @@ layout: center
 
   <div
     v-click
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
       <lucide-check-circle class="w-6 h-6 text-blue-500" />
@@ -473,7 +473,7 @@ layout: center
 
 <div class="grid grid-cols-2 gap-8">
   <div
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
       <lucide-layout-dashboard class="w-6 h-6 text-yellow-500" />
@@ -484,7 +484,7 @@ layout: center
 
   <div
     v-click
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
       <lucide-target class="w-6 h-6 text-yellow-500" />
@@ -495,7 +495,7 @@ layout: center
 
   <div
     v-click
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
       <lucide-bar-chart class="w-6 h-6 text-yellow-500" />
@@ -506,7 +506,7 @@ layout: center
 
   <div
     v-click
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
       <lucide-refresh-cw class="w-6 h-6 text-yellow-500" />
@@ -551,7 +551,7 @@ layout: center
 
 <div class="grid grid-cols-2 gap-8">
   <div
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
       <lucide-message-square class="w-6 h-6 text-red-500" />
@@ -561,7 +561,7 @@ layout: center
   </div>
   <div
     v-click
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
       <lucide-activity class="w-6 h-6 text-red-500" />
@@ -571,7 +571,7 @@ layout: center
   </div>
   <div
     v-click
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
       <lucide-database class="w-6 h-6 text-red-500" />
@@ -581,7 +581,7 @@ layout: center
   </div>
   <div
     v-click
-    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500 hover:scale-105"
+    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500 hover:scale-105"
   >
     <div class="flex items-center gap-4 mb-4">
       <lucide-refresh-cw class="w-6 h-6 text-red-500" />

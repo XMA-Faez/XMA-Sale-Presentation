@@ -1,4 +1,6 @@
-# Client Onboarding Journey
+---
+layout: none
+---
 
 <script setup>
 const meetings = [
@@ -57,7 +59,8 @@ const meetings = [
 ]
 </script>
 
-<div class="space-y-8">
+<div class="space-y-8 p-8 max-w-3xl mx-auto">
+  <h1 class="text-3xl text-center font-bold"> Client Onboarding Journey</h1>
   <!-- Timeline -->
   <div v-for="meeting in meetings" class="bg-zinc-800/40 rounded-lg p-6">
     <div class="flex items-center gap-4 mb-4">
@@ -69,20 +72,20 @@ const meetings = [
     </div>
     <div class="grid grid-cols-2 gap-8">
       <div>
-        <h4 class="text-lg font-medium mb-3">Meeting Agenda</h4>
+        <h4 class="text-base font-medium mb-3">Meeting Agenda</h4>
         <ul class="space-y-2">
           <li 
             v-for="item in meeting.agenda" 
-            class="flex items-center gap-2 text-zinc-300"
+            class="flex items-center !text-xs gap-2 text-zinc-300"
           >
-            <div class="i-lucide-check-circle w-4 h-4 text-green-500" />
+            <div class="i-lucide-check-circle w-3 h-4 text-green-500" />
             {{ item }}
           </li>
         </ul>
       </div>
       <div>
-        <h4 class="text-lg font-medium mb-3">Key Deliverables</h4>
-        <div class="bg-zinc-900/40 rounded p-4 text-zinc-300">
+        <h4 class="text-base font-medium mb-3">Key Deliverables</h4>
+        <div class="bg-zinc-900/40 text-xs rounded text-zinc-300">
           {{ meeting.deliverables }}
         </div>
       </div>
