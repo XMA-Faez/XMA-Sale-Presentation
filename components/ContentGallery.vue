@@ -33,7 +33,7 @@ const filters = [
   { id: 'all', label: 'All' },
   { id: 'service', label: 'Service' },
   { id: 'product', label: 'Product' },
-  { id: 'best-performing', label: 'Best Performing' }
+  //{ id: 'best-performing', label: 'Best Performing' }
 ]
 
 // Function to format video data
