@@ -28,7 +28,7 @@ const packages = [
       { text: '3 Video Ads', included: true },
       { text: 'Ad Campaign(s) Set-up', included: true },
       { text: 'CRM', included: true },
-      { text: 'WhatsApp Integration', included: true }
+      { text: 'WhatsApp Integration', included: true },
     ]
   },
   {
@@ -43,7 +43,8 @@ const packages = [
       { text: '8 Video Ads', included: true },
       { text: 'Ad Campaign(s) Set-up', included: true },
       { text: 'CRM', included: true },
-      { text: 'WhatsApp Integration', included: true }
+      { text: 'WhatsApp Integration', included: true },
+      { text: '+1 Month Free Ad Management', bold: true, extraSpace: true }
     ]
   },
   {
@@ -58,7 +59,8 @@ const packages = [
       { text: '14 Video Ads', included: true },
       { text: 'Ad Campaign(s) Set-up', included: true },
       { text: 'CRM', included: true },
-      { text: 'WhatsApp Integration', included: true }
+      { text: 'WhatsApp Integration', included: true },
+      { text: '+1 Month Free Ad Management', bold: true, extraSpace: true }
     ]
   }
 ]
@@ -89,7 +91,7 @@ const retainers = [
     popular: false,
     features: [
       { text: 'CRM Subscription', included: true },
-      { text: 'Ad Management + 1 Month Free', included: true },
+      { text: 'Ad Management', included: true },
       { text: '1 Monthly Graphic', included: true },
       { text: 'WhatsApp Marketing Management', included: false },
       { text: 'Smart AI ChatBot', included: false },
@@ -104,7 +106,7 @@ const retainers = [
     popular: true,
     features: [
       { text: 'CRM Subscription', included: true },
-      { text: 'Ad Management + 1 Month Free', included: true },
+      { text: 'Ad Management', included: true },
       { text: '4 Monthly Graphics', included: true },
       { text: 'WhatsApp Marketing Management', included: true },
       { text: 'Smart AI ChatBot', included: true },
@@ -119,7 +121,7 @@ const retainers = [
     popular: false,
     features: [
       { text: 'CRM Subscription', included: true },
-      { text: 'Ad Management + 1 Month Free', included: true },
+      { text: 'Ad Management', included: true },
       { text: '8 Monthly Graphics', included: true },
       { text: 'WhatsApp Marketing Management', included: true },
       { text: 'Smart AI ChatBot', included: true },
