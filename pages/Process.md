@@ -3,7 +3,249 @@ layout: center
 class: text-center
 ---
 
-# Our Process
+# Understanding Advertising
+
+<div 
+  v-motion
+  :initial="{ opacity: 0, y: 100 }"
+  :enter="{ opacity: 1, y: 0 }"
+  class="text-2xl text-zinc-400 mt-4"
+>
+  The Truth About What Works
+</div>
+
+---
+layout: center
+---
+
+<div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
+  <div
+    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500"
+  >
+    <div class="flex gap-4 mb-4">
+      <lucide-target class="w-8 h-8 text-yellow-500" />
+      <h2 class="text-2xl font-bold">The Game of Advertising</h2>
+    </div>
+    <p class="text-zinc-300 !mb-8">Advertising is not about creativity or looking professional—it's about <span class="text-yellow-500 font-bold">results</span>.</p>
+    <div class="space-y-3 !mb-8">
+      <div 
+        v-click
+        class="flex items-start gap-3 !my-4"
+      >
+        <lucide-dollar-sign class="w-5 h-5 text-yellow-500 mt-0.5" />
+        <p class="text-zinc-300 !m-0">You pay money to get your message in front of strangers</p>
+      </div>
+      <div 
+        v-click
+        class="flex items-start gap-3 !my-4"
+      >
+        <lucide-users class="w-5 h-5 text-yellow-500 mt-0.5" />
+        <p class="text-zinc-300 !m-0">Some percentage of those strangers become leads</p>
+      </div>
+      <div 
+        v-click
+        class="flex items-start gap-3 !my-4"
+      >
+        <lucide-shopping-cart class="w-5 h-5 text-yellow-500 mt-0.5" />
+        <p class="text-zinc-300 !m-0">Some percentage of those leads become customers</p>
+      </div>
+      <div 
+        v-click
+        class="flex items-start gap-3 !my-4"
+      >
+        <lucide-trending-up class="w-5 h-5 text-yellow-500 mt-0.5" />
+        <p class="text-zinc-300 !m-0">The money you make must exceed what you spent</p>
+      </div>
+    </div>
+    <div 
+      v-click
+      class="mt-6 bg-yellow-950/20 p-4 rounded-lg border border-yellow-900/30"
+    >
+      <p class="text-white font-bold !m-0">Success = Put $1 in, get $2+ back.</p>
+    </div>
+  </div>
+</div>
+
+---
+layout: center
+---
+
+<div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
+  <div
+    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500"
+  >
+    <div class="flex gap-4 mb-4">
+      <lucide-lightbulb class="w-8 h-8 text-yellow-500" />
+      <h2 class="text-2xl font-bold">The Truth About Ad Performance</h2>
+    </div>
+    <div 
+      v-click
+      class="bg-yellow-950/20 p-4 rounded-lg border border-yellow-900/30 mb-6"
+    >
+      <p class="text-white font-bold !m-0">REALITY: The question isn't whether ads work—it's how well you can make them work.</p>
+    </div>
+    <div class="space-y-4 !mb-8">
+      <div 
+        v-click
+        class="flex items-start gap-3"
+      >
+        <lucide-eye class="w-5 h-5 text-yellow-500 mt-0.5" />
+        <p class="text-zinc-300 !m-0">Reach is guaranteed (you will get views)</p>
+      </div>
+      <div 
+        v-click
+        class="flex items-start gap-3"
+      >
+        <lucide-zap class="w-5 h-5 text-yellow-500 mt-0.5" />
+        <p class="text-zinc-300 !m-0">Response is earned (you must get attention)</p>
+      </div>
+      <div 
+        v-click
+        class="flex items-start gap-3"
+      >
+        <lucide-bar-chart-2 class="w-5 h-5 text-yellow-500 mt-0.5" />
+        <p class="text-zinc-300 !m-0">Results are a numbers game (test, optimize, scale)</p>
+      </div>
+    </div>
+    <div 
+      v-click
+      class="mt-6 p-4 rounded-lg bg-zinc-800/50 border border-zinc-700"
+    >
+      <p class="text-zinc-300 !m-0 italic">You're not buying customers, you're renting attention.</p>
+    </div>
+  </div>
+</div>
+
+---
+layout: center
+---
+
+<div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
+  <div
+    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500"
+  >
+    <div class="flex gap-4 mb-4">
+      <lucide-timer class="w-8 h-8 text-yellow-500" />
+      <h2 class="text-2xl font-bold">Why Attention Is Everything</h2>
+    </div>
+    <div 
+      v-click
+      class="bg-yellow-950/20 p-4 rounded-lg border border-yellow-900/30 mb-6"
+    >
+      <p class="text-white font-bold !m-0">Getting attention is the foundation of all successful advertising.</p>
+    </div>
+    <p 
+      v-click
+      class="text-zinc-300"
+    >
+      If you don't capture attention in the first 5 seconds:
+    </p>
+    <div class="space-y-4 items !mb-8">
+      <div 
+        v-click
+        class="flex items-start gap-3"
+      >
+        <lucide-x-circle class="w-5 h-5 text-red-500 mt-0.5" />
+        <p class="text-zinc-300">Nothing else in your ad matters</p>
+      </div>
+      <div 
+        v-click
+        class="flex items-start gap-3"
+      >
+        <lucide-x-circle class="w-5 h-5 text-red-500 mt-0.5" />
+        <p class="text-zinc-300">Your message never gets delivered</p>
+      </div>
+      <div 
+        v-click
+        class="flex items-start gap-3"
+      >
+        <lucide-x-circle class="w-5 h-5 text-red-500 mt-0.5" />
+        <p class="text-zinc-300">Your money is wasted</p>
+      </div>
+    </div>
+    <div 
+      v-click
+      class="mt-6 p-4 rounded-lg bg-zinc-800/50 border border-zinc-700"
+    >
+      <p class="text-zinc-300 !m-0">People make an almost instant decision whether to keep watching or scroll past.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .items p {
+    margin: 0 !important;
+  }
+</style>
+
+---
+layout: center
+---
+
+<div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
+  <div
+    class="bg-zinc-500/10 rounded-lg p-6 transform transition duration-500"
+  >
+    <div class="flex gap-4 mb-4">
+      <lucide-layers class="w-8 h-8 text-yellow-500" />
+      <h2 class="text-2xl font-bold">What Makes an Effective Ad?</h2>
+    </div>
+    <p class="text-zinc-300 mb-4">Every successful ad has three parts:</p>
+    <div class="flex gap-4 items">
+      <div 
+        v-click
+        class="flex items-start gap-4 bg-yellow-950/20 p-4 rounded-lg border border-yellow-900/30"
+      >
+        <div class="rounded-full bg-yellow-600 w-8 h-8 flex justify-center items-center flex-shrink-0">1</div>
+        <div>
+          <h4 class="font-bold text-white">The Hook</h4>
+          <p class="text-zinc-300 !mb-0">80% of success</p>
+        </div>
+      </div>
+      <div 
+        v-click
+        class="flex items-start gap-4 bg-zinc-700/30 p-4 rounded-lg border border-zinc-700"
+      >
+        <div class="rounded-full bg-zinc-600 w-8 h-8 flex justify-center items-center flex-shrink-0">2</div>
+        <div>
+          <h4 class="font-bold text-white">The Value</h4>
+          <p class="text-zinc-300 !mb-0">15% of success</p>
+        </div>
+      </div>
+      <div 
+        v-click
+        class="flex items-start gap-4 bg-zinc-700/30 p-4 rounded-lg border border-zinc-700"
+      >
+        <div class="rounded-full bg-zinc-600 w-8 h-8 flex justify-center items-center flex-shrink-0">3</div>
+        <div>
+          <h4 class="font-bold text-white">The Call to Action</h4>
+          <p class="text-zinc-300 !mb-0">5% of success</p>
+        </div>
+      </div>
+    </div>
+    <div 
+      v-click
+      class="mt-6 p-4 rounded-lg bg-red-900/20 border border-red-900/30"
+    >
+      <p class="text-white !m-0">Most businesses spend 80% of their time on the least important parts!</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .items p {
+    margin-bottom: 0 !important;
+    margin-top: 0.5rem !important;
+    font-size: 0.875rem !important;
+  }
+</style>
+
+---
+layout: center
+class: text-center
+---
+
+# Our Complete Process
 
 <div class="process-summary">
   <div class="process-flow">

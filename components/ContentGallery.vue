@@ -31,7 +31,7 @@ const inlineImagePlaceholder = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA
 // Available filters for videos
 const filters = [
   { id: 'all', label: 'All' },
-  { id: 'service-based', label: 'Service Based' },
+  { id: 'service', label: 'Service' },
   { id: 'product', label: 'Product' },
   { id: 'best-performing', label: 'Best Performing' }
 ]
@@ -507,7 +507,7 @@ onMounted(() => {
             class="px-2 py-0.5 bg-black/70 backdrop-blur-sm rounded-full text-xs font-medium"
             :class="{
               'text-red-500': tag === 'best-performing',
-              'text-blue-400': tag === 'service-based',
+              'text-blue-400': tag === 'service',
               'text-green-400': tag === 'product'
             }"
           >
@@ -549,7 +549,7 @@ onMounted(() => {
             class="px-2 py-0.5 bg-zinc-800 rounded-full text-xs font-medium"
             :class="{
               'text-red-500': tag === 'best-performing',
-              'text-blue-400': tag === 'service-based',
+              'text-blue-400': tag === 'service',
               'text-green-400': tag === 'product'
             }"
           >
@@ -602,7 +602,7 @@ onMounted(() => {
             class="px-2 py-1 rounded bg-zinc-700 text-xs font-medium"
             :class="{
               'text-red-500': tag === 'best-performing',
-              'text-blue-400': tag === 'service-based',
+              'text-blue-400': tag === 'service',
               'text-green-400': tag === 'product'
             }"
           >
