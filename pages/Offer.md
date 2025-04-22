@@ -29,6 +29,7 @@ const packages = [
       { text: 'Ad Campaign(s) Set-up', included: true },
       { text: 'CRM', included: true },
       { text: 'WhatsApp Integration', included: true },
+      { text: '+1 Month Free Ad Management', bold: true, extraSpace: true }
     ]
   },
   {
