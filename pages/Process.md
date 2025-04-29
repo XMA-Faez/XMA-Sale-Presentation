@@ -116,129 +116,75 @@ layout: center
   </div>
 </div>
 
----
-layout: center
+--- 
+layout: center 
+zoom: 1.2
 ---
 
-<div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
-  <div
-    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500"
-  >
-    <div class="flex gap-4 mb-4">
-      <lucide-timer class="w-8 h-8 text-yellow-500" />
-      <h2 class="text-2xl font-bold">Why Attention Is Everything</h2>
+<div class="max-w-3xl mx-auto">
+  <div class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500 border border-zinc-800">
+    <div class="flex gap-3 mb-4 items-center">
+      <lucide-lightbulb class="w-8 h-8 text-yellow-500" />
+      <h2 class="!text-2xl font-bold ">What Makes an Ad Successful?</h2>
     </div>
-    <div 
-      v-click
-      class="bg-yellow-950/20 p-4 rounded-lg border border-yellow-900/30 mb-6"
-    >
-      <p class="text-white font-bold !m-0">Getting attention is the foundation of all successful advertising.</p>
+    <div class="bg-yellow-950/20 p-4 rounded-lg border border-yellow-900/30 mb-5">
+      <p class="text-white font-bold !m-0">Getting attention is everything.</p>
     </div>
-    <p 
-      v-click
-      class="text-zinc-300"
-    >
-      If you don't capture attention in the first 5 seconds:
-    </p>
-    <div class="space-y-4 items !mb-8">
-      <div 
-        v-click
-        class="flex items-start gap-3"
-      >
-        <lucide-x-circle class="w-5 h-5 text-red-500 mt-0.5" />
-        <p class="text-zinc-300">Nothing else in your ad matters</p>
+    <h3 class="!text-sm mb-3 font-semibold">
+      If you don't capture it in the first 5 seconds:
+    </h3>
+    <div class="space-y-3">
+      <div class="flex items-center gap-3 rounded-lg">
+        <lucide-message-square-off class="w-4 h-4 text-red-500" />
+        <p class="text-zinc-300 !m-0 !text-sm">Your message never gets delivered</p>
       </div>
-      <div 
-        v-click
-        class="flex items-start gap-3"
-      >
-        <lucide-x-circle class="w-5 h-5 text-red-500 mt-0.5" />
-        <p class="text-zinc-300">Your message never gets delivered</p>
+      <div class="flex items-center gap-3 rounded-lg">
+        <lucide-x-circle class="w-4 h-4 text-red-500" />
+        <p class="text-zinc-300 !m-0 !text-sm">Your creative efforts go unseen</p>
       </div>
-      <div 
-        v-click
-        class="flex items-start gap-3"
-      >
-        <lucide-x-circle class="w-5 h-5 text-red-500 mt-0.5" />
-        <p class="text-zinc-300">Your money is wasted</p>
+      <div class="flex items-center gap-3 rounded-lg">
+        <lucide-alert-circle class="w-4 h-4 text-red-500" />
+        <p class="text-zinc-300 !m-0 !text-sm">Your opportunity is missed</p>
       </div>
-    </div>
-    <div 
-      v-click
-      class="mt-6 p-4 rounded-lg bg-zinc-800/50 border border-zinc-700"
-    >
-      <p class="text-zinc-300 !m-0">People make an almost instant decision whether to keep watching or scroll past.</p>
     </div>
   </div>
 </div>
 
-<style>
-  .items p {
-    margin: 0 !important;
-  }
-</style>
 
 ---
 layout: center
 ---
 
-<div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
-  <div
-    class="bg-zinc-900/50 rounded-lg p-6 transform transition duration-500"
-  >
+<div class="max-w-3xl mx-auto">
+  <div class="bg-zinc-900/50 rounded-lg p-8 transform transition duration-500 border border-zinc-800">
+    <!-- Ad Structure Components Title -->
     <div class="flex gap-4 mb-4">
-      <lucide-layers class="w-8 h-8 text-yellow-500" />
-      <h2 class="text-2xl font-bold">What Makes an Effective Ad?</h2>
+      <lucide-lightbulb class="w-8 h-8 text-yellow-500" />
+      <h2 class="!text-2xl font-bold text-center mb-6">That's why the Hook determines 80% of your ad's success</h2>
     </div>
-    <p class="text-zinc-300 mb-4">Every successful ad has three parts:</p>
-    <div class="flex gap-4 items">
-      <div 
-        v-click
-        class="flex items-start gap-4 bg-yellow-950/20 p-4 rounded-lg border border-yellow-900/30"
-      >
-        <div class="rounded-full bg-yellow-600 w-8 h-8 flex justify-center items-center flex-shrink-0">1</div>
-        <div>
-          <h4 class="font-bold text-white">The Hook</h4>
-          <p class="text-zinc-300 !mb-0">80% of success</p>
-        </div>
+    <!-- Ad Components -->
+    <div class="flex flex-col md:flex-row justify-center gap-6 mb-6">
+      <div class="bg-yellow-950/20 p-4 rounded-lg border border-yellow-900/30 text-center w-full">
+        <iconoir-fishing class="w-8 h-8 mx-auto mb-2 text-yellow-500" />
+        <h4 class="font-bold text-white">The Hook</h4>
+        <p class="text-white text-2xl font-bold">80%</p>
+        <p class="text-xs text-yellow-300 mt-1">Grabs attention and stops the scroll</p>
       </div>
-      <div 
-        v-click
-        class="flex items-start gap-4 bg-zinc-700/30 p-4 rounded-lg border border-zinc-700"
-      >
-        <div class="rounded-full bg-zinc-600 w-8 h-8 flex justify-center items-center flex-shrink-0">2</div>
-        <div>
-          <h4 class="font-bold text-white">The Value</h4>
-          <p class="text-zinc-300 !mb-0">15% of success</p>
-        </div>
+      <div class="bg-zinc-800/40 flex flex-col text-center p-4 rounded-lg border border-zinc-700 w-full">
+        <lucide-package class="w-6 h-6 mx-auto mb-2 text-blue-500" />
+        <h4 class="font-bold text-white">The Value</h4>
+        <p class="text-white">15%</p>
+        <p class="text-xs text-blue-300 mt-1 !m-0">Explains benefits and builds interest</p>
       </div>
-      <div 
-        v-click
-        class="flex items-start gap-4 bg-zinc-700/30 p-4 rounded-lg border border-zinc-700"
-      >
-        <div class="rounded-full bg-zinc-600 w-8 h-8 flex justify-center items-center flex-shrink-0">3</div>
-        <div>
-          <h4 class="font-bold text-white">The Call to Action</h4>
-          <p class="text-zinc-300 !mb-0">5% of success</p>
-        </div>
+      <div class="bg-zinc-800/40 flex flex-col text-center p-4 rounded-lg border border-zinc-700 w-full">
+        <lucide-mouse-pointer-click class="w-6 h-6 mx-auto mb-2 text-green-500" />
+        <h4 class="font-bold text-white">The Call to Action</h4>
+        <p class="text-white">5%</p>
+        <p class="text-xs text-green-300 mt-1 !m-0">Drives conversion and results</p>
       </div>
-    </div>
-    <div 
-      v-click
-      class="mt-6 p-4 rounded-lg bg-red-900/20 border border-red-900/30"
-    >
-      <p class="text-white !m-0">Most businesses spend 80% of their time on the least important parts!</p>
     </div>
   </div>
 </div>
-
-<style>
-  .items p {
-    margin-bottom: 0 !important;
-    margin-top: 0.5rem !important;
-    font-size: 0.875rem !important;
-  }
-</style>
 
 ---
 layout: center
