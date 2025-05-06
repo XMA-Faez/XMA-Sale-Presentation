@@ -21,7 +21,7 @@ html {
 }
 
 .slidev-page {
-  overflow: scroll;
+  overflow: auto;
 }
 
 .slidev-layout {

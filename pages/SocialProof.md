@@ -65,7 +65,7 @@ class: text-center
         <img src="/ASUS.png" class="h-12 w-full rounded-xl bg-white rounded-xl duration-300" />
         <img src="/TFG.png" class="h-12 w-full rounded-xl bg-white rounded-xl duration-300" />
     </Marquee>
-    <div class="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#0f0f0f] dark:from-background" />
-    <div class="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#0f0f0f] dark:from-background" />
+    <div class="pointer-events-none absolute inset-y-0 -left-0.5 w-1/3 bg-gradient-to-r from-[#0f0f0f]" />
+    <div class="pointer-events-none absolute inset-y-0 -right-0.5 w-1/3 bg-gradient-to-l from-[#0f0f0f]" />
 </div>
 

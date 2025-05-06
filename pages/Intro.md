@@ -1,15 +1,12 @@
 <!-- Global state setup -->
 <script setup>
 import { ref, onMounted, provide } from 'vue'
-
 const clientName = ref("")
 const companyName = ref("")
-
 onMounted(() => {
   const urlParams = new URLSearchParams(window.location.search)
   clientName.value = urlParams.get('name') || ''
   companyName.value = urlParams.get('company') || ''
-  
   // Make these values available to other slides
   provide('clientName', clientName)
   provide('companyName', companyName)
@@ -63,61 +60,53 @@ onMounted(() => {
 </div>
 <!-- Service icons with Lucide -->
 <div class="flex gap-12 mt-12">
-    <div 
+    <div
         v-motion
         :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
         :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 200 } }"
         :duration="500"
-        class="text-center"
+        class="text-center flex flex-col items-center"
     >
-        <div class="mb-3 p-4 bg-white/20 rounded-full">
+        <div class="mb-3 flex items-center justify-center w-16 h-16 bg-white/20 rounded-full">
             <lucide-video class="w-8 h-8" />
         </div>
-        <div>Video</div>
+        <div class="text-center w-16">Video</div>
     </div>
-    <div 
+    <div
         v-motion
         :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
         :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 400 } }"
         :duration="500"
-        class="text-center"
+        class="text-center flex flex-col items-center"
     >
-        <div class="mb-3  p-4 bg-white/20 rounded-full ">
+        <div class="mb-3 flex items-center justify-center w-16 h-16 bg-white/20 rounded-full">
             <lucide-bar-chart3 class="w-8 h-8" />
         </div>
-        <div>Marketing</div>
+        <div class="text-center w-16">Marketing</div>
     </div>
-    <div 
+    <div
         v-motion
         :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
         :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 600 } }"
         :duration="500"
-        class="text-center"
+        class="text-center flex flex-col items-center"
     >
-        <div class="mb-3  p-4 bg-white/20 rounded-full ">
+        <div class="mb-3 flex items-center justify-center w-16 h-16 bg-white/20 rounded-full">
             <lucide-bot class="w-8 h-8" />
         </div>
-        <div>CRM</div>
+        <div class="text-center w-16">CRM</div>
     </div>
-    <div 
+    <div
         v-motion
         :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
         :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 800 } }"
         :duration="500"
-        class="text-center"
+        class="text-center flex flex-col items-center"
     >
-        <div class="mb-3  p-4 bg-white/20 rounded-full ">
+        <div class="mb-3 flex items-center justify-center w-16 h-16 bg-white/20 rounded-full">
             <lucide-zap class="w-8 h-8" />
         </div>
-        <div>Performance</div>
+        <div class="text-center w-16">Performance</div>
     </div>
 </div>
 </div>
-
-<!-- Style adjustments -->
-<style>
-.slidev-layout.cover {
-  background: linear-gradient(to bottom right, #1a237e, #311b92);
-  color: white;
-}
-</style>

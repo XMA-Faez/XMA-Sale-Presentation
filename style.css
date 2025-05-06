@@ -1,0 +1,23 @@
+html, body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#slide-container {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.slidev-layout {
+  max-width: 100%;
+}
+
+/* Fix for the white line in Chrome between gradients */
+.bg-gradient-to-r, .bg-gradient-to-l {
+  background-size: 100% 100%;
+  transform: translateZ(0); /* Force hardware acceleration */
+  backface-visibility: hidden; /* Prevent rendering artifacts */
+}

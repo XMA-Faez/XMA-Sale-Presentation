@@ -2,7 +2,7 @@
 src: ./pages/Intro.md
 
 theme: ./theme
-colorschema: dark
+colorscheme: dark
 favicon: '/XMA-White.svg'
 transition: my-transition
 title: Lead Generation Solutions
