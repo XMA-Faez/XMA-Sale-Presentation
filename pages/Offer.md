@@ -4,7 +4,7 @@ zoom: 0.6
 
 <div class="w-full h-full flex flex-col items-center justify-center">
   <PricingCardSystem
-    title="Our Packages"
+    title="Our Setup Packages"
     subtitle="Tailored Solutions for Your Business Growth"
     :plans="packages"
   />
@@ -29,10 +29,10 @@ const packages = [
     ]
   },
   {
-    name: 'Lead Generation',
-    price: '15,000',
+    name: 'Lead Generator',
+    price: '17,500',
     currency: 'AED',
-    usdPrice: '4,500',
+    usdPrice: '4,800',
     popular: true,
     features: [
       { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
@@ -40,14 +40,13 @@ const packages = [
       { text: '10 Video Ads', included: true, color: 'blue' },
       { text: 'CRM System', included: true, color: 'green' },
       { text: 'Ad Campaign(s) Set-up', included: true, color: 'yellow' },
-      { text: '+1 Month Free Ad Management', bold: true, extraSpace: true }
     ]
   },
   {
-    name: 'Lead Generation Plus',
-    price: '25,000',
+    name: 'Lead Generator +',
+    price: '30,000',
     currency: 'AED',
-    usdPrice: '6,800',
+    usdPrice: '8,200',
     popular: false,
     features: [
       { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
@@ -57,7 +56,6 @@ const packages = [
       { text: 'Ad Campaign(s) Set-up', included: true, color: 'yellow' },
       { text: 'Sales Funnel Audit', included: true, color: 'yellow' },
       { text: 'Sales Automation', included: true, color: 'yellow' },
-      { text: '+1 Month Free Ad Management', bold: true, extraSpace: true }
     ]
   }
 ]
@@ -69,7 +67,7 @@ zoom: 0.6
 
 <div class="w-full h-full flex flex-col items-center justify-center">
   <PricingCardSystem
-    title="Retainer Structure"
+    title="Our Subscriptions"
     subtitle="Monthly Support Plans for Ongoing Success"
     :plans="retainers"
   />
