@@ -38,8 +38,8 @@ const packages = [
       { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
       { text: '10 Static Ads', included: true, color: 'blue' },
       { text: '10 Video Ads', included: true, color: 'blue' },
-      { text: 'Ad Campaign(s) Set-up', included: true, color: 'blue' },
       { text: 'CRM System', included: true, color: 'green' },
+      { text: 'Ad Campaign(s) Set-up', included: true, color: 'yellow' },
       { text: '+1 Month Free Ad Management', bold: true, extraSpace: true }
     ]
   },
@@ -53,8 +53,8 @@ const packages = [
       { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
       { text: '10 Static Ads', included: true, color: 'blue' },
       { text: '10 Video Ads', included: true, color: 'blue' },
-      { text: 'Ad Campaign(s) Set-up', included: true, color: 'blue' },
       { text: 'CRM System', included: true, color: 'green' },
+      { text: 'Ad Campaign(s) Set-up', included: true, color: 'yellow' },
       { text: 'Sales Funnel Audit', included: true, color: 'yellow' },
       { text: 'Sales Automation', included: true, color: 'yellow' },
       { text: '+1 Month Free Ad Management', bold: true, extraSpace: true }
