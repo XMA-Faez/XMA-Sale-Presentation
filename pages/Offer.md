@@ -17,48 +17,46 @@ zoom: 0.6
 // Data for pricing packages
 const packages = [
   {
-    name: 'Starter',
+    name: 'Ad Creation',
     price: '10,000',
     currency: 'AED',
     usdPrice: '2,700',
     popular: false,
     features: [
-      { text: '20 Total Ads', bold: true, included: true },
-      { text: '10 Static Ads', included: true },
-      { text: '10 Video Ads', included: true },
+      { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
+      { text: '10 Static Ads', included: true, color: 'blue' },
+      { text: '10 Video Ads', included: true, color: 'blue' },
     ]
   },
   {
-    name: 'Growth',
+    name: 'Lead Generation',
     price: '15,000',
     currency: 'AED',
     usdPrice: '4,500',
     popular: true,
     features: [
-      { text: '20 Total Ads', bold: true, included: true },
-      { text: '10 Static Ads', included: true },
-      { text: '10 Video Ads', included: true },
-      { text: 'Ad Campaign(s) Set-up', included: true },
-      { text: 'CRM System', included: true },
-      { text: 'WhatsApp Integration', included: true },
+      { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
+      { text: '10 Static Ads', included: true, color: 'blue' },
+      { text: '10 Video Ads', included: true, color: 'blue' },
+      { text: 'Ad Campaign(s) Set-up', included: true, color: 'blue' },
+      { text: 'CRM System', included: true, color: 'green' },
       { text: '+1 Month Free Ad Management', bold: true, extraSpace: true }
     ]
   },
   {
-    name: 'Scale',
+    name: 'Lead Generation Plus',
     price: '25,000',
     currency: 'AED',
     usdPrice: '6,800',
     popular: false,
     features: [
-      { text: '20 Total Ads', bold: true, included: true },
-      { text: '10 Static Ads', included: true },
-      { text: '10 Video Ads', included: true },
-      { text: 'Ad Campaign(s) Set-up', included: true },
-      { text: 'CRM System', included: true },
-      { text: 'WhatsApp Integration', included: true },
-      { text: 'Sales Funnel Audit', included: true },
-      { text: 'Sales Automation', included: true },
+      { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
+      { text: '10 Static Ads', included: true, color: 'blue' },
+      { text: '10 Video Ads', included: true, color: 'blue' },
+      { text: 'Ad Campaign(s) Set-up', included: true, color: 'blue' },
+      { text: 'CRM System', included: true, color: 'green' },
+      { text: 'Sales Funnel Audit', included: true, color: 'yellow' },
+      { text: 'Sales Automation', included: true, color: 'yellow' },
       { text: '+1 Month Free Ad Management', bold: true, extraSpace: true }
     ]
   }
