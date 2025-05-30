@@ -3,7 +3,7 @@ zoom: 0.6
 ---
 
 <div class="w-full h-full flex flex-col items-center justify-center">
-  <PricingCardSystem 
+  <PricingCardSystem
     title="Our Packages"
     subtitle="Tailored Solutions for Your Business Growth"
     :plans="packages"
@@ -17,50 +17,48 @@ zoom: 0.6
 // Data for pricing packages
 const packages = [
   {
-    name: 'Base',
-    price: '8,000',
+    name: 'Starter',
+    price: '10,000',
     currency: 'AED',
-    usdPrice: '2,300',
+    usdPrice: '2,700',
     popular: false,
     features: [
-      { text: '8 Total Ads', bold: true, included: true },
-      { text: '5 Static Ads', included: true },
-      { text: '3 Video Ads', included: true },
-      { text: 'Ad Campaign(s) Set-up', included: true },
-      { text: 'CRM', included: true },
-      { text: 'WhatsApp Integration', included: true },
-      { text: '+1 Month Free Ad Management', bold: true, extraSpace: true }
+      { text: '20 Total Ads', bold: true, included: true },
+      { text: '10 Static Ads', included: true },
+      { text: '10 Video Ads', included: true },
     ]
   },
   {
-    name: 'Standard',
+    name: 'Growth',
     price: '15,000',
     currency: 'AED',
     usdPrice: '4,500',
     popular: true,
     features: [
-      { text: '18 Total Ads', bold: true, included: true },
+      { text: '20 Total Ads', bold: true, included: true },
       { text: '10 Static Ads', included: true },
-      { text: '8 Video Ads', included: true },
+      { text: '10 Video Ads', included: true },
       { text: 'Ad Campaign(s) Set-up', included: true },
-      { text: 'CRM', included: true },
+      { text: 'CRM System', included: true },
       { text: 'WhatsApp Integration', included: true },
       { text: '+1 Month Free Ad Management', bold: true, extraSpace: true }
     ]
   },
   {
-    name: 'Premium',
+    name: 'Scale',
     price: '25,000',
     currency: 'AED',
     usdPrice: '6,800',
     popular: false,
     features: [
-      { text: '34 Total Ads', bold: true, included: true },
-      { text: '20 Static Ads', included: true },
-      { text: '14 Video Ads', included: true },
+      { text: '20 Total Ads', bold: true, included: true },
+      { text: '10 Static Ads', included: true },
+      { text: '10 Video Ads', included: true },
       { text: 'Ad Campaign(s) Set-up', included: true },
-      { text: 'CRM', included: true },
+      { text: 'CRM System', included: true },
       { text: 'WhatsApp Integration', included: true },
+      { text: 'Sales Funnel Audit', included: true },
+      { text: 'Sales Automation', included: true },
       { text: '+1 Month Free Ad Management', bold: true, extraSpace: true }
     ]
   }
@@ -72,7 +70,7 @@ zoom: 0.6
 ---
 
 <div class="w-full h-full flex flex-col items-center justify-center">
-  <PricingCardSystem 
+  <PricingCardSystem
     title="Retainer Structure"
     subtitle="Monthly Support Plans for Ongoing Success"
     :plans="retainers"

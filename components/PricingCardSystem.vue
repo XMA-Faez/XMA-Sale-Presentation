@@ -33,9 +33,9 @@
             <div v-if="plan.usdPrice" class="text-zinc-400 text-sm mt-1">${{ plan.usdPrice }} USD</div>
           </div>
           
-          <div class="flex-grow">
-            <ul class="space-y-3">
-              <li v-for="(feature, featureIndex) in plan.features" :key="featureIndex" class="flex items-center !ml-0">
+          <div class="flex-grow flex flex-col">
+            <ul class="space-y-3 flex-grow">
+              <li v-for="(feature, featureIndex) in plan.features.filter(f => !f.extraSpace)" :key="featureIndex" class="flex items-center !ml-0">
                 <!-- If feature has an 'included' property and we need a checkmark or x icon -->
                 <template v-if="feature.included !== undefined">
                   <div :class="feature.included ? 'text-red-500' : 'text-zinc-600'" class="mr-2 mt-0.5">
@@ -54,13 +54,21 @@
                 
                 <!-- For features that are just displayed as text with no icon (like the budget line) -->
                 <template v-else>
-                  <span :class="feature.extraSpace ? '!mt-8' : ''" class="flex items-center">
+                  <span class="flex items-center">
                     <b v-if="feature.bold">{{ feature.text }}</b>
                     <template v-else>{{ feature.text }}</template>
                   </span>
                 </template>
               </li>
             </ul>
+            
+            <!-- Bottom features with extraSpace -->
+            <div v-if="plan.features.some(f => f.extraSpace)" class="mt-auto pt-3 border-t border-zinc-800" style="margin-top: 2rem !important;">
+              <div v-for="(feature, featureIndex) in plan.features.filter(f => f.extraSpace)" :key="'bottom-' + featureIndex" class="flex items-center">
+                <b v-if="feature.bold">{{ feature.text }}</b>
+                <template v-else>{{ feature.text }}</template>
+              </div>
+            </div>
           </div>
           
           <button v-if="showButtons" :class="`mt-8 ${plan.popular ? 'bg-red-600 hover:bg-red-700' : 'bg-zinc-800 hover:bg-zinc-700'} text-white font-medium py-2 px-4 rounded-lg transition-colors`">
