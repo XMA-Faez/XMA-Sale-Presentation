@@ -40,6 +40,7 @@ const packages = [
       { text: '10 Video Ads', included: true, color: 'blue' },
       { text: 'CRM System', included: true, color: 'green' },
       { text: 'Ad Campaign(s) Set-up', included: true, color: 'yellow' },
+      { text: '+1 Month Ad Management', bold: true, extraSpace: true }
     ]
   },
   {
@@ -56,6 +57,7 @@ const packages = [
       { text: 'Ad Campaign(s) Set-up', included: true, color: 'yellow' },
       { text: 'Sales Funnel Audit', included: true, color: 'yellow' },
       { text: 'Sales Automation', included: true, color: 'yellow' },
+      { text: '+1 Month Ad Management', bold: true, extraSpace: true }
     ]
   }
 ]

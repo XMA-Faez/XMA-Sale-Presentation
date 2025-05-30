@@ -63,7 +63,7 @@
             </ul>
             
             <!-- Bottom features with extraSpace -->
-            <div v-if="plan.features.some(f => f.extraSpace)" class="mt-auto pt-3 border-t border-zinc-800" style="margin-top: 2rem !important;">
+            <div v-if="plan.features.some(f => f.extraSpace)" class="mt-auto pt-3 border-t border-zinc-800 text-red-500" style="margin-top: 2rem !important;">
               <div v-for="(feature, featureIndex) in plan.features.filter(f => f.extraSpace)" :key="'bottom-' + featureIndex" class="flex items-center">
                 <b v-if="feature.bold">{{ feature.text }}</b>
                 <template v-else>{{ feature.text }}</template>
