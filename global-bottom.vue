@@ -1,14 +1,4 @@
 <template>
-  <a 
-    href="https://xma-website.vercel.app/proposal" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    class="fixed text-[10px] top-4 right-4 z-50 bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded-lg transition-all duration-300 flex items-center gap-2 backdrop-blur-sm border border-red-400/20"
-  >
-    <span>Visit Proposal</span>
-    <lucide-external-link class="w-4 h-4" />
-  </a>
-
   <img src="/XMA-White.svg" class="h-4 m-4 w-auto" />
   <footer class="absolute hidden z-50 bottom-0 left-0 right-0 p-2 xl:flex justify-center gap-2">
     <!-- Back Button -->
