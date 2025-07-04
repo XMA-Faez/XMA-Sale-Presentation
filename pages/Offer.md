@@ -16,38 +16,55 @@ zoom: 0.6
 
 // Data for pricing packages
 const packages = [
+  // {
+  //   name: 'Ad Creation',
+  //   price: '10,000',
+  //   currency: 'AED',
+  //   usdPrice: '2,700',
+  //   popular: false,
+  //   features: [
+  //     { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
+  //     { text: '10 Static Ads', included: true, color: 'blue' },
+  //     { text: '10 Video Ads', included: true, color: 'blue' },
+  //   ]
+  // },
   {
-    name: 'Ad Creation',
-    price: '10,000',
-    currency: 'AED',
-    usdPrice: '2,700',
+    name: 'CRM System',
+    price: '5,000',
+    currency: 'AED/year',
+    usdPrice: '1,400',
     popular: false,
     features: [
-      { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
-      { text: '10 Static Ads', included: true, color: 'blue' },
-      { text: '10 Video Ads', included: true, color: 'blue' },
+      { text: 'Unlimited Users', included: true, color: 'green', bold: true },
+      { text: 'Unlimited Contacts', included: true, color: 'green', bold: true },
+      { text: 'Lead Management System', included: true, color: 'green' },
+      { text: 'Automated Workflows', included: true, color: 'green' },
+      { text: 'Reporting & Analytics', included: true, color: 'green' },
+      { text: 'Integration with Ads', included: true, color: 'green' },
+      { text: 'Training & Support', included: true, color: 'green' },
+      { text: '14-Day Money Back Guarantee', included: true, bold: true, extraSpace: true }
     ]
   },
   {
     name: 'Lead Generator',
-    price: '17,500',
+    price: '20,000',
     currency: 'AED',
-    usdPrice: '4,800',
+    usdPrice: '5,500',
     popular: true,
     features: [
       { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
       { text: '10 Static Ads', included: true, color: 'blue' },
       { text: '10 Video Ads', included: true, color: 'blue' },
-      { text: 'CRM System', included: true, color: 'green' },
-      { text: 'Ad Campaign(s) Set-up', included: true, color: 'yellow' },
+      { text: 'CRM System Setup', included: true, color: 'green' },
+      { text: 'Ad Campaigns Setup', included: true, color: 'yellow' },
       { text: '+1 Month Ad Management', bold: true, extraSpace: true }
     ]
   },
   {
     name: 'Lead Generator +',
-    price: '30,000',
+    price: '35,000',
     currency: 'AED',
-    usdPrice: '8,200',
+    usdPrice: '9,500',
     popular: false,
     features: [
       { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
@@ -57,6 +74,7 @@ const packages = [
       { text: 'Ad Campaign(s) Set-up', included: true, color: 'yellow' },
       { text: 'Sales Funnel Audit', included: true, color: 'yellow' },
       { text: 'Sales Automation', included: true, color: 'yellow' },
+      { text: 'Lead Magnet Development', included: true, color: 'yellow' },
       { text: '+1 Month Ad Management', bold: true, extraSpace: true }
     ]
   }
