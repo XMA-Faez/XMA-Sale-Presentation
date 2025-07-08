@@ -42,9 +42,16 @@ interface GalleryResponse {
 }
 
 // Contentful client configuration from environment variables
-const CONTENTFUL_SPACE_ID = import.meta.env.VITE_CONTENTFUL_SPACE_ID
-const CONTENTFUL_ACCESS_TOKEN = import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN  
-const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
+const CONTENTFUL_SPACE_ID = import.meta.env.VITE_CONTENTFUL_SPACE_ID || '5x4bvaam5rka'
+const CONTENTFUL_ACCESS_TOKEN = import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN || 'Jgov9-PKzdMqIFuUv6hlWLMAhtkXQAK0c2XljBJn9EA'
+const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'dw1j7izud'
+
+// Debug: Check if environment variables are loaded
+console.log('Environment variables:', {
+  space: CONTENTFUL_SPACE_ID,
+  hasToken: !!CONTENTFUL_ACCESS_TOKEN,
+  cloud: CLOUDINARY_CLOUD_NAME
+})
 
 // Initialize Contentful client
 const contentfulClient = createClient({
