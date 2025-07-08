@@ -5,3 +5,14 @@ dist
 .vite-inspect
 .remote-assets
 components.d.ts
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp

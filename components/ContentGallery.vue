@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
+import { fetchCloudinaryVideos, fetchCloudinaryGraphics } from '../lib/cloudinary-client'
 
 const activeTab = ref('videos')
 const activeFilter = ref('all')
@@ -36,92 +37,10 @@ const filters = [
   //{ id: 'best-performing', label: 'Best Performing' }
 ]
 
-// Function to format video data
-const formatVideoData = (item, index) => {
-  // Cloudinary thumbnail generation
-  let thumbnailUrl = null;
-  if (item.public_id) {
-    thumbnailUrl = `https://res.cloudinary.com/dw1j7izud/video/upload/${item.public_id}.jpg`;
-  }
+// Formatting functions are now handled by the API layer
 
-  return {
-    id: index + 1,
-    cloudinaryId: item.public_id,
-    title: item.title || `Video ${index + 1}`,
-    url: item.url || null,
-    thumbnailUrl: item.thumbnail, // Use the new Cloudinary-generated thumbnail
-    width: item.width,
-    height: item.height,
-    loaded: false,
-    tags: item.tags || [] // Ensure tags are included
-  };
-}
-
-// Function to format graphic data
-const formatGraphicData = (item, index) => {
-  // Determine format based on aspect ratio
-  const aspectRatio = item.width / item.height;
-  let format = 'reels'; // Default to vertical (9:16)
-
-  if (aspectRatio > 0.9 && aspectRatio < 1.1) {
-    format = 'square'; // Close to 1:1
-  } else if (aspectRatio >= 1.1) {
-    format = 'feed'; // Landscape/horizontal
-  }
-
-  // Extract category from folder path
-  let category = 'general';
-  if (item.public_id) {
-    const parts = item.public_id.split('/');
-    if (parts.length > 1) {
-      category = parts[1] || category;
-    }
-  }
-
-  // Determine graphic type based on filename or folder
-  let type = 'image';
-  const typeKeywords = {
-    'logo': 'logo',
-    'banner': 'banner',
-    'icon': 'icon',
-    'background': 'background',
-    'illustration': 'illustration',
-    'social': 'social'
-  };
-
-  // Check if any keywords are in the public_id
-  Object.entries(typeKeywords).forEach(([keyword, value]) => {
-    if (item.public_id && item.public_id.toLowerCase().includes(keyword)) {
-      type = value;
-    }
-  });
-
-  // Format title from filename
-  const filename = item.public_id ? item.public_id.split('/').pop() : `Image ${index + 1}`; // Get last part after /
-  const title = filename
-    .replace(/\.\w+$/, '') // Remove file extension
-    .replace(/[-_]/g, ' ') // Replace dashes and underscores with spaces
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join(' ');
-
-  return {
-    id: `graphic-${index + 1}`,
-    cloudinaryId: item.public_id,
-    title: title,
-    type: type,
-    industry: category,
-    format: format,
-    url: item.url || null,
-    width: item.width,
-    height: item.height,
-    loaded: false,
-    tags: item.tags || [] // Ensure tags are included
-  };
-}
-
-// Fetch videos from the JSON file - with caching
-const fetchCloudinaryVideos = async () => {
+// Fetch videos from Cloudinary API - with caching
+const fetchVideosFromCloudinary = async () => {
   // Don't fetch if we already have videos and they're not loading
   if (videos.value.length > 0 && !isLoading.value) {
     return;
@@ -130,39 +49,22 @@ const fetchCloudinaryVideos = async () => {
   try {
     isLoading.value = true;
 
-    // Check for cached data in sessionStorage
-    const cachedVideos = sessionStorage.getItem('cachedVideos');
-    if (cachedVideos) {
-      videos.value = JSON.parse(cachedVideos);
-      isLoading.value = false;
-      return;
-    }
+    // No caching - always fetch fresh data from Contentful
 
-    // Load the JSON file
-    const response = await fetch('/cloudinary-videos-sorted.json');
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch videos: ${response.statusText}`);
-    }
-
-    const data = await response.json();
-
-    // Format the videos
-    videos.value = data.map(formatVideoData);
-    
-    // Cache the formatted data
-    sessionStorage.setItem('cachedVideos', JSON.stringify(videos.value));
+    // Fetch from Cloudinary API
+    const fetchedVideos = await fetchCloudinaryVideos();
+    videos.value = fetchedVideos;
 
   } catch (err) {
     console.error('Error loading videos:', err);
-    error.value = 'Failed to load videos. Please check if the JSON file exists.';
+    error.value = 'Failed to load videos from Cloudinary. Please check your connection.';
   } finally {
     isLoading.value = false;
   }
 };
 
-// Fetch graphics from the JSON file - with caching
-const fetchCloudinaryGraphics = async () => {
+// Fetch graphics from Cloudinary API - with caching
+const fetchGraphicsFromCloudinary = async () => {
   // Don't fetch if we already have graphics and they're not loading
   if (graphics.value.length > 0 && !graphicsLoading.value) {
     return;
@@ -171,32 +73,15 @@ const fetchCloudinaryGraphics = async () => {
   try {
     graphicsLoading.value = true;
 
-    // Check for cached data in sessionStorage
-    const cachedGraphics = sessionStorage.getItem('cachedGraphics');
-    if (cachedGraphics) {
-      graphics.value = JSON.parse(cachedGraphics);
-      graphicsLoading.value = false;
-      return;
-    }
+    // No caching - always fetch fresh data from Contentful
 
-    // Load the JSON file
-    const response = await fetch('/cloudinary-graphics-sorted.json');
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch graphics: ${response.statusText}`);
-    }
-
-    const data = await response.json();
-
-    // Format the graphics
-    graphics.value = data.map(formatGraphicData);
-    
-    // Cache the formatted data
-    sessionStorage.setItem('cachedGraphics', JSON.stringify(graphics.value));
+    // Fetch from Cloudinary API
+    const fetchedGraphics = await fetchCloudinaryGraphics();
+    graphics.value = fetchedGraphics;
 
   } catch (err) {
     console.error('Error loading graphics:', err);
-    graphicsError.value = 'Failed to load graphics. Please check if the JSON file exists.';
+    graphicsError.value = 'Failed to load graphics from Cloudinary. Please check your connection.';
   } finally {
     graphicsLoading.value = false;
   }
@@ -268,9 +153,9 @@ const closeGraphicPreview = () => {
 watch(activeTab, (newTab, oldTab) => {
   // Fetch data for the active tab if it's not already loaded
   if (newTab === 'videos') {
-    fetchCloudinaryVideos();
+    fetchVideosFromCloudinary();
   } else if (newTab === 'graphics') {
-    fetchCloudinaryGraphics();
+    fetchGraphicsFromCloudinary();
   }
 });
 
@@ -348,9 +233,9 @@ const handleIntersection = (entries, observer) => {
 onMounted(() => {
   // Only fetch data for the active tab initially
   if (activeTab.value === 'videos') {
-    fetchCloudinaryVideos();
+    fetchVideosFromCloudinary();
   } else {
-    fetchCloudinaryGraphics();
+    fetchGraphicsFromCloudinary();
   }
 
   // Create IntersectionObserver for lazy loading
@@ -405,8 +290,8 @@ onMounted(() => {
     </button>
   </div>
 
-  <!-- Filter Tabs (only show for videos tab) -->
-  <div v-if="activeTab === 'videos'" class="flex gap-2 mb-8 flex-wrap">
+  <!-- Filter Tabs (hidden for now) -->
+  <!-- <div v-if="activeTab === 'videos'" class="flex gap-2 mb-8 flex-wrap">
     <button 
       v-for="filter in filters" 
       :key="filter.id" 
@@ -420,7 +305,7 @@ onMounted(() => {
     >
       {{ filter.label }}
     </button>
-  </div>
+  </div> -->
 
   <!-- Loading state -->
   <div v-if="isContentLoading" class="flex justify-center items-center py-12">
@@ -559,8 +444,14 @@ onMounted(() => {
 
         <!-- Video element with responsive sizing -->
         <div class="flex-1 bg-black rounded-lg shadow-2xl overflow-hidden flex items-center justify-center">
-          <video v-if="activeVideo" :src="activeVideo.url" controls autoplay class="max-w-full max-h-full"
-            style="object-fit: contain;"></video>
+          <video v-if="activeVideo" 
+            :src="activeVideo.url" 
+            controls 
+            autoplay 
+            preload="auto"
+            class="max-w-full max-h-full"
+            style="object-fit: contain;">
+          </video>
         </div>
       </div>
     </div>
