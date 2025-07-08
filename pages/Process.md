@@ -188,6 +188,60 @@ layout: center
 
 ---
 layout: center
+zoom: 0.6
+---
+
+<div class="max-w-6xl mx-auto">
+  <div class="flex items-center justify-center gap-4 mb-12">
+    <lucide-play class="w-8 h-8 text-yellow-500" />
+    <h1 class="text-3xl font-bold !m-0">Hook Variations in Action</h1>
+  </div>
+  
+  <div class="grid grid-cols-3 gap-8">
+    <!-- Video 1 -->
+    <div class="flex flex-col items-center">
+      <div class="aspect-[9/16] w-full bg-zinc-700 rounded-lg overflow-hidden">
+        <video 
+          class="w-full h-full object-cover"
+          controls
+          preload="metadata"
+        >
+          <source src="https://res.cloudinary.com/dw1j7izud/video/upload/v1751985102/qthpluu3htri9oqhdtbf.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <!-- Video 2 -->
+    <div class="flex flex-col items-center">
+      <div class="aspect-[9/16] w-full bg-zinc-700 rounded-lg overflow-hidden">
+        <video 
+          class="w-full h-full object-cover"
+          controls
+          preload="metadata"
+        >
+          <source src="https://res.cloudinary.com/dw1j7izud/video/upload/v1751985099/auzrduovnbg1ix85dwyo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <!-- Video 3 -->
+    <div class="flex flex-col items-center">
+      <div class="aspect-[9/16] w-full bg-zinc-700 rounded-lg overflow-hidden">
+        <video 
+          class="w-full h-full object-cover"
+          controls
+          preload="metadata"
+        >
+          <source src="https://res.cloudinary.com/dw1j7izud/video/upload/v1751985090/qswiaoghsfener3onjd3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
+layout: center
 class: text-center
 ---
 
