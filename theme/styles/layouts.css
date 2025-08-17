@@ -16,10 +16,6 @@ html {
   --slidev-theme-primary: #f0f0f0;
 }
 
-#slide-content {
-  background: #0f0f0f;
-}
-
 .slidev-page {
   overflow: auto;
 }

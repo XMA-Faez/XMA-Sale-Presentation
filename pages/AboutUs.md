@@ -1,97 +1,105 @@
 ---
 class: text-center
+zoom: 0.6
 ---
 
-# Who We Are
-
-<div class="relative h-full -mt-10">
-  <!-- Section 1: Advertising Agency -->
-  <div class="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2" v-click.hide="1">
+<div class="">
+  <div class="max-w-6xl mx-auto">
+    <!-- Main Title -->
     <div
       v-motion
-      :initial="{ filter: 'blur(12px)', opacity: 0, scale: 0.8 }"
-      :enter="{ filter: 'blur(0px)', opacity: 1, scale: 1 }"
-      class="text-center text-4xl font-bold bg-gradient-to-r leading-[50px] from-red-600 to-red-500 bg-clip-text text-transparent"
+      :initial="{ opacity: 0, y: 40 }"
+      :enter="{ opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } }"
+      class="text-center mb-16"
     >
-      Advertising Agency
+      <h1 class="!text-5xl !font-bold mb-6">
+        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+          Beauty Marketing Specialists
+        </span>
+      </h1>
+      <p class="!text-xl text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+        15 dedicated professionals focused on scaling beauty ecommerce brands
+      </p>
     </div>
-  </div>
-
-  <!-- Section 2: In-House Team (Two-Column Layout) -->
-  <div class="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
-    <div class="flex flex-col md:flex-row gap-12 justify-center items-center">
-      <!-- Left Column: Team Label -->
-      <div class="flex-1">
-        <div
-          v-click="1"
-          v-motion
-          :initial="{ filter: 'blur(12px)', opacity: 0, scale: 0.8 }"
-          :enter="{ filter: 'blur(0px)', opacity: 1, scale: 1 }"
-          class="text-3xl font-bold text-center"
-        >
-          <span class="text-red-600">15</span> In-House<br/>Professionals
+    <!-- Team Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+      <div
+        v-click="1"
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :enter="{ opacity: 1, y: 0, transition: {  duration: 0.7 } }"
+        class="bg-white rounded-3xl p-8 shadow-lg border border-stone-100 hover:shadow-2xl transition-all duration-300"
+      >
+        <div class="w-16 h-16 bg-gradient-to-br from-rose-300 to-pink-300 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
+          <lucide-mail class="w-8 h-8 text-white" />
         </div>
+        <h3 class="!text-xl !font-semibold text-gray-800 mb-2">Email Specialists</h3>
+        <p class="text-gray-600">Klaviyo experts crafting converting email flows</p>
       </div>
-      <!-- Right Column: Team Members -->
-      <div class="flex-1 text-left grid grid-cols-2 gap-4">
-        <div
-          v-click="2"
-          v-motion
-          :initial="{ filter: 'blur(12px)', opacity: 0, x: 50 }"
-          :enter="{ filter: 'blur(0px)', opacity: 1, x: 0 }"
-          class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
-        >
-          <lucide-video class="w-6 h-6 text-red-500"/>
-          <span class="text-sm">Videographers</span>
+      <div
+        v-click="2"
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :enter="{ opacity: 1, y: 0, transition: {  duration: 0.7 } }"
+        class="bg-white rounded-3xl p-8 shadow-lg border border-stone-100 hover:shadow-2xl transition-all duration-300"
+      >
+        <div class="w-16 h-16 bg-gradient-to-br from-purple-300 to-indigo-300 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
+          <lucide-megaphone class="w-8 h-8 text-white" />
         </div>
-        <div
-          v-click="3"
-          v-motion
-          :initial="{ filter: 'blur(12px)', opacity: 0, x: 50 }"
-          :enter="{ filter: 'blur(0px)', opacity: 1, x: 0 }"
-          class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
-        >
-          <lucide-clapperboard class="w-6 h-6 text-red-500"/>
-          <span class="text-sm">Video Editors</span>
+        <h3 class="!text-xl !font-semibold text-gray-800 mb-2">Ad Campaign Managers</h3>
+        <p class="text-gray-600">Meta, Google & TikTok advertising experts</p>
+      </div>
+      <div
+        v-click="3"
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :enter="{ opacity: 1, y: 0, transition: {  duration: 0.7 } }"
+        class="bg-white rounded-3xl p-8 shadow-lg border border-stone-100 hover:shadow-2xl transition-all duration-300"
+      >
+        <div class="w-16 h-16 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
+          <lucide-palette class="w-8 h-8 text-white" />
         </div>
-        <div
-          v-click="4"
-          v-motion
-          :initial="{ filter: 'blur(12px)', opacity: 0, x: 50 }"
-          :enter="{ filter: 'blur(0px)', opacity: 1, x: 0 }"
-          class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
-        >
-          <lucide-code-2 class="w-6 h-6 text-red-500"/>
-          <span class="text-sm">Developers</span>
+        <h3 class="!text-xl !font-semibold text-gray-800 mb-2">Creative Directors</h3>
+        <p class="text-gray-600">Beauty-focused ad creative & visual design</p>
+      </div>
+      <div
+        v-click="4"
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :enter="{ opacity: 1, y: 0, transition: {  duration: 0.7 } }"
+        class="bg-white rounded-3xl p-8 shadow-lg border border-stone-100 hover:shadow-2xl transition-all duration-300"
+      >
+        <div class="w-16 h-16 bg-gradient-to-br from-pink-300 to-rose-300 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
+          <lucide-layout-dashboard class="w-8 h-8 text-white" />
         </div>
-        <div
-          v-click="5"
-          v-motion
-          :initial="{ filter: 'blur(12px)', opacity: 0, x: 50 }"
-          :enter="{ filter: 'blur(0px)', opacity: 1, x: 0 }"
-          class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
-        >
-          <lucide-palette class="w-6 h-6 text-red-500"/>
-          <span class="text-sm">Graphic Designers</span>
-        </div><div
-          v-click="6"
-          v-motion
-          :initial="{ filter: 'blur(12px)', opacity: 0, x: 50 }"
-          :enter="{ filter: 'blur(0px)', opacity: 1, x: 0 }"
-          class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
-        >
-          <lucide-presentation class="w-6 h-6 text-red-500"/>
-          <span class="text-sm">Marketing Managers</span>
-        </div><div
-          v-click="7"
-          v-motion
-          :initial="{ filter: 'blur(12px)', opacity: 0, x: 50 }"
-          :enter="{ filter: 'blur(0px)', opacity: 1, x: 0 }"
-          class="flex items-center gap-3 p-3 bg-zinc-900/50 rounded-lg backdrop-blur-sm transform hover:scale-105 border border-zinc-800 hover:border-red-600/50"
-        >
-          <lucide-megaphone class="w-6 h-6 text-red-500"/>
-          <span class="text-sm">Advertising Experts</span>
+        <h3 class="!text-xl !font-semibold text-gray-800 mb-2">CRM Experts</h3>
+        <p class="text-gray-600">Customer journey & automation specialists</p>
+      </div>
+      <div
+        v-click="5"
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :enter="{ opacity: 1, y: 0, transition: {  duration: 0.7 } }"
+        class="bg-white rounded-3xl p-8 shadow-lg border border-stone-100 hover:shadow-2xl transition-all duration-300"
+      >
+        <div class="w-16 h-16 bg-gradient-to-br from-purple-300 to-pink-300 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
+          <lucide-bar-chart class="w-8 h-8 text-white" />
         </div>
+        <h3 class="!text-xl !font-semibold text-gray-800 mb-2">Data Analysts</h3>
+        <p class="text-gray-600">Performance tracking & optimization experts</p>
+      </div>
+      <div
+        v-click="6"
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :enter="{ opacity: 1, y: 0, transition: {  duration: 0.7 } }"
+        class="bg-white rounded-3xl p-8 shadow-lg border border-stone-100 hover:shadow-2xl transition-all duration-300"
+      >
+        <div class="w-16 h-16 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
+          <lucide-code-2 class="w-8 h-8 text-white" />
+        </div>
+        <h3 class="!text-xl !font-semibold text-gray-800 mb-2">Automation Specialists</h3>
+        <p class="text-gray-600">Technical integration & workflow optimization</p>
       </div>
     </div>
   </div>

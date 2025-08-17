@@ -16,66 +16,51 @@ zoom: 0.6
 
 // Data for pricing packages
 const packages = [
-  // {
-  //   name: 'Ad Creation',
-  //   price: '10,000',
-  //   currency: 'AED',
-  //   usdPrice: '2,700',
-  //   popular: false,
-  //   features: [
-  //     { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
-  //     { text: '10 Static Ads', included: true, color: 'blue' },
-  //     { text: '10 Video Ads', included: true, color: 'blue' },
-  //   ]
-  // },
   {
-    name: 'CRM System',
-    price: '5,000',
-    currency: 'AED/year',
-    usdPrice: '1,400',
+    name: 'Beauty Starter',
+    price: '8,000',
+    currency: 'AED',
+    usdPrice: '2,200',
     popular: false,
     features: [
-      { text: 'Unlimited Users', included: true, color: 'green', bold: true },
-      { text: 'Unlimited Contacts', included: true, color: 'green', bold: true },
-      { text: 'Lead Management System', included: true, color: 'green' },
-      { text: 'Automated Workflows', included: true, color: 'green' },
-      { text: 'Reporting & Analytics', included: true, color: 'green' },
-      { text: 'Integration with Ads', included: true, color: 'green' },
+      { text: 'Beauty-focused CRM Setup', included: true, color: 'green', bold: true },
+      { text: 'Customer Segmentation', included: true, color: 'green' },
+      { text: 'Email Welcome Series', included: true, color: 'green' },
+      { text: 'Basic Analytics Dashboard', included: true, color: 'green' },
       { text: 'Training & Support', included: true, color: 'green' },
-      { text: '14-Day Money Back Guarantee', included: true, bold: true, extraSpace: true }
+      { text: '30-Day Money Back Guarantee', included: true, bold: true, extraSpace: true }
     ]
   },
   {
-    name: 'Lead Generator',
-    price: '20,000',
+    name: 'Beauty Growth',
+    price: '18,000',
     currency: 'AED',
-    usdPrice: '5,500',
+    usdPrice: '4,900',
     popular: true,
     features: [
-      { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
-      { text: '10 Static Ads', included: true, color: 'blue' },
-      { text: '10 Video Ads', included: true, color: 'blue' },
-      { text: 'CRM System Setup', included: true, color: 'green' },
-      { text: 'Ad Campaigns Setup', included: true, color: 'yellow' },
-      { text: '+1 Month Ad Management', bold: true, extraSpace: true }
+      { text: 'Complete Beauty CRM System', bold: true, included: true, color: 'green' },
+      { text: '15 Beauty-focused Ad Creatives', included: true, color: 'blue' },
+      { text: 'Klaviyo Email Automation', included: true, color: 'green' },
+      { text: 'Customer Journey Mapping', included: true, color: 'yellow' },
+      { text: 'Retention System Setup', included: true, color: 'yellow' },
+      { text: '+1 Month Management Included', bold: true, extraSpace: true }
     ]
   },
   {
-    name: 'Lead Generator +',
+    name: 'Beauty Enterprise',
     price: '35,000',
     currency: 'AED',
     usdPrice: '9,500',
     popular: false,
     features: [
-      { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
-      { text: '10 Static Ads', included: true, color: 'blue' },
-      { text: '10 Video Ads', included: true, color: 'blue' },
-      { text: 'CRM System', included: true, color: 'green' },
-      { text: 'Ad Campaign(s) Set-up', included: true, color: 'yellow' },
-      { text: 'Sales Funnel Audit', included: true, color: 'yellow' },
-      { text: 'Sales Automation', included: true, color: 'yellow' },
-      { text: 'Lead Magnet Development', included: true, color: 'yellow' },
-      { text: '+1 Month Ad Management', bold: true, extraSpace: true }
+      { text: 'Full Beauty Marketing Stack', bold: true, included: true, color: 'green' },
+      { text: '25 Premium Ad Creatives', included: true, color: 'blue' },
+      { text: 'Advanced Segmentation', included: true, color: 'green' },
+      { text: 'Subscription Flow Setup', included: true, color: 'yellow' },
+      { text: 'Loyalty Program Integration', included: true, color: 'yellow' },
+      { text: 'Beauty Influencer Strategy', included: true, color: 'yellow' },
+      { text: 'Conversion Optimization', included: true, color: 'yellow' },
+      { text: '+2 Months Management Included', bold: true, extraSpace: true }
     ]
   }
 ]

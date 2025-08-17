@@ -10,7 +10,7 @@ themeConfig:
   primary: '#ffffff'
 favicon: '/XMA-White.svg'
 transition: my-transition
-title: Lead Generation Solutions
+title: Beauty Ecommerce Growth Solutions
 layout: cover
 background: /gradient.jpg
 fonts:
@@ -31,16 +31,40 @@ src: ./pages/SocialProof.md
 ---
 
 ---
-src: ./pages/Process.md
+src: ./pages/BeautyJourney.md
+---
+
+---
+src: ./pages/AdCreative.md
+---
+
+---
+src: ./pages/EmailMarketing.md
+---
+
+---
+src: ./pages/KlaviyoFlows.md
+---
+
+---
+src: ./pages/CRMAutomation.md
+---
+
+---
+src: ./pages/RetentionSystems.md
+---
+
+---
+src: ./pages/BeautySegmentation.md
+---
+
+---
+src: ./pages/Analytics.md
 ---
 
 ---
 src: ./pages/ROICalculator.md
 ---
-
-<!-- --- -->
-<!-- src: ./pages/Clients.md -->
-<!-- --- -->
 
 ---
 src: ./pages/Meetings.md

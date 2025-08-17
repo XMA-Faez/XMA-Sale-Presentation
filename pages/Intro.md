@@ -3,6 +3,34 @@
 import { ref, onMounted, provide } from 'vue'
 const clientName = ref("")
 const companyName = ref("")
+
+const services = [
+  {
+    id: 1,
+    title: 'Email Marketing',
+    icon: 'Mail',
+    gradient: 'from-rose-300 to-pink-300'
+  },
+  {
+    id: 2,
+    title: 'Paid Advertising',
+    icon: 'Megaphone',
+    gradient: 'from-purple-300 to-indigo-300'
+  },
+  {
+    id: 3,
+    title: 'CRM Automation',
+    icon: 'LayoutDashboard',
+    gradient: 'from-indigo-300 to-purple-300'
+  },
+  {
+    id: 4,
+    title: 'Analytics',
+    icon: 'BarChart',
+    gradient: 'from-pink-300 to-rose-300'
+  }
+]
+
 onMounted(() => {
   const urlParams = new URLSearchParams(window.location.search)
   clientName.value = urlParams.get('name') || ''
@@ -17,96 +45,66 @@ onMounted(() => {
     <!-- Logo -->
     <div
         v-motion
-        :initial="{ filter: 'blur(12px)', opacity: 0 }"
-        :enter="{ filter: 'blur(0px)', opacity: 1 }"
-        :duration="300"
-        class="mb-8"
+        :initial="{ opacity: 0, scale: 0.95 }"
+        :enter="{ opacity: 1, scale: 1, transition: { duration: 0.6, ease: 'easeOut' } }"
+        class="mb-12"
     >
-        <img src="/XMA-White.svg" alt="XMA Agency Logo" class="h-10 w-auto" />
+        <img src="/XMA-01.svg" alt="XMA Agency Logo" class="h-12 w-auto" />
     </div>
     <!-- Personalized Welcome -->
     <div
-    v-motion
-    :initial="{ filter: 'blur(12px)', opacity: 0 }"
-    :enter="{ filter: 'blur(0px)', opacity: 1, transition: { delay: 200 } }"
-    :duration="300"
-    class="text-5xl font-bold mb-4 text-center"
-    >
-    <template v-if="clientName">
-    <HyperText :text="`Welcome, ${clientName}`" duration="2000" />
-    </template>
-    <template v-else>
-    <HyperText text="Welcome to XMA Agency"  duration="2000" />
-    </template>
-</div>
-<!-- Company specific message -->
-<div
-    v-if="companyName"
-    v-motion
-    :initial="{ filter: 'blur(12px)', opacity: 0 }"
-    :enter="{ filter: 'blur(0px)', opacity: 1, transition: { delay: 400 } }"
-    class="text-2xl mb-8 text-red-200"
->
-    <HyperText :text="`Let\'s transform ${companyName}\'s digital presence`"  duration="2000" />
-</div>
-<div
-    v-else
-    v-motion
-    :initial="{ filter: 'blur(12px)', opacity: 0 }"
-    :enter="{ filter: 'blur(0px)', opacity: 1, transition: { delay: 400 } }"
-    class="text-2xl mb-8 text-red-200"
->
-    <HyperText :text="`Let\'s transform your digital presence`"  duration="2000" />
-</div>
-<!-- Service icons with Lucide -->
-<div class="flex gap-12 mt-12">
-    <div
         v-motion
-        :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
-        :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 200 } }"
-        :duration="500"
-        class="text-center flex flex-col items-center"
+        :initial="{ opacity: 0, y: 40 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } }"
+        class="!text-5xl !font-bold mb-6 text-center"
     >
-        <div class="mb-3 flex items-center justify-center w-16 h-16 bg-white/20 rounded-full">
-            <lucide-video class="w-8 h-8" />
-        </div>
-        <div class="text-center w-16">Video</div>
+        <template v-if="clientName">
+            <div class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+                Welcome, {{ clientName }}
+            </div>
+        </template>
+        <template v-else>
+            <div class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+                Welcome to XMA Agency
+            </div>
+        </template>
+    </div>
+    <!-- Company specific message -->
+    <div
+        v-if="companyName"
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 0.7 } }"
+        class="!text-xl mb-12 text-gray-600 text-center max-w-3xl !leading-relaxed"
+    >
+        Scale {{ companyName }}'s beauty brand with sophisticated email marketing & paid advertising
     </div>
     <div
+        v-else
         v-motion
-        :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
-        :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 400 } }"
-        :duration="500"
-        class="text-center flex flex-col items-center"
+        :initial="{ opacity: 0, y: 30 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 0.7 } }"
+        class="!text-xl mb-12 text-gray-600 text-center max-w-3xl !leading-relaxed"
     >
-        <div class="mb-3 flex items-center justify-center w-16 h-16 bg-white/20 rounded-full">
-            <lucide-bar-chart3 class="w-8 h-8" />
-        </div>
-        <div class="text-center w-16">Marketing</div>
+        Scale your beauty brand with sophisticated email marketing & paid advertising
     </div>
-    <div
-        v-motion
-        :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
-        :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 600 } }"
-        :duration="500"
-        class="text-center flex flex-col items-center"
-    >
-        <div class="mb-3 flex items-center justify-center w-16 h-16 bg-white/20 rounded-full">
-            <lucide-bot class="w-8 h-8" />
+    <!-- Service icons with elegant styling -->
+    <div class="flex gap-16 mt-8">
+        <div
+            v-for="service in services"
+            :key="service.id"
+            v-motion
+            :initial="{ opacity: 0, y: 30 }"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 0.7 } }"
+            class="text-center flex flex-col items-center"
+        >
+            <div :class="`mb-4 flex items-center justify-center w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-2xl shadow-lg`">
+                <lucide-mail v-if="service.icon === 'Mail'" class="w-10 h-10 text-white" />
+                <lucide-megaphone v-else-if="service.icon === 'Megaphone'" class="w-10 h-10 text-white" />
+                <lucide-layout-dashboard v-else-if="service.icon === 'LayoutDashboard'" class="w-10 h-10 text-white" />
+                <lucide-bar-chart v-else-if="service.icon === 'BarChart'" class="w-10 h-10 text-white" />
+            </div>
+            <div class="text-center !text-lg !font-medium text-gray-700">{{ service.title }}</div>
         </div>
-        <div class="text-center w-16">CRM</div>
     </div>
-    <div
-        v-motion
-        :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
-        :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 800 } }"
-        :duration="500"
-        class="text-center flex flex-col items-center"
-    >
-        <div class="mb-3 flex items-center justify-center w-16 h-16 bg-white/20 rounded-full">
-            <lucide-zap class="w-8 h-8" />
-        </div>
-        <div class="text-center w-16">Performance</div>
-    </div>
-</div>
 </div>
