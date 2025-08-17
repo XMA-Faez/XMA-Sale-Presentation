@@ -1,5 +1,5 @@
 ---
-src: ./pages/Intro.md
+src: ./beauty-sections/intro/pages/Intro.md
 
 theme: ./theme
 colorScheme: light
@@ -19,28 +19,29 @@ fonts:
 ---
 
 ---
-src: ./sections/intro.md
+src: ./beauty-sections/intro/intro.md
 ---
 
 ---
-src: ./sections/strategy.md
+src: ./beauty-sections/strategy/strategy.md
 ---
 
 ---
-src: ./sections/advertising.md
+src: ./beauty-sections/advertising/advertising.md
 ---
 
 ---
-src: ./sections/email-marketing.md
+src: ./beauty-sections/email-marketing/email-marketing.md
 ---
 
 ---
-src: ./sections/crm-automation.md
+src: ./beauty-sections/crm-automation/crm-automation.md
 ---
 
-<!-- --- src: ./sections/analytics.md --- -->
 ---
-src: ./sections/closing.md
+src: ./beauty-sections/analytics/analytics.md
 ---
 
+---
+src: ./beauty-sections/closing/closing.md
 ---
