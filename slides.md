@@ -2,80 +2,45 @@
 src: ./pages/Intro.md
 
 theme: ./theme
-colorScheme: dark
+colorScheme: light
 htmlAttrs:
-  class: 'dark'
-  data-theme: 'dark'
+  class: 'light beauty-theme'
+  data-theme: 'light'
 themeConfig:
-  primary: '#ffffff'
+  primary: 'rose-300'
 favicon: '/XMA-White.svg'
 transition: my-transition
 title: Beauty Ecommerce Growth Solutions
 layout: cover
-background: /gradient.jpg
+background: /gradient-light.jpg
 fonts:
   mono: "JetBrains Mono"
   local: Mona Sans
 ---
 
 ---
-src: ./pages/AboutUs.md
+src: ./sections/intro.md
 ---
 
 ---
-src: ./pages/USP.md
+src: ./sections/strategy.md
 ---
 
 ---
-src: ./pages/SocialProof.md
+src: ./sections/advertising.md
 ---
 
 ---
-src: ./pages/BeautyJourney.md
+src: ./sections/email-marketing.md
 ---
 
 ---
-src: ./pages/AdCreative.md
+src: ./sections/crm-automation.md
 ---
 
+<!-- --- src: ./sections/analytics.md --- -->
 ---
-src: ./pages/EmailMarketing.md
----
-
----
-src: ./pages/KlaviyoFlows.md
----
-
----
-src: ./pages/CRMAutomation.md
----
-
----
-src: ./pages/RetentionSystems.md
----
-
----
-src: ./pages/BeautySegmentation.md
----
-
----
-src: ./pages/Analytics.md
----
-
----
-src: ./pages/ROICalculator.md
----
-
----
-src: ./pages/Meetings.md
----
-
----
-src: ./pages/Offer.md
----
-
----
-src: ./pages/Outro.md
+src: ./sections/closing.md
 ---
 
 ---
