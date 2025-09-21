@@ -12,25 +12,25 @@ const services = [
     icon: 'Mail',
     bgGradient: 'from-white to-rose-50',
     borderColor: 'border-rose-100',
-    iconGradient: 'from-rose-300 to-pink-300'
+    iconGradient: 'from-rose-700 to-rose-800'
   },
   {
     id: 2,
     title: 'Beauty-Focused Advertising',
     description: 'Meta, Google & TikTok campaigns optimized for beauty audiences',
     icon: 'Megaphone',
-    bgGradient: 'from-white to-purple-50',
-    borderColor: 'border-purple-100',
-    iconGradient: 'from-purple-300 to-indigo-300'
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700'
   },
   {
     id: 3,
     title: 'CRM & Automation',
     description: 'Customer journey automation that maximizes lifetime value',
     icon: 'LayoutDashboard',
-    bgGradient: 'from-white to-indigo-50',
-    borderColor: 'border-indigo-100',
-    iconGradient: 'from-indigo-300 to-purple-300'
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700'
   },
   {
     id: 4,
@@ -39,25 +39,25 @@ const services = [
     icon: 'Palette',
     bgGradient: 'from-white to-rose-50',
     borderColor: 'border-rose-100',
-    iconGradient: 'from-rose-300 to-pink-300'
+    iconGradient: 'from-rose-700 to-rose-800'
   },
   {
     id: 5,
     title: 'Beauty Analytics',
     description: 'Performance tracking with beauty-specific KPIs and insights',
     icon: 'BarChart',
-    bgGradient: 'from-white to-purple-50',
-    borderColor: 'border-purple-100',
-    iconGradient: 'from-purple-300 to-indigo-300'
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700'
   },
   {
     id: 6,
     title: 'Retention Systems',
     description: 'Loyalty programs and retention strategies for beauty customers',
     icon: 'Heart',
-    bgGradient: 'from-white to-indigo-50',
-    borderColor: 'border-indigo-100',
-    iconGradient: 'from-indigo-300 to-purple-300'
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700'
   }
 ]
 </script>
@@ -71,11 +71,11 @@ const services = [
       class="text-center mb-16"
     >
       <h1 class="!text-5xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Complete Beauty Ecommerce Ecosystem
         </span>
       </h1>
-      <p class="!text-xl text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-xl text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Everything your beauty brand needs to scale from 6-figures to 8-figures
       </p>
     </div>
@@ -99,7 +99,7 @@ const services = [
         </div>
         <div>
           <h3 class="!text-xl !font-semibold text-gray-800 mb-3 text-left">{{ service.title }}</h3>
-          <p class="text-gray-600 !text-sm !leading-relaxed text-left">{{ service.description }}</p>
+          <p class="text-rose-900 !text-sm !leading-relaxed text-left">{{ service.description }}</p>
         </div>
       </div>
     </div>

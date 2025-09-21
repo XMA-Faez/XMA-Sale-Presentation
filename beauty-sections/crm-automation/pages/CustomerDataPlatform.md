@@ -10,7 +10,7 @@ const platforms = [
     icon: 'Users',
     bgGradient: 'from-white to-rose-50',
     borderColor: 'border-rose-100',
-    iconGradient: 'from-rose-300 to-pink-300',
+    iconGradient: 'from-rose-700 to-rose-800',
     features: [
       { title: '360° Customer Profiles', description: 'Purchase history, preferences, lifecycle stage', color: 'bg-rose-400' },
       { title: 'Beauty-Specific Tracking', description: 'Skin type, product usage patterns, seasonal trends', color: 'bg-rose-400' },
@@ -21,13 +21,13 @@ const platforms = [
     id: 2,
     title: 'Intelligent Automation',
     icon: 'Zap',
-    bgGradient: 'from-white to-purple-50',
-    borderColor: 'border-purple-100',
-    iconGradient: 'from-purple-300 to-indigo-300',
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
-      { title: 'Behavioral Triggers', description: 'Actions based on customer behavior patterns', color: 'bg-purple-400' },
-      { title: 'Predictive Analytics', description: 'Churn risk, next purchase timing, CLV forecasting', color: 'bg-purple-400' },
-      { title: 'Dynamic Personalization', description: 'Product recommendations, pricing, messaging', color: 'bg-purple-400' }
+      { title: 'Behavioral Triggers', description: 'Actions based on customer behavior patterns', color: 'bg-rose-600' },
+      { title: 'Predictive Analytics', description: 'Churn risk, next purchase timing, CLV forecasting', color: 'bg-rose-600' },
+      { title: 'Dynamic Personalization', description: 'Product recommendations, pricing, messaging', color: 'bg-rose-600' }
     ]
   }
 ]
@@ -42,11 +42,11 @@ const platforms = [
       class="text-center mb-16"
     >
       <h1 class="!text-5xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Customer Data & Intelligence
         </span>
       </h1>
-      <p class="!text-xl text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-xl text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Unified customer data platform with AI-powered insights
       </p>
     </div>
@@ -78,7 +78,7 @@ const platforms = [
             <div :class="`w-2 h-2 ${feature.color} rounded-full mt-2 flex-shrink-0`"></div>
             <div>
               <div class="!font-medium text-left text-gray-800 mb-1">{{ feature.title }}</div>
-              <div class="!text-sm text-left text-gray-600">{{ feature.description }}</div>
+              <div class="!text-sm text-left text-rose-900">{{ feature.description }}</div>
             </div>
           </div>
         </div>

@@ -17,7 +17,7 @@ const metrics = [
     value: 45,
     suffix: '%',
     prefix: '',
-    color: 'text-purple-500',
+    color: 'text-rose-500',
     label: 'Open Rate'
   },
   {
@@ -25,7 +25,7 @@ const metrics = [
     value: 8,
     suffix: '%',
     prefix: '',
-    color: 'text-indigo-500',
+    color: 'text-rose-500',
     label: 'Click-Through Rate'
   },
   {
@@ -48,11 +48,11 @@ const metrics = [
       class="text-center mb-16"
     >
       <h1 class="!text-4xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Email Performance Metrics
         </span>
       </h1>
-      <p class="!text-lg text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-lg text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Industry-leading results for beauty brands
       </p>
     </div>
@@ -69,7 +69,7 @@ const metrics = [
         <div :class="`!text-4xl !font-bold ${metric.color} mb-3`">
           {{ metric.prefix }}<Ticker :value="metric.value" :decimalPlaces="0" :color="metric.color" />{{ metric.suffix }}
         </div>
-        <div class="!text-sm text-gray-600 !font-medium">{{ metric.label }}</div>
+        <div class="!text-sm text-rose-900 !font-medium">{{ metric.label }}</div>
       </div>
     </div>
   </div>

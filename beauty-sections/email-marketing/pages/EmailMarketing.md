@@ -10,11 +10,11 @@ const emailFlows = [
     icon: 'Mail',
     bgGradient: 'from-white to-rose-50',
     borderColor: 'border-rose-100',
-    iconGradient: 'from-rose-300 to-pink-300',
+    iconGradient: 'from-rose-700 to-rose-800',
     steps: [
-      { number: '1', title: 'Brand Story', description: 'Mission & values', color: 'bg-rose-400' },
-      { number: '2', title: 'Product Education', description: 'Usage & benefits', color: 'bg-rose-400' },
-      { number: '3', title: 'Social Proof', description: 'Reviews & testimonials', color: 'bg-rose-400' }
+      { number: '1', title: 'Brand Story', description: 'Mission & values', color: 'bg-rose-700' },
+      { number: '2', title: 'Product Education', description: 'Usage & benefits', color: 'bg-rose-700' },
+      { number: '3', title: 'Social Proof', description: 'Reviews & testimonials', color: 'bg-rose-700' }
     ],
     stepBorder: 'border-rose-100'
   },
@@ -22,15 +22,15 @@ const emailFlows = [
     id: 2,
     title: 'Replenishment Flow',
     icon: 'Repeat',
-    bgGradient: 'from-white to-purple-50',
-    borderColor: 'border-purple-100',
-    iconGradient: 'from-purple-300 to-indigo-300',
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700',
     steps: [
-      { icon: 'Clock', title: 'Usage Reminder', description: 'Product lifecycle tracking', color: 'bg-purple-400' },
-      { icon: 'Percent', title: 'Exclusive Discount', description: 'VIP customer pricing', color: 'bg-purple-400' },
-      { icon: 'ShoppingBag', title: 'Easy Reorder', description: 'One-click purchase', color: 'bg-purple-400' }
+      { icon: 'Clock', title: 'Usage Reminder', description: 'Product lifecycle tracking', color: 'bg-rose-600' },
+      { icon: 'Percent', title: 'Exclusive Discount', description: 'VIP customer pricing', color: 'bg-rose-600' },
+      { icon: 'ShoppingBag', title: 'Easy Reorder', description: 'One-click purchase', color: 'bg-rose-600' }
     ],
-    stepBorder: 'border-purple-100'
+    stepBorder: 'border-rose-100'
   }
 ]
 </script>
@@ -44,11 +44,11 @@ const emailFlows = [
       class="text-center mb-16"
     >
       <h1 class="!text-4xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Key Email Flows
         </span>
       </h1>
-      <p class="!text-lg text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-lg text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Essential automated sequences for beauty brands
       </p>
     </div>
@@ -87,7 +87,7 @@ const emailFlows = [
             </div>
             <div>
               <div class="!text-sm !font-medium text-gray-800">{{ step.title }}</div>
-              <div class="!text-xs text-gray-600">{{ step.description }}</div>
+              <div class="!text-xs text-rose-900">{{ step.description }}</div>
             </div>
           </div>
         </div>

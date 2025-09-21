@@ -11,11 +11,11 @@ class: text-center
       class="text-center mb-16"
     >
       <h1 class="!text-4xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Beauty-Focused Ad Creatives
         </span>
       </h1>
-      <p class="!text-lg text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-lg text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         High-converting ad formats designed for beauty brands
       </p>
     </div>
@@ -27,25 +27,25 @@ class: text-center
         :enter="{ opacity: 1, x: 0, transition: { duration: 0.7 } }"
         class="bg-gradient-to-br from-white to-rose-50 rounded-3xl p-6 shadow-lg border border-rose-100"
       >
-        <div class="w-12 h-12 bg-gradient-to-br from-rose-300 to-pink-300 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-md">
+        <div class="w-12 h-12 bg-gradient-to-br from-rose-700 to-rose-800 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-md">
           <lucide-play class="w-6 h-6 text-white" />
         </div>
         <h3 class="!text-xl !font-semibold text-gray-800 mb-3">Video Creatives</h3>
-        <ul class="text-gray-600 space-y-2">
+        <ul class="text-rose-900 space-y-2">
           <li class="flex items-start gap-2">
-            <div class="w-1.5 h-1.5 bg-rose-400 rounded-full mt-1.5 flex-shrink-0"></div>
+            <div class="w-1.5 h-1.5 bg-rose-700 rounded-full mt-1.5 flex-shrink-0"></div>
             <span class="!text-sm">Before/after transformations</span>
           </li>
           <li class="flex items-start gap-2">
-            <div class="w-1.5 h-1.5 bg-rose-400 rounded-full mt-1.5 flex-shrink-0"></div>
+            <div class="w-1.5 h-1.5 bg-rose-700 rounded-full mt-1.5 flex-shrink-0"></div>
             <span class="!text-sm">Application tutorials</span>
           </li>
           <li class="flex items-start gap-2">
-            <div class="w-1.5 h-1.5 bg-rose-400 rounded-full mt-1.5 flex-shrink-0"></div>
+            <div class="w-1.5 h-1.5 bg-rose-700 rounded-full mt-1.5 flex-shrink-0"></div>
             <span class="!text-sm">UGC compilations</span>
           </li>
           <li class="flex items-start gap-2">
-            <div class="w-1.5 h-1.5 bg-rose-400 rounded-full mt-1.5 flex-shrink-0"></div>
+            <div class="w-1.5 h-1.5 bg-rose-700 rounded-full mt-1.5 flex-shrink-0"></div>
             <span class="!text-sm">Ingredient highlights</span>
           </li>
         </ul>
@@ -57,25 +57,25 @@ class: text-center
         :enter="{ opacity: 1, x: 0, transition: { duration: 0.7 } }"
         class="bg-gradient-to-br from-white to-purple-50 rounded-3xl p-6 shadow-lg border border-purple-100"
       >
-        <div class="w-12 h-12 bg-gradient-to-br from-purple-300 to-indigo-300 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-md">
+        <div class="w-12 h-12 bg-gradient-to-br from-rose-600 to-rose-700 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-md">
           <lucide-image class="w-6 h-6 text-white" />
         </div>
         <h3 class="!text-xl !font-semibold text-gray-800 mb-3">Static Images</h3>
-        <ul class="text-gray-600 space-y-2 !text-left">
+        <ul class="text-rose-900 space-y-2 !text-left">
           <li class="flex items-start gap-2">
-            <div class="w-1.5 h-1.5 bg-purple-400 rounded-full mt-1.5 flex-shrink-0"></div>
+            <div class="w-1.5 h-1.5 bg-rose-600 rounded-full mt-1.5 flex-shrink-0"></div>
             <span class="!text-sm">Lifestyle flat lays</span>
           </li>
           <li class="flex items-start gap-2">
-            <div class="w-1.5 h-1.5 bg-purple-400 rounded-full mt-1.5 flex-shrink-0"></div>
+            <div class="w-1.5 h-1.5 bg-rose-600 rounded-full mt-1.5 flex-shrink-0"></div>
             <span class="!text-sm">Natural model shots</span>
           </li>
           <li class="flex items-start gap-2">
-            <div class="w-1.5 h-1.5 bg-purple-400 rounded-full mt-1.5 flex-shrink-0"></div>
+            <div class="w-1.5 h-1.5 bg-rose-600 rounded-full mt-1.5 flex-shrink-0"></div>
             <span class="!text-sm">Benefit infographics</span>
           </li>
           <li class="flex items-start gap-2">
-            <div class="w-1.5 h-1.5 bg-purple-400 rounded-full mt-1.5 flex-shrink-0"></div>
+            <div class="w-1.5 h-1.5 bg-rose-600 rounded-full mt-1.5 flex-shrink-0"></div>
             <span class="!text-sm">Social proof testimonials</span>
           </li>
         </ul>

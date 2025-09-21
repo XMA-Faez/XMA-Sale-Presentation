@@ -11,7 +11,7 @@ const segments = [
     icon: 'Sparkles',
     bgGradient: 'from-white to-rose-50',
     borderColor: 'border-rose-100',
-    iconGradient: 'from-rose-300 to-pink-300',
+    iconGradient: 'from-rose-700 to-rose-800',
     features: [
       'Acne-prone skin solutions',
       'Anti-aging & wrinkles',
@@ -23,9 +23,9 @@ const segments = [
     id: 2,
     title: 'Lifestyle Segments',
     icon: 'Calendar',
-    bgGradient: 'from-white to-purple-50',
-    borderColor: 'border-purple-100',
-    iconGradient: 'from-purple-300 to-indigo-300',
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
       'Busy professionals',
       'Minimalist beauty lovers',
@@ -37,9 +37,9 @@ const segments = [
     id: 3,
     title: 'Purchase Behavior',
     icon: 'ShoppingBag',
-    bgGradient: 'from-white to-indigo-50',
-    borderColor: 'border-indigo-100',
-    iconGradient: 'from-indigo-300 to-purple-300',
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
       'High-value customers (LTV)',
       'Frequent buyers',
@@ -53,7 +53,7 @@ const segments = [
     icon: 'Users',
     bgGradient: 'from-white to-rose-50',
     borderColor: 'border-rose-100',
-    iconGradient: 'from-rose-300 to-pink-300',
+    iconGradient: 'from-rose-700 to-rose-800',
     features: [
       'Gen Z beauty explorers',
       'Millennial skincare focus',
@@ -65,9 +65,9 @@ const segments = [
     id: 5,
     title: 'Engagement Level',
     icon: 'Heart',
-    bgGradient: 'from-white to-purple-50',
-    borderColor: 'border-purple-100',
-    iconGradient: 'from-purple-300 to-indigo-300',
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
       'Brand advocates & reviewers',
       'Social media engagers',
@@ -79,9 +79,9 @@ const segments = [
     id: 6,
     title: 'Beauty Goals',
     icon: 'Target',
-    bgGradient: 'from-white to-indigo-50',
-    borderColor: 'border-indigo-100',
-    iconGradient: 'from-indigo-300 to-purple-300',
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
       'Skincare routine builders',
       'Makeup enhancement',
@@ -101,11 +101,11 @@ const segments = [
       class="text-center mb-16"
     >
       <h1 class="!text-5xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Beauty Customer Segmentation
         </span>
       </h1>
-      <p class="!text-xl text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-xl text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Precision targeting for personalized beauty marketing campaigns
       </p>
     </div>
@@ -139,7 +139,7 @@ const segments = [
             class="flex items-center gap-3"
           >
             <div class="w-2 h-2 bg-gray-400 rounded-full flex-shrink-0"></div>
-            <span class="!text-sm text-gray-600">{{ feature }}</span>
+            <span class="!text-sm text-rose-900">{{ feature }}</span>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ const platforms = [
     icon: 'Users',
     bgGradient: 'from-white to-rose-50',
     borderColor: 'border-rose-100',
-    iconGradient: 'from-rose-300 to-pink-300',
+    iconGradient: 'from-rose-700 to-rose-800',
     features: [
       { title: '360° Customer Profiles', description: 'Purchase history, preferences, lifecycle stage', color: 'bg-rose-400' },
       { title: 'Beauty-Specific Tracking', description: 'Skin type, product usage patterns, seasonal trends', color: 'bg-rose-400' },
@@ -22,13 +22,13 @@ const platforms = [
     id: 2,
     title: 'Intelligent Automation',
     icon: 'Zap',
-    bgGradient: 'from-white to-purple-50',
-    borderColor: 'border-purple-100',
-    iconGradient: 'from-purple-300 to-indigo-300',
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
-      { title: 'Behavioral Triggers', description: 'Actions based on customer behavior patterns', color: 'bg-purple-400' },
-      { title: 'Predictive Analytics', description: 'Churn risk, next purchase timing, CLV forecasting', color: 'bg-purple-400' },
-      { title: 'Dynamic Personalization', description: 'Product recommendations, pricing, messaging', color: 'bg-purple-400' }
+      { title: 'Behavioral Triggers', description: 'Actions based on customer behavior patterns', color: 'bg-rose-600' },
+      { title: 'Predictive Analytics', description: 'Churn risk, next purchase timing, CLV forecasting', color: 'bg-rose-600' },
+      { title: 'Dynamic Personalization', description: 'Product recommendations, pricing, messaging', color: 'bg-rose-600' }
     ]
   }
 ]
@@ -38,7 +38,7 @@ const workflows = [
     id: 1,
     title: 'Lifecycle Campaigns',
     icon: 'Bell',
-    iconGradient: 'from-rose-300 to-pink-300',
+    iconGradient: 'from-rose-700 to-rose-800',
     features: [
       { icon: 'UserPlus', title: 'New customer onboarding', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' },
       { icon: 'Crown', title: 'VIP tier progression', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' },
@@ -49,22 +49,22 @@ const workflows = [
     id: 2,
     title: 'Revenue Optimization',
     icon: 'TrendingUp',
-    iconGradient: 'from-purple-300 to-indigo-300',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
-      { icon: 'ArrowUp', title: 'Upsell & cross-sell triggers', bgColor: 'bg-purple-100', iconColor: 'text-purple-500' },
-      { icon: 'Percent', title: 'Dynamic pricing alerts', bgColor: 'bg-purple-100', iconColor: 'text-purple-500' },
-      { icon: 'Package', title: 'Bundle recommendations', bgColor: 'bg-purple-100', iconColor: 'text-purple-500' }
+      { icon: 'ArrowUp', title: 'Upsell & cross-sell triggers', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' },
+      { icon: 'Percent', title: 'Dynamic pricing alerts', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' },
+      { icon: 'Package', title: 'Bundle recommendations', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' }
     ]
   },
   {
     id: 3,
     title: 'Retention Automation',
     icon: 'Shield',
-    iconGradient: 'from-indigo-300 to-purple-300',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
-      { icon: 'AlertTriangle', title: 'Churn risk intervention', bgColor: 'bg-indigo-100', iconColor: 'text-indigo-500' },
-      { icon: 'RefreshCw', title: 'Subscription management', bgColor: 'bg-indigo-100', iconColor: 'text-indigo-500' },
-      { icon: 'Heart', title: 'Loyalty program automation', bgColor: 'bg-indigo-100', iconColor: 'text-indigo-500' }
+      { icon: 'AlertTriangle', title: 'Churn risk intervention', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' },
+      { icon: 'RefreshCw', title: 'Subscription management', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' },
+      { icon: 'Heart', title: 'Loyalty program automation', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' }
     ]
   }
 ]
@@ -75,28 +75,28 @@ const integrations = [
     name: 'Klaviyo',
     description: 'Email & SMS automation',
     icon: 'Mail',
-    iconGradient: 'from-rose-300 to-pink-300'
+    iconGradient: 'from-rose-700 to-rose-800'
   },
   {
     id: 2,
     name: 'Shopify Plus',
     description: 'Ecommerce platform',
     icon: 'ShoppingBag',
-    iconGradient: 'from-purple-300 to-indigo-300'
+    iconGradient: 'from-rose-600 to-rose-700'
   },
   {
     id: 3,
     name: 'Google Analytics',
     description: 'Customer analytics',
     icon: 'BarChart',
-    iconGradient: 'from-indigo-300 to-purple-300'
+    iconGradient: 'from-rose-600 to-rose-700'
   },
   {
     id: 4,
     name: 'Reviews.io',
     description: 'Social proof automation',
     icon: 'Star',
-    iconGradient: 'from-rose-300 to-pink-300'
+    iconGradient: 'from-rose-700 to-rose-800'
   }
 ]
 </script>
@@ -110,11 +110,11 @@ const integrations = [
       class="text-center mb-16"
     >
       <h1 class="!text-5xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           CRM & Marketing Automation
         </span>
       </h1>
-      <p class="!text-xl text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-xl text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Intelligent customer relationship management that scales with your beauty brand
       </p>
     </div>
@@ -144,7 +144,7 @@ const integrations = [
             <div :class="`w-2 h-2 ${feature.color} rounded-full mt-2 flex-shrink-0`"></div>
             <div>
               <div class="!font-medium text-left text-gray-800 mb-1">{{ feature.title }}</div>
-              <div class="!text-sm text-gray-600">{{ feature.description }}</div>
+              <div class="!text-sm text-rose-900">{{ feature.description }}</div>
             </div>
           </div>
         </div>
@@ -191,7 +191,7 @@ const integrations = [
                 <lucide-refresh-cw v-else-if="feature.icon === 'RefreshCw'" :class="`w-3 h-3 ${feature.iconColor}`" />
                 <lucide-heart v-else-if="feature.icon === 'Heart'" :class="`w-3 h-3 ${feature.iconColor}`" />
               </div>
-              <span class="!text-sm text-gray-600">{{ feature.title }}</span>
+              <span class="!text-sm text-rose-900">{{ feature.title }}</span>
             </div>
           </div>
         </div>
@@ -219,7 +219,7 @@ const integrations = [
           </div>
           <div>
             <h4 class="!text-lg !font-medium text-gray-800 !mb-1">{{ integration.name }}</h4>
-            <p class="text-gray-600 !text-sm !m-0">{{ integration.description }}</p>
+            <p class="text-rose-900 !text-sm !m-0">{{ integration.description }}</p>
           </div>
         </div>
       </div>

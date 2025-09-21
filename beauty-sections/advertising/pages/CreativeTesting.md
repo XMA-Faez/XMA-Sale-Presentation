@@ -9,28 +9,28 @@ const testingSteps = [
     number: '1',
     title: 'Hook Testing',
     description: 'Test 3-5 different opening hooks per audience',
-    gradient: 'from-rose-300 to-pink-300'
+    gradient: 'from-rose-700 to-rose-800'
   },
   {
     id: 2,
     number: '2',
     title: 'Format Testing',
     description: 'Video vs. carousel vs. static performance',
-    gradient: 'from-purple-300 to-indigo-300'
+    gradient: 'from-rose-600 to-rose-700'
   },
   {
     id: 3,
     number: '3',
     title: 'Angle Testing',
     description: 'Problem/solution vs. aspiration vs. social proof',
-    gradient: 'from-indigo-300 to-purple-300'
+    gradient: 'from-rose-600 to-rose-700'
   },
   {
     id: 4,
     number: '4',
     title: 'CTA Testing',
     description: 'Shop Now vs. Learn More vs. Get Yours',
-    gradient: 'from-rose-300 to-pink-300'
+    gradient: 'from-rose-700 to-rose-800'
   }
 ]
 </script>
@@ -44,11 +44,11 @@ const testingSteps = [
       class="text-center mb-16"
     >
       <h1 class="!text-4xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Creative Testing Strategy
         </span>
       </h1>
-      <p class="!text-lg text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-lg text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Systematic approach to optimizing ad performance
       </p>
     </div>
@@ -67,7 +67,7 @@ const testingSteps = [
         </div>
         <div>
           <h4 class="!text-xl !font-medium text-gray-800 mb-3">{{ step.title }}</h4>
-          <p class="text-gray-600 !m-0 !text-sm">{{ step.description }}</p>
+          <p class="text-rose-900 !m-0 !text-sm">{{ step.description }}</p>
         </div>
       </div>
     </div>

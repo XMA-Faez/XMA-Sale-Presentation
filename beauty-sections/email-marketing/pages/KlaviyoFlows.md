@@ -11,7 +11,7 @@ const klaviyoFlows = [
     icon: 'UserPlus',
     bgGradient: 'from-white to-rose-50',
     borderColor: 'border-rose-100',
-    iconGradient: 'from-rose-300 to-pink-300',
+    iconGradient: 'from-rose-700 to-rose-800',
     features: [
       'Brand introduction',
       'Product education', 
@@ -28,9 +28,9 @@ const klaviyoFlows = [
     id: 2,
     title: 'Abandoned Cart',
     icon: 'ShoppingCart',
-    bgGradient: 'from-white to-purple-50',
-    borderColor: 'border-purple-100',
-    iconGradient: 'from-purple-300 to-indigo-300',
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
       'Immediate reminder',
       'Product benefits',
@@ -39,17 +39,17 @@ const klaviyoFlows = [
     ],
     impact: {
       text: 'Recovery Rate: 25-35%',
-      bgColor: 'bg-purple-100',
-      textColor: 'text-purple-700'
+      bgColor: 'bg-rose-100',
+      textColor: 'text-rose-700'
     }
   },
   {
     id: 3,
     title: 'Post-Purchase',
     icon: 'Package',
-    bgGradient: 'from-white to-indigo-50',
-    borderColor: 'border-indigo-100',
-    iconGradient: 'from-indigo-300 to-purple-300',
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
       'Order confirmation',
       'Usage instructions',
@@ -58,8 +58,8 @@ const klaviyoFlows = [
     ],
     impact: {
       text: 'Upsell Rate: 12-18%',
-      bgColor: 'bg-indigo-100',
-      textColor: 'text-indigo-700'
+      bgColor: 'bg-rose-100',
+      textColor: 'text-rose-700'
     }
   },
   {
@@ -68,7 +68,7 @@ const klaviyoFlows = [
     icon: 'Repeat',
     bgGradient: 'from-white to-rose-50',
     borderColor: 'border-rose-100',
-    iconGradient: 'from-rose-300 to-pink-300',
+    iconGradient: 'from-rose-700 to-rose-800',
     features: [
       'Usage tracking',
       'Reorder reminders',
@@ -85,9 +85,9 @@ const klaviyoFlows = [
     id: 5,
     title: 'Win-Back',
     icon: 'Heart',
-    bgGradient: 'from-white to-purple-50',
-    borderColor: 'border-purple-100',
-    iconGradient: 'from-purple-300 to-indigo-300',
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
       '"We miss you" message',
       'Exclusive comeback offer',
@@ -96,17 +96,17 @@ const klaviyoFlows = [
     ],
     impact: {
       text: 'Reactivation: 8-15%',
-      bgColor: 'bg-purple-100',
-      textColor: 'text-purple-700'
+      bgColor: 'bg-rose-100',
+      textColor: 'text-rose-700'
     }
   },
   {
     id: 6,
     title: 'Browse Abandonment',
     icon: 'Search',
-    bgGradient: 'from-white to-indigo-50',
-    borderColor: 'border-indigo-100',
-    iconGradient: 'from-indigo-300 to-purple-300',
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
       'Product viewed reminder',
       'Similar recommendations',
@@ -115,8 +115,8 @@ const klaviyoFlows = [
     ],
     impact: {
       text: 'Conversion: 5-12%',
-      bgColor: 'bg-indigo-100',
-      textColor: 'text-indigo-700'
+      bgColor: 'bg-rose-100',
+      textColor: 'text-rose-700'
     }
   }
 ]
@@ -131,11 +131,11 @@ const klaviyoFlows = [
       class="text-center mb-16"
     >
       <h1 class="!text-5xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Klaviyo Automation Flows
         </span>
       </h1>
-      <p class="!text-xl text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-xl text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Set-and-forget email sequences that work 24/7 for your beauty brand
       </p>
     </div>
@@ -163,7 +163,7 @@ const klaviyoFlows = [
             <div
               v-for="feature in flow.features"
               :key="feature"
-              class="!text-sm text-gray-600 text-left"
+              class="!text-sm text-rose-900 text-left"
             >
               • {{ feature }}
             </div>

@@ -7,12 +7,12 @@ htmlAttrs:
   class: 'light beauty-theme'
   data-theme: 'light'
 themeConfig:
-  primary: 'rose-300'
+  primary: '#79222E'
 favicon: '/XMA-White.svg'
 transition: my-transition
 title: Beauty Ecommerce Growth Solutions
 layout: cover
-background: /gradient-light.jpg
+background: '#FFF2E6'
 fonts:
   mono: "JetBrains Mono"
   local: Mona Sans

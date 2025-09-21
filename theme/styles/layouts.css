@@ -13,7 +13,11 @@ html {
 }
 
 :root {
-  --slidev-theme-primary: #f0f0f0;
+  --slidev-theme-primary: #79222E;
+  --slidev-theme-background: #FFF2E6;
+  --slidev-theme-accent: #9d2a38;
+  --slidev-theme-text: #2c1418;
+  --slidev-theme-text-light: #4a2229;
 }
 
 .slidev-page {

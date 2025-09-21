@@ -11,7 +11,7 @@ const retentionSystems = [
     icon: 'Crown',
     bgGradient: 'from-white to-rose-50',
     borderColor: 'border-rose-100',
-    iconGradient: 'from-rose-300 to-pink-300',
+    iconGradient: 'from-rose-700 to-rose-800',
     features: [
       'Points-based rewards system',
       'Tier-based VIP programs',
@@ -23,9 +23,9 @@ const retentionSystems = [
     id: 2,
     title: 'Subscription Management',
     icon: 'Repeat',
-    bgGradient: 'from-white to-purple-50',
-    borderColor: 'border-purple-100',
-    iconGradient: 'from-purple-300 to-indigo-300',
+    bgGradient: 'from-white to-rose-50',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
       'Flexible subscription options',
       'Automated replenishment',
@@ -38,8 +38,8 @@ const retentionSystems = [
     title: 'Churn Prevention',
     icon: 'Shield',
     bgGradient: 'from-white to-indigo-50',
-    borderColor: 'border-indigo-100',
-    iconGradient: 'from-indigo-300 to-purple-300',
+    borderColor: 'border-rose-100',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
       'At-risk customer identification',
       'Predictive churn modeling',
@@ -53,7 +53,7 @@ const retentionSystems = [
     icon: 'Users',
     bgGradient: 'from-white to-rose-50',
     borderColor: 'border-rose-100',
-    iconGradient: 'from-rose-300 to-pink-300',
+    iconGradient: 'from-rose-700 to-rose-800',
     features: [
       'Beauty community platform',
       'User-generated content',
@@ -73,11 +73,11 @@ const retentionSystems = [
       class="text-center mb-16"
     >
       <h1 class="!text-5xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Customer Retention Systems
         </span>
       </h1>
-      <p class="!text-xl text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-xl text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Strategic systems that turn one-time buyers into loyal beauty advocates
       </p>
     </div>
@@ -109,7 +109,7 @@ const retentionSystems = [
             class="flex items-center gap-3"
           >
             <div class="w-2 h-2 bg-gray-400 rounded-full flex-shrink-0"></div>
-            <span class="!text-sm text-gray-600">{{ feature }}</span>
+            <span class="!text-sm text-rose-900">{{ feature }}</span>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ const workflows = [
     id: 1,
     title: 'Lifecycle Campaigns',
     icon: 'Bell',
-    iconGradient: 'from-rose-300 to-pink-300',
+    iconGradient: 'from-rose-700 to-rose-800',
     features: [
       { icon: 'UserPlus', title: 'New customer onboarding', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' }, { icon: 'Crown', title: 'VIP tier progression', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' }, { icon: 'Gift', title: 'Birthday & anniversary', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' }
     ]
@@ -17,22 +17,22 @@ const workflows = [
     id: 2,
     title: 'Revenue Optimization',
     icon: 'TrendingUp',
-    iconGradient: 'from-purple-300 to-indigo-300',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
-      { icon: 'ArrowUp', title: 'Upsell & cross-sell triggers', bgColor: 'bg-purple-100', iconColor: 'text-purple-500' },
-      { icon: 'Percent', title: 'Dynamic pricing alerts', bgColor: 'bg-purple-100', iconColor: 'text-purple-500' },
-      { icon: 'Package', title: 'Bundle recommendations', bgColor: 'bg-purple-100', iconColor: 'text-purple-500' }
+      { icon: 'ArrowUp', title: 'Upsell & cross-sell triggers', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' },
+      { icon: 'Percent', title: 'Dynamic pricing alerts', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' },
+      { icon: 'Package', title: 'Bundle recommendations', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' }
     ]
   },
   {
     id: 3,
     title: 'Retention Automation',
     icon: 'Shield',
-    iconGradient: 'from-indigo-300 to-purple-300',
+    iconGradient: 'from-rose-600 to-rose-700',
     features: [
-      { icon: 'AlertTriangle', title: 'Churn risk intervention', bgColor: 'bg-indigo-100', iconColor: 'text-indigo-500' },
-      { icon: 'RefreshCw', title: 'Subscription management', bgColor: 'bg-indigo-100', iconColor: 'text-indigo-500' },
-      { icon: 'Heart', title: 'Loyalty program automation', bgColor: 'bg-indigo-100', iconColor: 'text-indigo-500' }
+      { icon: 'AlertTriangle', title: 'Churn risk intervention', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' },
+      { icon: 'RefreshCw', title: 'Subscription management', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' },
+      { icon: 'Heart', title: 'Loyalty program automation', bgColor: 'bg-rose-100', iconColor: 'text-rose-500' }
     ]
   }
 ]
@@ -47,11 +47,11 @@ const workflows = [
       class="text-center mb-16"
     >
       <h1 class="!text-5xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Automation Workflows
         </span>
       </h1>
-      <p class="!text-xl text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-xl text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Smart automation that engages customers at every touchpoint
       </p>
     </div>
@@ -88,7 +88,7 @@ const workflows = [
               <lucide-refresh-cw v-else-if="feature.icon === 'RefreshCw'" :class="`w-3 h-3 ${feature.iconColor}`" />
               <lucide-heart v-else-if="feature.icon === 'Heart'" :class="`w-3 h-3 ${feature.iconColor}`" />
             </div>
-            <span class="!text-sm text-gray-600">{{ feature.title }}</span>
+            <span class="!text-sm text-rose-900">{{ feature.title }}</span>
           </div>
         </div>
       </div>

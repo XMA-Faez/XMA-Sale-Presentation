@@ -31,7 +31,7 @@ const roiMetrics = [
     description: 'Average LTV for beauty customers',
     icon: 'Users',
     color: 'text-purple-600',
-    bgColor: 'bg-purple-50',
+    bgColor: 'bg-rose-50',
     borderColor: 'border-purple-200'
   },
   {
@@ -62,11 +62,11 @@ const projections = [
       class="text-center mb-16"
     >
       <h1 class="!text-5xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Beauty Marketing ROI
         </span>
       </h1>
-      <p class="!text-xl text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-xl text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Proven returns from comprehensive beauty marketing strategies
       </p>
     </div>
@@ -92,7 +92,7 @@ const projections = [
         </div>
         <div :class="`!text-3xl !font-bold ${metric.color} mb-2`">{{ metric.metric }}</div>
         <h4 class="!text-lg !font-semibold text-gray-800 mb-2">{{ metric.title }}</h4>
-        <p class="!text-sm text-gray-600">{{ metric.description }}</p>
+        <p class="!text-sm text-rose-900">{{ metric.description }}</p>
       </div>
     </div>
     <!-- Revenue Projections -->
@@ -110,19 +110,19 @@ const projections = [
           :key="projection.period"
           class="text-center"
         >
-          <div class="w-16 h-16 bg-gradient-to-br from-rose-300 to-pink-300 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-md">
+          <div class="w-16 h-16 bg-gradient-to-br from-rose-700 to-rose-800 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-md">
             <span class="!text-xl !font-bold text-white">{{ index + 1 }}</span>
           </div>
           <div class="!text-2xl !font-bold text-gray-800 mb-2">{{ projection.revenue }}</div>
-          <div class="!text-lg !font-medium text-gray-700 mb-1">{{ projection.period }}</div>
-          <div class="!text-sm text-gray-600">{{ projection.growth }}</div>
+          <div class="!text-lg !font-medium text-rose-900 mb-1">{{ projection.period }}</div>
+          <div class="!text-sm text-rose-900">{{ projection.growth }}</div>
         </div>
       </div>
       <div class="mt-8 text-center">
-        <p class="!text-lg text-gray-700">
+        <p class="!text-lg text-rose-900">
           <span class="!font-semibold">Total Investment:</span> $15K setup + $5K/month management
         </p>
-        <p class="!text-lg text-gray-700 mt-2">
+        <p class="!text-lg text-rose-900 mt-2">
           <span class="!font-semibold">12-Month ROI:</span> <span class="text-emerald-600 !font-bold">400%+</span>
         </p>
       </div>

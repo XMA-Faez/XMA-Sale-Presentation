@@ -10,7 +10,7 @@ const analyticsModules = [
     icon: 'TrendingUp',
     bgGradient: 'from-white to-rose-50',
     borderColor: 'border-rose-100',
-    iconGradient: 'from-rose-300 to-pink-300',
+    iconGradient: 'from-rose-700 to-rose-800',
     metrics: [
       { label: 'Average CLV', value: '$485', color: 'text-rose-600' },
       { label: 'Top 20% CLV', value: '$1,250', color: 'text-rose-600' },
@@ -23,7 +23,7 @@ const analyticsModules = [
     icon: 'BarChart',
     bgGradient: 'from-white to-purple-50',
     borderColor: 'border-purple-100',
-    iconGradient: 'from-purple-300 to-indigo-300',
+    iconGradient: 'from-rose-600 to-rose-700',
     metrics: [
       { label: 'Email Revenue', value: '35%', color: 'text-purple-600' },
       { label: 'Paid Ads ROAS', value: '4.2x', color: 'text-purple-600' },
@@ -36,7 +36,7 @@ const analyticsModules = [
     icon: 'Package',
     bgGradient: 'from-white to-indigo-50',
     borderColor: 'border-indigo-100',
-    iconGradient: 'from-indigo-300 to-purple-300',
+    iconGradient: 'from-rose-600 to-rose-700',
     metrics: [
       { label: 'Top Category', value: 'Skincare', color: 'text-indigo-600' },
       { label: 'Repeat Purchase', value: '42%', color: 'text-indigo-600' },
@@ -49,7 +49,7 @@ const analyticsModules = [
     icon: 'MapPin',
     bgGradient: 'from-white to-rose-50',
     borderColor: 'border-rose-100',
-    iconGradient: 'from-rose-300 to-pink-300',
+    iconGradient: 'from-rose-700 to-rose-800',
     metrics: [
       { label: 'Time to Purchase', value: '12 days', color: 'text-rose-600' },
       { label: 'Touchpoints', value: '7.3 avg', color: 'text-rose-600' },
@@ -75,11 +75,11 @@ const kpis = [
       class="text-center mb-16"
     >
       <h1 class="!text-5xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Beauty Analytics Dashboard
         </span>
       </h1>
-      <p class="!text-xl text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-xl text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Data-driven insights that power beauty brand growth strategies
       </p>
     </div>
@@ -101,7 +101,7 @@ const kpis = [
           <lucide-star v-else-if="kpi.icon === 'Star'" :class="`w-6 h-6 ${kpi.color}`" />
         </div>
         <div :class="`!text-2xl !font-bold ${kpi.color} mb-1`">{{ kpi.value }}</div>
-        <div class="!text-xs text-gray-600">{{ kpi.label }}</div>
+        <div class="!text-xs text-rose-900">{{ kpi.label }}</div>
       </div>
     </div>
     <!-- Detailed Analytics Modules -->
@@ -132,7 +132,7 @@ const kpis = [
             :key="metric.label"
             class="flex justify-between items-center"
           >
-            <span class="!text-sm text-gray-600">{{ metric.label }}</span>
+            <span class="!text-sm text-rose-900">{{ metric.label }}</span>
             <span :class="`!text-sm !font-semibold ${metric.color}`">{{ metric.value }}</span>
           </div>
         </div>

@@ -9,28 +9,28 @@ const segments = [
     title: 'Demographics',
     description: 'Age, location, skin type',
     icon: 'User',
-    iconGradient: 'from-rose-300 to-pink-300'
+    iconGradient: 'from-rose-700 to-rose-800'
   },
   {
     id: 2,
     title: 'Purchase Behavior',
     description: 'Frequency, AOV, category',
     icon: 'ShoppingCart',
-    iconGradient: 'from-purple-300 to-indigo-300'
+    iconGradient: 'from-rose-600 to-rose-700'
   },
   {
     id: 3,
     title: 'Engagement',
     description: 'Open rates, click behavior',
     icon: 'MousePointer',
-    iconGradient: 'from-indigo-300 to-purple-300'
+    iconGradient: 'from-rose-600 to-rose-700'
   },
   {
     id: 4,
     title: 'Lifecycle Stage',
     description: 'New, active, at-risk, loyal',
     icon: 'Calendar',
-    iconGradient: 'from-rose-300 to-pink-300'
+    iconGradient: 'from-rose-700 to-rose-800'
   }
 ]
 </script>
@@ -44,11 +44,11 @@ const segments = [
       class="text-center mb-16"
     >
       <h1 class="!text-4xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Advanced Email Segmentation
         </span>
       </h1>
-      <p class="!text-lg text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-lg text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Personalized messaging for beauty customer segments
       </p>
     </div>
@@ -70,7 +70,7 @@ const segments = [
         </div>
         <div>
           <h4 class="!text-xl !font-medium text-gray-800 mb-2 text-left">{{ segment.title }}</h4>
-          <p class="text-gray-600 !text-sm text-left">{{ segment.description }}</p>
+          <p class="text-rose-900 !text-sm text-left">{{ segment.description }}</p>
         </div>
       </div>
     </div>

@@ -9,42 +9,42 @@ const integrations = [
     name: 'Klaviyo',
     description: 'Email & SMS automation',
     icon: 'Mail',
-    iconGradient: 'from-rose-300 to-pink-300'
+    iconGradient: 'from-rose-700 to-rose-800'
   },
   {
     id: 2,
     name: 'Shopify Plus',
     description: 'Ecommerce platform',
     icon: 'ShoppingBag',
-    iconGradient: 'from-purple-300 to-indigo-300'
+    iconGradient: 'from-rose-600 to-rose-700'
   },
   {
     id: 3,
     name: 'Google Analytics',
     description: 'Customer analytics',
     icon: 'BarChart',
-    iconGradient: 'from-indigo-300 to-purple-300'
+    iconGradient: 'from-rose-600 to-rose-700'
   },
   {
     id: 4,
     name: 'Reviews.io',
     description: 'Social proof automation',
     icon: 'Star',
-    iconGradient: 'from-rose-300 to-pink-300'
+    iconGradient: 'from-rose-700 to-rose-800'
   },
   {
     id: 5,
     name: 'Gorgias',
     description: 'Customer support',
     icon: 'Headphones',
-    iconGradient: 'from-purple-300 to-indigo-300'
+    iconGradient: 'from-rose-600 to-rose-700'
   },
   {
     id: 6,
     name: 'Recharge',
     description: 'Subscription management',
     icon: 'Repeat',
-    iconGradient: 'from-indigo-300 to-purple-300'
+    iconGradient: 'from-rose-600 to-rose-700'
   }
 ]
 </script>
@@ -58,11 +58,11 @@ const integrations = [
       class="text-center mb-16"
     >
       <h1 class="!text-5xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Integration Ecosystem
         </span>
       </h1>
-      <p class="!text-xl text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-xl text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         Seamless connections with your favorite beauty ecommerce tools
       </p>
     </div>
@@ -87,7 +87,7 @@ const integrations = [
           </div>
           <div>
             <h4 class="!text-lg !font-medium text-gray-800 mb-1 text-left">{{ integration.name }}</h4>
-            <p class="text-gray-600 !text-sm text-left !m-0">{{ integration.description }}</p>
+            <p class="text-rose-900 !text-sm text-left !m-0">{{ integration.description }}</p>
           </div>
         </div>
       </div>

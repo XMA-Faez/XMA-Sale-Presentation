@@ -9,25 +9,25 @@ const services = [
     id: 1,
     title: 'Email Marketing',
     icon: 'Mail',
-    gradient: 'from-rose-300 to-pink-300'
+    gradient: 'from-rose-600 to-rose-700'
   },
   {
     id: 2,
     title: 'Paid Advertising',
     icon: 'Megaphone',
-    gradient: 'from-purple-300 to-indigo-300'
+    gradient: 'from-rose-700 to-rose-800'
   },
   {
     id: 3,
     title: 'CRM Automation',
     icon: 'LayoutDashboard',
-    gradient: 'from-indigo-300 to-purple-300'
+    gradient: 'from-rose-800 to-rose-900'
   },
   {
     id: 4,
     title: 'Analytics',
     icon: 'BarChart',
-    gradient: 'from-pink-300 to-rose-300'
+    gradient: 'from-rose-500 to-rose-600'
   }
 ]
 
@@ -59,12 +59,12 @@ onMounted(() => {
         class="!text-5xl !font-bold mb-6 text-center"
     >
         <template v-if="clientName">
-            <div class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+            <div class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
                 Welcome, {{ clientName }}
             </div>
         </template>
         <template v-else>
-            <div class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+            <div class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
                 Welcome to XMA Agency
             </div>
         </template>
@@ -75,7 +75,7 @@ onMounted(() => {
         v-motion
         :initial="{ opacity: 0, y: 30 }"
         :enter="{ opacity: 1, y: 0, transition: { duration: 0.7 } }"
-        class="!text-xl mb-12 text-gray-600 text-center max-w-3xl !leading-relaxed"
+        class="!text-xl mb-12 text-rose-900 text-center max-w-3xl !leading-relaxed">
     >
         Scale {{ companyName }}'s beauty brand with sophisticated email marketing & paid advertising
     </div>
@@ -84,7 +84,7 @@ onMounted(() => {
         v-motion
         :initial="{ opacity: 0, y: 30 }"
         :enter="{ opacity: 1, y: 0, transition: { duration: 0.7 } }"
-        class="!text-xl mb-12 text-gray-600 text-center max-w-3xl !leading-relaxed"
+        class="!text-xl mb-12 text-rose-900 text-center max-w-3xl !leading-relaxed">
     >
         Scale your beauty brand with sophisticated email marketing & paid advertising
     </div>
@@ -104,7 +104,7 @@ onMounted(() => {
                 <lucide-layout-dashboard v-else-if="service.icon === 'LayoutDashboard'" class="w-10 h-10 text-white" />
                 <lucide-bar-chart v-else-if="service.icon === 'BarChart'" class="w-10 h-10 text-white" />
             </div>
-            <div class="text-center !text-lg !font-medium text-gray-700">{{ service.title }}</div>
+            <div class="text-center !text-lg !font-medium text-rose-950">{{ service.title }}</div>
         </div>
     </div>
 </div>

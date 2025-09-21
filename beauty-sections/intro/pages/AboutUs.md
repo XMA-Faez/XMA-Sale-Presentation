@@ -13,11 +13,11 @@ zoom: 0.6
       class="text-center mb-16"
     >
       <h1 class="!text-5xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Beauty Marketing Specialists
         </span>
       </h1>
-      <p class="!text-xl text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-xl text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         15 dedicated professionals focused on scaling beauty ecommerce brands
       </p>
     </div>
@@ -30,11 +30,11 @@ zoom: 0.6
         :enter="{ opacity: 1, y: 0, transition: {  duration: 0.7 } }"
         class="bg-white rounded-3xl p-8 shadow-lg border border-stone-100 hover:shadow-2xl transition-all duration-300"
       >
-        <div class="w-16 h-16 bg-gradient-to-br from-rose-300 to-pink-300 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
+        <div class="w-16 h-16 bg-gradient-to-br from-rose-700 to-rose-800 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
           <lucide-mail class="w-8 h-8 text-white" />
         </div>
         <h3 class="!text-xl !font-semibold text-gray-800 mb-2">Email Specialists</h3>
-        <p class="text-gray-600">Klaviyo experts crafting converting email flows</p>
+        <p class="text-rose-900">Klaviyo experts crafting converting email flows</p>
       </div>
       <div
         v-click="2"
@@ -43,11 +43,11 @@ zoom: 0.6
         :enter="{ opacity: 1, y: 0, transition: {  duration: 0.7 } }"
         class="bg-white rounded-3xl p-8 shadow-lg border border-stone-100 hover:shadow-2xl transition-all duration-300"
       >
-        <div class="w-16 h-16 bg-gradient-to-br from-purple-300 to-indigo-300 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
+        <div class="w-16 h-16 bg-gradient-to-br from-rose-600 to-rose-700 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
           <lucide-megaphone class="w-8 h-8 text-white" />
         </div>
         <h3 class="!text-xl !font-semibold text-gray-800 mb-2">Ad Campaign Managers</h3>
-        <p class="text-gray-600">Meta, Google & TikTok advertising experts</p>
+        <p class="text-rose-900">Meta, Google & TikTok advertising experts</p>
       </div>
       <div
         v-click="3"
@@ -56,11 +56,11 @@ zoom: 0.6
         :enter="{ opacity: 1, y: 0, transition: {  duration: 0.7 } }"
         class="bg-white rounded-3xl p-8 shadow-lg border border-stone-100 hover:shadow-2xl transition-all duration-300"
       >
-        <div class="w-16 h-16 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
+        <div class="w-16 h-16 bg-gradient-to-br from-rose-600 to-rose-700 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
           <lucide-palette class="w-8 h-8 text-white" />
         </div>
         <h3 class="!text-xl !font-semibold text-gray-800 mb-2">Creative Directors</h3>
-        <p class="text-gray-600">Beauty-focused ad creative & visual design</p>
+        <p class="text-rose-900">Beauty-focused ad creative & visual design</p>
       </div>
       <div
         v-click="4"
@@ -69,11 +69,11 @@ zoom: 0.6
         :enter="{ opacity: 1, y: 0, transition: {  duration: 0.7 } }"
         class="bg-white rounded-3xl p-8 shadow-lg border border-stone-100 hover:shadow-2xl transition-all duration-300"
       >
-        <div class="w-16 h-16 bg-gradient-to-br from-pink-300 to-rose-300 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
+        <div class="w-16 h-16 bg-gradient-to-br from-rose-700 to-rose-800 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
           <lucide-layout-dashboard class="w-8 h-8 text-white" />
         </div>
         <h3 class="!text-xl !font-semibold text-gray-800 mb-2">CRM Experts</h3>
-        <p class="text-gray-600">Customer journey & automation specialists</p>
+        <p class="text-rose-900">Customer journey & automation specialists</p>
       </div>
       <div
         v-click="5"
@@ -82,11 +82,11 @@ zoom: 0.6
         :enter="{ opacity: 1, y: 0, transition: {  duration: 0.7 } }"
         class="bg-white rounded-3xl p-8 shadow-lg border border-stone-100 hover:shadow-2xl transition-all duration-300"
       >
-        <div class="w-16 h-16 bg-gradient-to-br from-purple-300 to-pink-300 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
+        <div class="w-16 h-16 bg-gradient-to-br from-rose-700 to-rose-800 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
           <lucide-bar-chart class="w-8 h-8 text-white" />
         </div>
         <h3 class="!text-xl !font-semibold text-gray-800 mb-2">Data Analysts</h3>
-        <p class="text-gray-600">Performance tracking & optimization experts</p>
+        <p class="text-rose-900">Performance tracking & optimization experts</p>
       </div>
       <div
         v-click="6"
@@ -95,11 +95,11 @@ zoom: 0.6
         :enter="{ opacity: 1, y: 0, transition: {  duration: 0.7 } }"
         class="bg-white rounded-3xl p-8 shadow-lg border border-stone-100 hover:shadow-2xl transition-all duration-300"
       >
-        <div class="w-16 h-16 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
+        <div class="w-16 h-16 bg-gradient-to-br from-rose-600 to-rose-700 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md">
           <lucide-code-2 class="w-8 h-8 text-white" />
         </div>
         <h3 class="!text-xl !font-semibold text-gray-800 mb-2">Automation Specialists</h3>
-        <p class="text-gray-600">Technical integration & workflow optimization</p>
+        <p class="text-rose-900">Technical integration & workflow optimization</p>
       </div>
     </div>
   </div>

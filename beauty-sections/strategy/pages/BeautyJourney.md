@@ -10,7 +10,7 @@ const journeyStages = [
     title: 'Discovery',
     description: 'Social media ads, influencer content, beauty tutorials',
     icon: 'Search',
-    bgGradient: 'from-rose-300 to-pink-300',
+    bgGradient: 'from-rose-700 to-rose-800',
     borderColor: 'border-rose-100',
     textColor: 'text-rose-500'
   },
@@ -19,7 +19,7 @@ const journeyStages = [
     title: 'Interest', 
     description: 'Product research, reviews, ingredient analysis',
     icon: 'Heart',
-    bgGradient: 'from-purple-300 to-indigo-300',
+    bgGradient: 'from-rose-600 to-rose-700',
     borderColor: 'border-purple-100',
     textColor: 'text-purple-500'
   },
@@ -28,7 +28,7 @@ const journeyStages = [
     title: 'Purchase',
     description: 'First order, welcome series, unboxing experience', 
     icon: 'ShoppingCart',
-    bgGradient: 'from-indigo-300 to-purple-300',
+    bgGradient: 'from-rose-600 to-rose-700',
     borderColor: 'border-indigo-100',
     textColor: 'text-indigo-500'
   },
@@ -37,7 +37,7 @@ const journeyStages = [
     title: 'Retention',
     description: 'Usage tips, replenishment reminders, loyalty rewards',
     icon: 'Repeat',
-    bgGradient: 'from-rose-300 to-pink-300',
+    bgGradient: 'from-rose-700 to-rose-800',
     borderColor: 'border-rose-100',
     textColor: 'text-rose-500'
   },
@@ -46,7 +46,7 @@ const journeyStages = [
     title: 'Advocacy',
     description: 'Reviews, referrals, user-generated content',
     icon: 'Users',
-    bgGradient: 'from-purple-300 to-indigo-300', 
+    bgGradient: 'from-rose-600 to-rose-700', 
     borderColor: 'border-purple-100',
     textColor: 'text-purple-500'
   }
@@ -62,16 +62,16 @@ const journeyStages = [
       class="text-center mb-16"
     >
       <h1 class="!text-5xl !font-bold mb-6">
-        <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-rose-700 to-rose-800 bg-clip-text text-transparent">
           Beauty Customer Journey
         </span>
       </h1>
-      <p class="!text-xl text-gray-600 max-w-3xl mx-auto !leading-relaxed">
+      <p class="!text-xl text-rose-900 max-w-3xl mx-auto !leading-relaxed">
         From discovery to loyalty - every touchpoint optimized for beauty brands
       </p>
     </div>
     <div class="relative">
-      <div class="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-rose-200 via-purple-200 to-indigo-200 transform -translate-y-1/2 z-0"></div>
+      <div class="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-rose-700 via-rose-800 to-rose-900 transform -translate-y-1/2 z-0"></div>
       <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
         <div
           v-for="(stage, index) in journeyStages"
@@ -91,7 +91,7 @@ const journeyStages = [
             <lucide-users v-else-if="stage.icon === 'Users'" class="w-8 h-8 text-white" />
           </div>
           <h3 class="!text-lg !font-semibold text-gray-800 !mb-3">{{ stage.title }}</h3>
-          <p class="text-gray-600 !text-xs !leading-relaxed !m-0">{{ stage.description }}</p>
+          <p class="text-rose-900 !text-xs !leading-relaxed !m-0">{{ stage.description }}</p>
         </div>
       </div>
     </div>
