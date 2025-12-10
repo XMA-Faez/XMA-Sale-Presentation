@@ -3,15 +3,15 @@ layout: center
 class: text-center
 ---
 
-# Understanding Advertising
+# Understanding Real Estate Advertising
 
-<div 
+<div
   v-motion
   :initial="{ opacity: 0, y: 100 }"
   :enter="{ opacity: 1, y: 0 }"
   class="text-2xl text-zinc-400 mt-4"
 >
-  The Truth About What Works
+  Why Strategic Ads Beat Boosted Posts
 </div>
 
 ---
@@ -26,42 +26,42 @@ layout: center
       <lucide-target class="w-8 h-8 text-yellow-500" />
       <h2 class="text-2xl font-bold">The Game of Advertising</h2>
     </div>
-    <p class="text-zinc-300 !mb-8">Advertising is not about creativity or looking professional—it's about <span class="text-yellow-500 font-bold">results</span>.</p>
+    <p class="text-zinc-300 !mb-8">Real estate advertising is not about pretty photos—it's about <span class="text-yellow-500 font-bold">viewings and closings</span>.</p>
     <div class="space-y-3 !mb-8">
       <div 
         v-click
         class="flex items-start gap-3 !my-4"
       >
         <lucide-dollar-sign class="w-5 h-5 text-yellow-500 mt-0.5" />
-        <p class="text-zinc-300 !m-0">You pay money to get your message in front of strangers</p>
+        <p class="text-zinc-300 !m-0">You pay to get your properties in front of potential buyers</p>
       </div>
       <div 
         v-click
         class="flex items-start gap-3 !my-4"
       >
         <lucide-users class="w-5 h-5 text-yellow-500 mt-0.5" />
-        <p class="text-zinc-300 !m-0">Some percentage of those strangers become leads</p>
+        <p class="text-zinc-300 !m-0">Some percentage of those viewers become inquiries</p>
       </div>
       <div 
         v-click
         class="flex items-start gap-3 !my-4"
       >
         <lucide-shopping-cart class="w-5 h-5 text-yellow-500 mt-0.5" />
-        <p class="text-zinc-300 !m-0">Some percentage of those leads become customers</p>
+        <p class="text-zinc-300 !m-0">Some percentage of those inquiries book viewings</p>
       </div>
       <div 
         v-click
         class="flex items-start gap-3 !my-4"
       >
         <lucide-trending-up class="w-5 h-5 text-yellow-500 mt-0.5" />
-        <p class="text-zinc-300 !m-0">The money you make must exceed what you spent</p>
+        <p class="text-zinc-300 !m-0">One closed deal covers months of ad spend</p>
       </div>
     </div>
     <div 
       v-click
       class="mt-6 bg-yellow-950/20 p-4 rounded-lg border border-yellow-900/30"
     >
-      <p class="text-white font-bold !m-0">Success = Put $1 in, get $2+ back.</p>
+      <p class="text-white font-bold !m-0">Success = Ad spend that generates viewings that close deals.</p>
     </div>
   </div>
 </div>
@@ -111,7 +111,7 @@ layout: center
       v-click
       class="mt-6 p-4 rounded-lg bg-zinc-800/50 border border-zinc-700"
     >
-      <p class="text-zinc-300 !m-0 italic">You're not buying customers, you're renting attention.</p>
+      <p class="text-zinc-300 !m-0 italic">You're not buying clients—you're renting attention from serious property seekers.</p>
     </div>
   </div>
 </div>
@@ -245,7 +245,7 @@ layout: center
 class: text-center
 ---
 
-# Our Complete Process
+# Your Journey to a Full Pipeline
 
 <div class="process-summary">
   <div class="process-flow">
@@ -445,8 +445,8 @@ class: text-center
   <div class="header-icon">
     <lucide-megaphone class="w-10 h-10" />
   </div>
-  <h1>Advertising</h1>
-  <p class="header-description">Strategic campaigns that drive results</p>
+  <h1>Ads Built for Real Estate</h1>
+  <p class="header-description">Not boosted posts. Strategic campaigns.</p>
 </div>
 
 <style>
@@ -479,7 +479,7 @@ layout: center
       <lucide-layout-dashboard class="w-6 h-6 text-yellow-500" />
       <h3 class="text-xl font-bold">Campaign Setup</h3>
     </div>
-    <p class="text-zinc-300">Creating targeted ad campaigns on Meta platforms</p>
+    <p class="text-zinc-300">Creating property campaigns optimized for viewings and inquiries</p>
   </div>
 
   <div
@@ -488,9 +488,9 @@ layout: center
   >
     <div class="flex items-center gap-4 mb-4">
       <lucide-target class="w-6 h-6 text-yellow-500" />
-      <h3 class="text-xl font-bold">Audience Targeting</h3>
+      <h3 class="text-xl font-bold">Precision Targeting</h3>
     </div>
-    <p class="text-zinc-300">Defining and reaching your ideal customer segments</p>
+    <p class="text-zinc-300">Custom audiences: buyer nationalities, income levels, property interests</p>
   </div>
 
   <div
@@ -501,7 +501,7 @@ layout: center
       <lucide-bar-chart class="w-6 h-6 text-yellow-500" />
       <h3 class="text-xl font-bold">Performance Tracking</h3>
     </div>
-    <p class="text-zinc-300">Monitoring and optimizing campaign results</p>
+    <p class="text-zinc-300">Tracking cost per lead, lead quality, and viewing rates</p>
   </div>
 
   <div
@@ -512,7 +512,7 @@ layout: center
       <lucide-refresh-cw class="w-6 h-6 text-yellow-500" />
       <h3 class="text-xl font-bold">Continuous Optimization</h3>
     </div>
-    <p class="text-zinc-300">Regular adjustments for maximum ROI</p>
+    <p class="text-zinc-300">Daily A/B testing to lower cost per qualified lead</p>
   </div>
 </div>
 
@@ -596,7 +596,7 @@ layout: center
 class: text-center
 ---
 
-# Complete Digital Marketing Solution
+# The Complete Lead Engine
 
 <div class="process-summary">
   <div class="process-flow">

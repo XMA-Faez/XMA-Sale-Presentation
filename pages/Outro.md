@@ -10,7 +10,7 @@ class: text-center
     :enter="{ filter: 'blur(0px)', opacity: 1, y: 0 }"
   >
     <h1 class="text-6xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent mb-2">
-      Let's Work Together
+      Ready to Fill Your Pipeline?
     </h1>
   </div>
 
@@ -20,7 +20,7 @@ class: text-center
     :enter="{ filter: 'blur(0px)', opacity: 1, transition: { delay: 200 } }"
     class="flex flex-col items-center gap-6"
   >
-    <div class="text-2xl text-zinc-400">Transform Your Business with XMA Agency</div>
+    <div class="text-xl text-zinc-400 max-w-xl">You handle the viewings and closings. We'll make sure you never run out of qualified buyers to show.</div>
     <div class="flex items-center gap-8 mt-4">
       <div class="flex items-center gap-2">
         <lucide-phone class="w-6 h-6 text-red-500" />
@@ -33,18 +33,18 @@ class: text-center
     </div>
   </div>
 
-  <div 
+  <div
     v-motion
     :initial="{ opacity: 0, y: 50 }"
     :enter="{ opacity: 1, y: 0, transition: { delay: 400 } }"
-    class="mt-8 p-4 bg-zinc-900/50 rounded-xl border border-zinc-800 backdrop-blur-sm"
+    class="mt-8 p-4 bg-red-950/30 rounded-xl border border-red-900/50 backdrop-blur-sm"
   >
-    <div class="text-xl">
-      Ready to discuss your project? Let's schedule a call!
+    <div class="text-xl text-white">
+      Any questions before we move forward?
     </div>
   </div>
 
-  <div 
+  <div
     v-motion
     :initial="{ opacity: 0 }"
     :enter="{ opacity: 1, transition: { delay: 600 } }"

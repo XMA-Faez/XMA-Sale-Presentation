@@ -6,65 +6,48 @@ layout: none
 const meetings = [
   {
     week: 'Week 1',
-    meeting: 'Kickoff Meeting',
-    duration: '90 minutes',
-    agenda: [
-      'Company & brand deep-dive',
-      'Content strategy discussion',
-      'Timeline confirmation',
-      'Required materials checklist',
-      'CRM requirements gathering'
-    ],
-    deliverables: 'Brand questionnaire, content brief, timeline document'
-  },
-  {
-    week: 'Week 1',
-    meeting: 'Content Strategy Session',
+    meeting: 'Kickoff Call',
     duration: '60 minutes',
     agenda: [
-      'Video concepts presentation',
-      'Hook variations discussion',
-      'Shot list review',
-      'Location/talent requirements',
-      'Filming schedule confirmation'
+      'Property focus & target audience',
+      'Current marketing review',
+      'Goals & success metrics',
+      'CRM setup & training'
     ],
-    deliverables: 'Content plan, shoot schedule, requirements list'
+    deliverables: 'Strategy document, CRM access, pipeline configured'
   },
   {
-    week: 'Week 2-3',
-    meeting: 'Production Review',
+    week: 'Week 2',
+    meeting: 'Campaign Build',
     duration: '45 minutes',
     agenda: [
-      'First draft review',
-      'Feedback collection',
-      'Hook variations approval',
-      'CRM setup walkthrough',
-      'Campaign strategy overview'
+      'Ad creative review',
+      'Audience targeting confirmation',
+      'Campaign structure walkthrough',
+      'Budget allocation strategy'
     ],
-    deliverables: 'Revision notes, CRM setup confirmation'
+    deliverables: 'Ad creatives approved, audiences built'
   },
   {
-    week: 'Week 4',
-    meeting: 'Launch Preparation',
-    duration: '60 minutes',
+    week: 'Week 3',
+    meeting: 'Launch & Review',
+    duration: '45 minutes',
     agenda: [
-      'Final video approval',
-      'Campaign settings review',
-      'CRM/WhatsApp demo',
-      'Launch timeline confirmation',
-      'Success metrics setup'
+      'Campaign launch confirmation',
+      'CRM demo & best practices',
+      'Lead response workflow',
+      'Reporting dashboard setup'
     ],
-    deliverables: 'Launch checklist, training documents'
+    deliverables: 'Live campaigns, reporting access, response templates'
   }
 ]
 </script>
 
 <div class="space-y-8 p-8 max-w-3xl mx-auto">
-  <h1 class="text-3xl text-center font-bold"> Client Onboarding Journey</h1>
-  <!-- Timeline -->
+  <h1 class="text-3xl text-center font-bold">What Happens After You Say Yes</h1>
   <div v-for="meeting in meetings" class="bg-zinc-800/40 rounded-lg p-6">
     <div class="flex items-center gap-4 mb-4">
-      <div class="bg-blue-500/20 text-blue-500 px-3 py-1 rounded text-sm font-medium">
+      <div class="bg-red-500/20 text-red-500 px-3 py-1 rounded text-sm font-medium">
         {{ meeting.week }}
       </div>
       <h3 class="text-xl font-bold">{{ meeting.meeting }}</h3>
@@ -72,10 +55,10 @@ const meetings = [
     </div>
     <div class="grid grid-cols-2 gap-8">
       <div>
-        <h4 class="text-base font-medium mb-3">Meeting Agenda</h4>
+        <h4 class="text-base font-medium mb-3">What We Cover</h4>
         <ul class="space-y-2">
-          <li 
-            v-for="item in meeting.agenda" 
+          <li
+            v-for="item in meeting.agenda"
             class="flex items-center !text-xs gap-2 text-zinc-300"
           >
             <div class="i-lucide-check-circle w-3 h-4 text-green-500" />
@@ -84,7 +67,7 @@ const meetings = [
         </ul>
       </div>
       <div>
-        <h4 class="text-base font-medium mb-3">Key Deliverables</h4>
+        <h4 class="text-base font-medium mb-3">What You Get</h4>
         <div class="bg-zinc-900/40 text-xs rounded text-zinc-300">
           {{ meeting.deliverables }}
         </div>

@@ -1,148 +1,183 @@
 ---
-zoom: 0.6
+layout: center
 ---
 
-<div class="w-full h-full flex flex-col items-center justify-center">
-  <PricingCardSystem
-    title="Our Setup Packages"
-    subtitle="Tailored Solutions for Your Business Growth"
-    :plans="packages"
-  />
+<div class="pricing-container">
+  <div
+    v-motion
+    :initial="{ filter: 'blur(12px)', opacity: 0, scale: 0.95 }"
+    :enter="{ filter: 'blur(0px)', opacity: 1, scale: 1 }"
+    class="pricing-card"
+  >
+    <div class="pricing-header">
+      <h2 class="pricing-name">The Lead Engine</h2>
+      <div class="pricing-price">
+        <span class="price-amount">5,000</span>
+        <span class="price-currency">AED/month</span>
+      </div>
+    </div>
+    <div class="pricing-features">
+      <div class="feature-section">
+        <h3 class="feature-title text-yellow-500">Ad Management</h3>
+        <ul class="feature-list">
+          <li><lucide-check class="feature-icon text-yellow-500" /> Full campaign management (Meta & Google)</li>
+          <li><lucide-check class="feature-icon text-yellow-500" /> Weekly optimization & A/B testing</li>
+          <li><lucide-check class="feature-icon text-yellow-500" /> Performance reporting</li>
+        </ul>
+      </div>
+      <div class="feature-section">
+        <h3 class="feature-title text-green-500">CRM System</h3>
+        <ul class="feature-list">
+          <li><lucide-check class="feature-icon text-green-500" /> CRM setup & full access</li>
+          <li><lucide-check class="feature-icon text-green-500" /> Lead capture automation</li>
+          <li><lucide-check class="feature-icon text-green-500" /> Pipeline management</li>
+        </ul>
+      </div>
+      <div class="feature-section">
+        <h3 class="feature-title text-blue-500">Support</h3>
+        <ul class="feature-list">
+          <li><lucide-check class="feature-icon text-blue-500" /> Monthly strategy call</li>
+          <li><lucide-check class="feature-icon text-blue-500" /> WhatsApp support</li>
+          <li><lucide-check class="feature-icon text-blue-500" /> Training & onboarding</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
-<script setup>
-// Import the component if needed (might be auto-imported in Slidev)
-// import PricingCardSystem from '../components/PricingCardSystem.vue';
+<style>
+.pricing-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 750px;
+  margin: 0 auto;
+}
 
-// Data for pricing packages
-const packages = [
-  // {
-  //   name: 'Ad Creation',
-  //   price: '10,000',
-  //   currency: 'AED',
-  //   usdPrice: '2,700',
-  //   popular: false,
-  //   features: [
-  //     { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
-  //     { text: '10 Static Ads', included: true, color: 'blue' },
-  //     { text: '10 Video Ads', included: true, color: 'blue' },
-  //   ]
-  // },
-  {
-    name: 'CRM System',
-    price: '5,000',
-    currency: 'AED/year',
-    usdPrice: '1,400',
-    popular: false,
-    features: [
-      { text: 'Unlimited Users', included: true, color: 'green', bold: true },
-      { text: 'Unlimited Contacts', included: true, color: 'green', bold: true },
-      { text: 'Lead Management System', included: true, color: 'green' },
-      { text: 'Automated Workflows', included: true, color: 'green' },
-      { text: 'Reporting & Analytics', included: true, color: 'green' },
-      { text: 'Integration with Ads', included: true, color: 'green' },
-      { text: 'Training & Support', included: true, color: 'green' },
-      { text: '14-Day Money Back Guarantee', included: true, bold: true, extraSpace: true }
-    ]
-  },
-  {
-    name: 'Lead Generator',
-    price: '20,000',
-    currency: 'AED',
-    usdPrice: '5,500',
-    popular: true,
-    features: [
-      { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
-      { text: '10 Static Ads', included: true, color: 'blue' },
-      { text: '10 Video Ads', included: true, color: 'blue' },
-      { text: 'CRM System Setup', included: true, color: 'green' },
-      { text: 'Ad Campaigns Setup', included: true, color: 'yellow' },
-      { text: '+1 Month Ad Management', bold: true, extraSpace: true }
-    ]
-  },
-  {
-    name: 'Lead Generator +',
-    price: '35,000',
-    currency: 'AED',
-    usdPrice: '9,500',
-    popular: false,
-    features: [
-      { text: '20 Total Ads', bold: true, included: true, color: 'blue' },
-      { text: '10 Static Ads', included: true, color: 'blue' },
-      { text: '10 Video Ads', included: true, color: 'blue' },
-      { text: 'CRM System', included: true, color: 'green' },
-      { text: 'Ad Campaign(s) Set-up', included: true, color: 'yellow' },
-      { text: 'Sales Funnel Audit', included: true, color: 'yellow' },
-      { text: 'Sales Automation', included: true, color: 'yellow' },
-      { text: 'Lead Magnet Development', included: true, color: 'yellow' },
-      { text: '+1 Month Ad Management', bold: true, extraSpace: true }
-    ]
-  }
-]
-</script>
+.pricing-card {
+  background-color: rgba(24, 24, 27, 0.7);
+  border: 2px solid #EF4444;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
 
----
-zoom: 0.6
----
+.pricing-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-<div class="w-full h-full flex flex-col items-center justify-center">
-  <PricingCardSystem
-    title="Our Subscriptions"
-    subtitle="Monthly Support Plans for Ongoing Success"
-    :plans="retainers"
-  />
-</div>
+.pricing-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
 
-<script setup>
-// Import the component if needed (might be auto-imported in Slidev)
-// import PricingCardSystem from '../components/PricingCardSystem.vue';
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+}
 
-// Data for retainer packages
-const retainers = [
-  {
-    name: 'Lite',
-    price: '1,500',
-    currency: 'AED/mo',
-    popular: false,
-    features: [
-      { text: 'CRM Subscription', included: true },
-      { text: 'Ad Management', included: true },
-      { text: '1 Monthly Graphic', included: true },
-      { text: 'WhatsApp Marketing Management', included: false },
-      { text: 'Smart AI ChatBot', included: false },
-      { text: 'Monthly Videos', included: false },
-      { text: 'Ad Budget: 3,000 - 5,000', bold: true, extraSpace: true }
-    ]
-  },
-  {
-    name: 'Plus',
-    price: '3,500',
-    currency: 'AED/mo',
-    popular: true,
-    features: [
-      { text: 'CRM Subscription', included: true },
-      { text: 'Ad Management', included: true },
-      { text: '4 Monthly Graphics', included: true },
-      { text: 'WhatsApp Marketing Management', included: true },
-      { text: 'Smart AI ChatBot', included: true },
-      { text: 'Monthly Videos', included: false },
-      { text: 'Ad Budget: 5,000 - 15,000', bold: true, extraSpace: true }
-    ]
-  },
-  {
-    name: 'Pro',
-    price: '7,000',
-    currency: 'AED/mo',
-    popular: false,
-    features: [
-      { text: 'CRM Subscription', included: true },
-      { text: 'Ad Management', included: true },
-      { text: '8 Monthly Graphics', included: true },
-      { text: 'WhatsApp Marketing Management', included: true },
-      { text: 'Smart AI ChatBot', included: true },
-      { text: '4 Videos in 1 Shoot', included: true },
-      { text: 'Ad Budget: 15,000+', bold: true, extraSpace: true }
-    ]
-  }
-]
-</script>
+.price-amount {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #EF4444;
+}
+
+.price-currency {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pricing-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-section {
+  text-align: left;
+}
+
+.feature-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.375rem;
+}
+
+.feature-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.pricing-requirements {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.requirement-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pricing-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.why-commitment {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  max-width: 450px;
+}
+
+.why-commitment h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #EF4444;
+  margin-bottom: 0.25rem;
+}
+
+.why-commitment p {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.4;
+}
+</style>

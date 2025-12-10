@@ -7,8 +7,8 @@ class: text-center
   <div class="header-icon">
     <lucide-layout-dashboard class="w-10 h-10" />
   </div>
-  <h1>CRM Solutions</h1>
-  <p class="header-description">Managing customer relationships seamlessly</p>
+  <h1>Never Lose a Lead Again</h1>
+  <p class="header-description">Your command center for every property inquiry</p>
 </div>
 
 <style>
@@ -40,10 +40,10 @@ class: text-center
 
 <div class="crm-intro">
   <div class="crm-what-is">
-    <h1 class="section-title">What is a CRM?</h1>
-    <p 
+    <h1 class="section-title">Why Real Estate Agents Need a CRM</h1>
+    <p
       v-click
-      class="section-text">A Customer Relationship Management system that centrally manages all your leads and customer interactions
+      class="section-text">A system that captures every inquiry, responds instantly, and shows you exactly where every buyer stands in your pipeline
     </p>
   </div>
 </div>
@@ -117,73 +117,73 @@ zoom: 0.8
 ---
 
 
-# To Understand Why You Need a CRM, Let's See What Happens Without One
+# Without a CRM, This Is Your Reality
 
 <div class="problem-scenario">
-  <div 
+  <div
     v-click="1"
     class="problem-card"
   >
     <div class="problem-icon">
-      <lucide-mail class="icon-red" />
+      <lucide-message-square class="icon-red" />
     </div>
-    <h4 class="text-lg font-bold mb-1">Email Chaos</h4>
-    <p>Your leads get buried in your inbox, making you miss potential clients</p>
+    <h4 class="text-lg font-bold mb-1">WhatsApp Chaos</h4>
+    <p>Leads buried in hundreds of chat threads</p>
   </div>
-  
-  <div 
+
+  <div
     v-click="2"
     class="problem-card"
   >
     <div class="problem-icon">
-      <lucide-clock class="icon-red" />
+      <lucide-calendar-x class="icon-red" />
     </div>
-    <h4 class="text-lg font-bold mb-1">Manual Follow-ups</h4>
-    <p>You need to follow up on leads manually, which is very time consuming</p>
+    <h4 class="text-lg font-bold mb-1">Forgotten Follow-ups</h4>
+    <p>Forgetting to follow up after viewings</p>
   </div>
-  
-  <div 
+
+  <div
     v-click="3"
     class="problem-card"
   >
     <div class="problem-icon">
-      <lucide-list class="icon-red" />
+      <lucide-thermometer class="icon-red" />
     </div>
-    <h4 class="text-lg font-bold mb-1">Scattered Data</h4>
-    <p>Your customer info is spread across emails, notes, and spreadsheets</p>
+    <h4 class="text-lg font-bold mb-1">Cold vs. Hot?</h4>
+    <p>No idea which leads are ready to buy</p>
   </div>
-  
-  <div 
+
+  <div
     v-click="4"
     class="problem-card"
   >
     <div class="problem-icon">
-      <lucide-users class="icon-red" />
+      <lucide-copy class="icon-red" />
     </div>
-    <h4 class="text-lg font-bold mb-1">Volume Overwhelm</h4>
-    <p>As leads increase, your system breaks down and you get overwhelmed</p>
+    <h4 class="text-lg font-bold mb-1">Manual Copy-Paste</h4>
+    <p>Exporting Facebook leads one by one</p>
   </div>
-  
-  <div 
+
+  <div
     v-click="5"
     class="problem-card"
   >
     <div class="problem-icon">
-      <lucide-ban class="icon-red" />
+      <lucide-map class="icon-red" />
     </div>
-    <h4 class="text-lg font-bold mb-1">No Prioritization</h4>
-    <p>You can't tell which leads are hot and which can wait</p>
+    <h4 class="text-lg font-bold mb-1">Lost in the Pipeline</h4>
+    <p>No clue where each deal stands</p>
   </div>
-  
-  <div 
+
+  <div
     v-click="6"
     class="problem-card"
   >
     <div class="problem-icon">
-      <lucide-x-circle class="icon-red" />
+      <lucide-timer class="icon-red" />
     </div>
-    <h4 class="text-lg font-bold mb-1">Lost Opportunities</h4>
-    <p>You forget to follow up, and potential sales slip through the cracks</p>
+    <h4 class="text-lg font-bold mb-1">5-Minute Window</h4>
+    <p>Missing the critical response time</p>
   </div>
 </div>
 
@@ -210,7 +210,7 @@ class: text-center
 layout: center
 ---
 
-# A CRM Will Solve All Those Issues For You
+# The CRM Solves All of This
 
 ---
 layout: center
@@ -445,7 +445,6 @@ zoom: 0.8
       </div>
     </div>
   </div>
-  
   <div class="contact-features">
     <div 
       v-click="2"
@@ -652,7 +651,7 @@ zoom: 0.8
 class: text-center
 ---
 
-# Lead Pipeline Management
+# Your Real Estate Pipeline
 
 <div 
   v-click="1"
@@ -712,7 +711,7 @@ class: text-center
   </div>
   <div class="pipeline-stage">
     <div class="stage-header">
-      <h3>Meeting Scheduled</h3>
+      <h3>Viewing Booked</h3>
       <div class="stage-count">3</div>
     </div>
     <div class="stage-content">
@@ -731,7 +730,7 @@ class: text-center
   </div>
   <div class="pipeline-stage">
     <div class="stage-header">
-      <h3>Proposal Sent</h3>
+      <h3>Offer Made</h3>
       <div class="stage-count">2</div>
     </div>
     <div class="stage-content">

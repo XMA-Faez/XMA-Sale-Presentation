@@ -2,8 +2,8 @@
 class: text-center
 ---
 
-# Trusted By Leading Businesses
-<div 
+# Trusted by Dubai's Real Estate Professionals
+<div
   v-motion
   :initial="{ opacity: 0, y: 100 }"
   :enter="{ opacity: 1, y: 0 }"
@@ -11,7 +11,7 @@ class: text-center
   class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8"
 >
     <dl class="grid grid-cols-1 gap-8 sm:mt-8 sm:grid-cols-2 lg:grid-cols-3">
-        <div 
+        <div
           v-motion
           :initial="{ filter: 'blur(12px)', opacity: 0, scale: 0.8 }"
           :enter="{ filter: 'blur(0px)', opacity: 1, scale: 1, transition: { delay: 200 } }"
@@ -20,9 +20,9 @@ class: text-center
             <dd class="text-2xl font-extrabold text-red-600 md:text-4xl mb-4">
                 <Ticker :value="50" :decimalPlaces="0" />+
             </dd>
-            <dt class="text-base font-medium text-zinc-400">Total Clients</dt>
+            <dt class="text-base font-medium text-zinc-400">Campaigns Launched</dt>
         </div>
-        <div 
+        <div
           v-motion
           :initial="{ filter: 'blur(12px)', opacity: 0, scale: 0.8 }"
           :enter="{ filter: 'blur(0px)', opacity: 1, scale: 1, transition: { delay: 400 } }"
@@ -33,7 +33,7 @@ class: text-center
             </dd>
             <dt class="text-base font-medium text-zinc-400">Leads Generated</dt>
         </div>
-        <div 
+        <div
           v-motion
           :initial="{ filter: 'blur(12px)', opacity: 0, scale: 0.8 }"
           :enter="{ filter: 'blur(0px)', opacity: 1, scale: 1, transition: { delay: 600 } }"
@@ -47,7 +47,7 @@ class: text-center
     </dl>
 </div>
 
-<div 
+<div
   v-motion
   :initial="{ opacity: 0 }"
   :enter="{ opacity: 1, transition: { delay: 800 } }"

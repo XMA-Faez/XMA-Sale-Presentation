@@ -123,3 +123,8 @@ html {
   opacity: 0;
   filter: blur(10px);
 }
+
+.slidev-layout li,
+.slidev-layout p {
+  margin: 0;
+}

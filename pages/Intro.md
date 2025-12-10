@@ -68,9 +68,9 @@ onMounted(() => {
         class="text-center flex flex-col items-center"
     >
         <div class="mb-3 flex items-center justify-center w-16 h-16 bg-white/20 rounded-full">
-            <lucide-video class="w-8 h-8" />
+            <lucide-megaphone class="w-8 h-8" />
         </div>
-        <div class="text-center w-16">Video</div>
+        <div class="text-center w-16">Ads</div>
     </div>
     <div
         v-motion
@@ -80,9 +80,9 @@ onMounted(() => {
         class="text-center flex flex-col items-center"
     >
         <div class="mb-3 flex items-center justify-center w-16 h-16 bg-white/20 rounded-full">
-            <lucide-bar-chart3 class="w-8 h-8" />
+            <lucide-layout-dashboard class="w-8 h-8" />
         </div>
-        <div class="text-center w-16">Marketing</div>
+        <div class="text-center w-16">CRM</div>
     </div>
     <div
         v-motion
@@ -92,21 +92,9 @@ onMounted(() => {
         class="text-center flex flex-col items-center"
     >
         <div class="mb-3 flex items-center justify-center w-16 h-16 bg-white/20 rounded-full">
-            <lucide-bot class="w-8 h-8" />
+            <lucide-video class="w-8 h-8" />
         </div>
-        <div class="text-center w-16">CRM</div>
-    </div>
-    <div
-        v-motion
-        :initial="{ filter: 'blur(12px)', opacity: 0, y: 20 }"
-        :enter="{ filter: 'blur(0px)', opacity: 1, y: 0, transition: { delay: 800 } }"
-        :duration="500"
-        class="text-center flex flex-col items-center"
-    >
-        <div class="mb-3 flex items-center justify-center w-16 h-16 bg-white/20 rounded-full">
-            <lucide-zap class="w-8 h-8" />
-        </div>
-        <div class="text-center w-16">Performance</div>
+        <div class="text-center w-16">Content</div>
     </div>
 </div>
 </div>
